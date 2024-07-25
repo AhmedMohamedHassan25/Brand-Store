@@ -1,15 +1,12 @@
 
-
-
 // made by mohamed 
-
 /// resopnd and cards
+var item = []
+var cartStorge = []
 var xhr = new XMLHttpRequest();
 xhr.open("GET","./test.json")
-var item = 0
 xhr.onreadystatechange = function() {
     if (xhr.readyState == 4  && xhr.status == 200) {
-        console.log(xhr.response);
         var json = JSON.parse(xhr.response)
         var main = document.getElementById("main")
         for (let i = 0; i < json.length; i++) {
@@ -47,9 +44,24 @@ xhr.onreadystatechange = function() {
             card.appendChild(price)
             card.appendChild(addToCart)
             main.appendChild(card)
+            var num = document.getElementById("items")
+            localStorage.setItem("cartStorge","[]")
+            addToCart.addEventListener("click", function () {
+                var curnum = parseInt(num.textContent)
+                var newnum = curnum + 1
+                num.textContent = newnum
+                console.log(json[i]);
+                cartStorge.push(json[i])
+                console.log(cartStorge);
+                localStorage.setItem("cartStorge",JSON.stringify(cartStorge))
+            })
+
+
             card.addEventListener("click", function () {
                 window.open("./product.html");
-                item = json[i].id
+                item.push(json[i].id)
+                console.log(json[i].id);
+                localStorage.setItem("item",JSON.stringify(item))
                 console.log(item);
             })
             
@@ -57,5 +69,4 @@ xhr.onreadystatechange = function() {
 
     }
 }
-
-xhr.send();
+xhr.send()
