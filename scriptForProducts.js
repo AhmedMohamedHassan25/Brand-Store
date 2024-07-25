@@ -46,7 +46,8 @@ xhr.onreadystatechange = function() {
             main.appendChild(card)
             var num = document.getElementById("items")
             localStorage.setItem("cartStorge","[]")
-            addToCart.addEventListener("click", function () {
+            addToCart.addEventListener("click", function (event) {
+                if (!event.target.closest('button')) {
                 var curnum = parseInt(num.textContent)
                 var newnum = curnum + 1
                 num.textContent = newnum
@@ -54,13 +55,15 @@ xhr.onreadystatechange = function() {
                 cartStorge.push(json[i])
                 console.log(cartStorge);
                 localStorage.setItem("cartStorge",JSON.stringify(cartStorge))
+                }
             })
 
 
-            card.addEventListener("click", function () {
+            card.addEventListener("click", function (event) {
+                event.stopPropagation();
                 window.open("./product.html");
-                item.push(json[i].id)
-                console.log(json[i].id);
+                item.push(json[i])
+                console.log(json[i]);
                 localStorage.setItem("item",JSON.stringify(item))
                 console.log(item);
             })

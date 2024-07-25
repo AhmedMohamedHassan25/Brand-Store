@@ -1,0 +1,60 @@
+#cartdiv{
+    text-align: center;
+}
+#empitycartbtn{
+    width:"250px";
+    height:"100px";
+    margin:"auto";
+    display: "block";
+}
+#carthead{
+    height: 50px;
+    width: 70%;
+    background-color: rgb(230, 230, 214);
+
+}
+#productdiv{
+    display: inline-block;
+    height: 100%;
+    width: 35%;
+    margin-left: -300px;
+    padding-right: 50px;
+    text-align: center;
+
+
+}  
+#pricediv{
+    display: inline-block;
+    height: 100%;
+    width: 20%;
+    padding-left: 50px;
+
+    
+} 
+#amountdiv{
+    display: inline-block;
+    height: 100%;
+    width: 20%;
+} 
+#totaldiv{
+    display: inline-block;
+    height: 100%;
+    width: 20%;
+    margin-right: -250px;
+
+} 
+.cartcarddiv{
+    width: 70%;
+    height: 200px;
+    border: 1px solid black ;
+    margin-block: 3px;
+}
+.cartcardimg{
+    height: 150px;
+    width: 150px;
+    
+}
+
+
+  
+ 
