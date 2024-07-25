@@ -48,10 +48,12 @@
     height: 200px;
     border: 1px solid black ;
     margin-block: 3px;
+    text-align: center;
 }
 .cartcardimg{
     height: 150px;
     width: 150px;
+    margin-left: -700px;
     
 }
 

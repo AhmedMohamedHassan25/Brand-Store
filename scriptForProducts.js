@@ -47,26 +47,27 @@ xhr.onreadystatechange = function() {
             var num = document.getElementById("items")
             localStorage.setItem("cartStorge","[]")
             addToCart.addEventListener("click", function (event) {
-                if (!event.target.closest('button')) {
-                var curnum = parseInt(num.textContent)
-                var newnum = curnum + 1
-                num.textContent = newnum
+                event.stopPropagation(); 
+                var curnum = parseInt(num.textContent);
+                var newnum = curnum + 1;
+                num.textContent = newnum;
                 console.log(json[i]);
-                cartStorge.push(json[i])
+                cartStorge.push(json[i]);
                 console.log(cartStorge);
-                localStorage.setItem("cartStorge",JSON.stringify(cartStorge))
-                }
-            })
+                localStorage.setItem("cartStorge", JSON.stringify(cartStorge));
+            });
 
 
             card.addEventListener("click", function (event) {
-                event.stopPropagation();
-                window.open("./product.html");
-                item.push(json[i])
-                console.log(json[i]);
-                localStorage.setItem("item",JSON.stringify(item))
-                console.log(item);
-            })
+                if (!event.target.closest('button')) {
+                    event.stopPropagation(); 
+                    window.open("./product.html");
+                    item.push(json[i]);
+                    console.log(json[i]);
+                    localStorage.setItem("item", JSON.stringify(item));
+                    console.log(item);
+                }
+            });
             
         }
 
