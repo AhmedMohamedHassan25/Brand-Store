@@ -165,41 +165,5 @@ if (cart.length == 0) {
         cartcarddiv.appendChild(totalprice)
         cartcarddiv.appendChild(counter)
         
-
-       
-
-
-
-        // var line = document.createElement("br")
-        // var imgdiv = document.createElement("div")
-        // var btn = document.createElement("button")
-        // btn.setAttribute("id", cart[i].id)
-        // var add = document.createTextNode("remove to carte")
-        // btn.appendChild(add)
-        // imgdiv.appendChild(img)
-        // img.style.width = "100px"
-        // img.style.hight = "100px"
-        // var title = document.createTextNode(cart[i].title)
-        // console.log(cart[i].title);
-        // var rat = document.createTextNode( "rate: " + cart[i].rating.rate+" ")
-        // var count = document.createTextNode("count: "+cart[i].rating.count+" ")
-        // var price = document.createTextNode("price: "+cart[i].price+" ")
-        // card.appendChild(imgdiv)
-        // card.appendChild(title)
-        // card.appendChild(line)
-        // card.appendChild(count)
-        // // card.appendChild(rat)
-        // card.appendChild(price)
-        // card.appendChild(btn)
-        // cartdiv.appendChild(cartcarddiv)
-        // btn.addEventListener("click",function (evt) {
-        //     console.log(cart.length);
-        //     var x = document.getElementById(evt.target.id)
-        //     console.log(cart[i]);
-        //     cart.splice(i,1)
-        //     console.log(cart);
-        //     localStorage.setItem("cart",JSON.stringify(cart))
-        //     x.remove()
-        // })        
 }
 }
