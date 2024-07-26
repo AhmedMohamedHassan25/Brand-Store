@@ -2,7 +2,7 @@
 var cartdiv = document.getElementById("cartdiv")
 var cart = JSON.parse(localStorage.getItem("cartStorge"))
 console.log(cart);
-if (cart == null) {
+if (cart.length == 0) {
     var empityParag = document.createElement("p")
     var empitytext = document.createTextNode("Your cart is Empity")
     empityParag.appendChild(empitytext)
@@ -43,7 +43,50 @@ if (cart == null) {
         var cartcardimg = document.createElement("img")
         cartcardimg.setAttribute("class","cartcardimg")
         cartcardimg.src = cart[i].image
+        var Title = document.createElement("p")
+        Title.setAttribute("class","cartcardtitle")
+        Title.innerHTML = cart[i].product_name
+
+        var categ = document.createElement("p")
+        categ.setAttribute("class","categ")
+        categ.innerHTML = " category: " + cart[i].category
+
+        var quantity = document.createElement("p")
+        quantity.setAttribute("class","quantity")
+        quantity.innerHTML = cart[i].quantity + " pieces left !"
+
+        var price = document.createElement("p")
+        price.setAttribute("class","price")
+        price.innerHTML = "LE "+cart[i].price 
+
+        var counter = document.createElement("input")
+        counter.setAttribute("type","number")
+        counter.setAttribute("class","counterinput")
+        counter.setAttribute("value",1)
+        counter.setAttribute("max",10)
+        counter.setAttribute("min",1)
+
+        var totalprice = document.createElement("p")
+        totalprice.setAttribute("class","totalprice")
+        totalprice.setAttribute("id",cart[i].id)
+        var totalpriceNumber =  parseFloat(cart[i].price)
+        console.log(totalpriceNumber);
+        totalprice.innerHTML = "LE "+ counter.value * totalpriceNumber
+        
+        var inputs = document.getElementsByClassName("counterinput")
+        counter.addEventListener("input",function (event) {
+            totalprice.innerHTML = "LE "+ counter.value * totalpriceNumber
+            console.log(totalprice);
+        })
+        
         cartcarddiv.appendChild(cartcardimg)
+        cartcarddiv.appendChild(Title)
+        cartcarddiv.appendChild(categ)
+        cartcarddiv.appendChild(quantity)
+        cartcarddiv.appendChild(price)
+        cartcarddiv.appendChild(totalprice)
+        cartcarddiv.appendChild(counter)
+
 
 
         // var line = document.createElement("br")
