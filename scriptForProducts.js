@@ -45,15 +45,28 @@ xhr.onreadystatechange = function() {
             main.appendChild(card)
             var num = document.getElementById("items")
             localStorage.setItem("cartStorge","[]")
+            const productItem = json[i]
             addToCart.addEventListener("click", function (event) {
                 event.stopPropagation(); 
-                var curnum = parseInt(num.textContent);
-                var newnum = curnum + 1;
-                num.textContent = newnum;
-                console.log(json[i]);
-                cartStorge.push(json[i]);
-                console.log(cartStorge);
-                localStorage.setItem("cartStorge", JSON.stringify(cartStorge));
+                function containsObject(obj, list) {
+                    for (let i = 0; i < list.length; i++) {
+                        if (list[i] === obj) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+                var contains = containsObject(productItem,cartStorge)
+                if (!contains) {
+                    var curnum = parseInt(num.textContent);
+                    var newnum = curnum + 1;
+                    num.textContent = newnum;
+                    console.log(json[i]);
+                    cartStorge.push(json[i]);
+                    console.log(cartStorge);
+                    localStorage.setItem("cartStorge", JSON.stringify(cartStorge));
+                }
+                
             });
 
 

@@ -74,13 +74,13 @@ if (cart.length == 0) {
         city.innerHTML = "";    
         var selectedGovernorate = governorate.value;
         var cities;
-        for (var i = 0; i < allCities.length; i++) {
+        for (let i = 0; i < allCities.length; i++) {
             if (allCities[i].governorate === selectedGovernorate) {
                 cities = allCities[i].cities;
                 break;
             }
         }    
-        for (var j = 0; j < cities.length; j++) {
+        for (let j = 0; j < cities.length; j++) {
             var cityName = cities[j];
             var option = document.createElement("option");
             option.setAttribute("value", cityName);
@@ -133,29 +133,30 @@ if (cart.length == 0) {
         counter.setAttribute("max",10)
         counter.setAttribute("min",1)
 
-        var totalprice = document.createElement("p")
+        const totalprice = document.createElement("p")
         totalprice.setAttribute("class","totalprice")
         totalprice.setAttribute("id",cart[i].id)
-        var totalpriceNumber =  parseFloat(cart[i].price)
+        const totalpriceNumber =  parseFloat(cart[i].price)
         console.log(totalpriceNumber);
         totalprice.innerHTML = "LE "+ counter.value * totalpriceNumber
         
         var inputs = document.getElementsByClassName("counterinput")
         counter.addEventListener("input",function () {
-            totalprice.innerHTML = "LE "+ counter.value * totalpriceNumber
+            var ss = document.getElementById(cart[i].id)
+            ss.innerHTML = "LE "+ counter.value * totalpriceNumber
             console.log(totalprice);
         })
         
         var remove = document.createElement("button")
-        remove.setAttribute("id","remove")
+        remove.setAttribute("class","remove")
         remove.innerHTML = "X"
         cartcarddiv.appendChild(remove)
+        const itemId = cart[i].id;
         remove.addEventListener("click", function () {
-            this.parentElement.remove()
-            cart.splice(i,1)
-            console.log(cart);
-            localStorage.setItem("cartStorge",JSON.stringify(cart))
-        })
+            this.parentElement.remove();
+            cart = cart.filter(item => item.id !== itemId);
+            localStorage.setItem("cartStorge", JSON.stringify(cart));
+        });
 
         cartcarddiv.appendChild(cartcardimg)
         cartcarddiv.appendChild(Title)
@@ -167,3 +168,5 @@ if (cart.length == 0) {
         
 }
 }
+
+
