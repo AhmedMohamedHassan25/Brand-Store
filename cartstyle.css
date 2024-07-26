@@ -11,7 +11,7 @@
     height: 50px;
     width: 70%;
     background-color: rgb(230, 230, 214);
-
+    
 }
 #productdiv{
     display: inline-block;
@@ -49,6 +49,7 @@
     border: 1px solid black ;
     margin-block: 3px;
     text-align: center;
+    
 }
 .cartcardimg{
     height: 150px;
@@ -94,7 +95,45 @@
     width: 100px;
     text-align: center;
 }
+#sidediv{
+    display: inline-block;
+    background-color: rgb(252, 248, 248);
+    height: 500px;
+    width: 25%;
+    display: inline-block;
+    position: absolute;
+    margin-left: 270px;
+    margin-top: -50px;
 
+}
+#governorate{
+    width: 90%;
+    height: 30px;
+}
+#city{
+    width: 40%;
+    height: 30px;
+    margin-top: 20px;
+    margin-right: 160px;
+    display: inline-block;
+
+}
+#post{
+    width: 40%;
+    height: 25px;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: -140px;
+    display: inline-block;
+    position: absolute;
+
+}
+#remove{
+    display: inline-block;
+    margin-left: 130px ;
+    margin-top: 20px ;
+    position: absolute;
+}
 
   
  

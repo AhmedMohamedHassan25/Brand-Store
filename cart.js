@@ -35,6 +35,73 @@ if (cart.length == 0) {
     carthead.appendChild(totaldiv)
 
     cartdiv.appendChild(carthead)
+    var sidediv = document.createElement("div")
+    sidediv.setAttribute("id", "sidediv")
+    cartdiv.appendChild(sidediv)
+    var summary = document.createElement("p")
+    summary.innerHTML = "ORDER SUMMARY"
+
+    var shipping = document.createElement("p")
+    shipping.innerHTML = "Shipping Information"
+    shipping.style.marginTop = "30px"
+
+    var governorate = document.createElement("select")
+    governorate.setAttribute("id","governorate")
+    var option1 = document.createElement("option")
+    option1.setAttribute("value","Sohag")
+    option1.innerHTML = "Sohag"
+    governorate.appendChild(option1)
+    
+    var option2 = document.createElement("option")
+    option2.setAttribute("value","Assiut")
+    option2.innerHTML = "Assiut"
+    governorate.appendChild(option2)
+    
+    var option3 = document.createElement("option")
+    option3.setAttribute("value","Qena")
+    option3.innerHTML = "Qena"
+    governorate.appendChild(option3)
+
+    var city = document.createElement("select")
+    city.setAttribute("id","city")
+    var allCities = [
+        { governorate: "Sohag", cities: ["Sohag", "Tema", "Tahta", "El-Maragha","Girga", "El-Munshaa", "Al-Blina"] },
+        { governorate: "Assiut", cities: ["Assiut", "Sedfa", "Al-Fath", "Abo Teag", "Al-Qousia", "Abnoub"] },
+        { governorate: "Qena", cities: ["Qena", "Farshot", "Deshna", "Abu Tesht", "Naga Hamadi", "Qous", "Quft"] }
+    ];
+
+    function updateCityOptions() {
+        city.innerHTML = "";    
+        var selectedGovernorate = governorate.value;
+        var cities;
+        for (var i = 0; i < allCities.length; i++) {
+            if (allCities[i].governorate === selectedGovernorate) {
+                cities = allCities[i].cities;
+                break;
+            }
+        }    
+        for (var j = 0; j < cities.length; j++) {
+            var cityName = cities[j];
+            var option = document.createElement("option");
+            option.setAttribute("value", cityName);
+            option.innerHTML = cityName;
+            city.appendChild(option);
+        }
+    }
+    updateCityOptions();
+    governorate.addEventListener("change", updateCityOptions);
+    var post = document.createElement("input")
+    post.setAttribute("id","post")
+    post.setAttribute("type","text")
+    post.setAttribute("placeHolder","Postal Code")
+
+
+    sidediv.appendChild(summary)
+    sidediv.appendChild(shipping)
+    sidediv.appendChild(governorate)
+    sidediv.appendChild(city)
+    sidediv.appendChild(post)
+    
     for (let i = 0; i < cart.length; i++) {
         var cartcarddiv = document.createElement("div")
         cartcarddiv.setAttribute("class","cartcarddiv")
@@ -74,11 +141,22 @@ if (cart.length == 0) {
         totalprice.innerHTML = "LE "+ counter.value * totalpriceNumber
         
         var inputs = document.getElementsByClassName("counterinput")
-        counter.addEventListener("input",function (event) {
+        counter.addEventListener("input",function () {
             totalprice.innerHTML = "LE "+ counter.value * totalpriceNumber
             console.log(totalprice);
         })
         
+        var remove = document.createElement("button")
+        remove.setAttribute("id","remove")
+        remove.innerHTML = "X"
+        cartcarddiv.appendChild(remove)
+        remove.addEventListener("click", function () {
+            this.parentElement.remove()
+            cart.splice(i,1)
+            console.log(cart);
+            localStorage.setItem("cartStorge",JSON.stringify(cart))
+        })
+
         cartcarddiv.appendChild(cartcardimg)
         cartcarddiv.appendChild(Title)
         cartcarddiv.appendChild(categ)
@@ -86,6 +164,9 @@ if (cart.length == 0) {
         cartcarddiv.appendChild(price)
         cartcarddiv.appendChild(totalprice)
         cartcarddiv.appendChild(counter)
+        
+
+       
 
 
 
