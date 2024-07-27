@@ -16,6 +16,7 @@ body{
 }
 
 
+
 .FOOTbtn{
     display: flex;
     justify-content: center;
@@ -52,7 +53,6 @@ body{
         padding: 10px;
         border-color:#1d2430 ;
         box-shadow: 0  0 10px 10px rgba(144, 144, 144, 0.347);
-
         /* display: ; */
     }
 

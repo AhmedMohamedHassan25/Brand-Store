@@ -1,3 +1,72 @@
+
+
+
+// made by Elghoul
+var foot1 =document.getElementById("footbtn1");
+foot1.onclick = goTo;
+
+function goTo(){
+    window.location.href="#top";
+}
+
+
+/* search bar */
+let search=document.createElement("input");
+search.type="text";
+search.placeholder="Search";
+let mainOfHome=document.getElementById("top");
+mainOfHome.after(search);
+search.style.width="500px";
+search.style.height="50px";
+search.style.display="none";
+search.id="searchID"; 
+
+
+/*searching button */
+var searching=document.getElementById("searching");
+searching.onclick=makeTextSearch;
+// the value of search;
+let valueOFsearhing;
+/*the event of the button search*/
+function makeTextSearch(){
+
+    //return the element to it's default
+    if (search.style.display === "none") {
+        // Display the search bar
+        search.style.display = "initial";
+        mainOfHome.style.opacity = 0.3;
+        search.focus();
+    } else {
+        // Hide the search bar and reset the input
+        valueOFsearhing=search.value;
+        search.style.display = "none";
+        mainOfHome.style.opacity = 1;
+        search.value = null;
+        
+        console.log(valueOFsearhing);
+
+    }
+
+    // event when press enter 
+    search.addEventListener("keypress",function(ev){
+    if(ev.key=="Enter" ){
+        valueOFsearhing=search.value;
+        search.style.display="none";
+        mainOfHome.style.opacity=1;
+        console.log(valueOFsearhing);
+        search.value=null;
+
+    }
+  
+
+        
+    })
+ 
+}
+
+
+
+
 //made by walid
 document.body.style.backgroundColor = 'lightblue';
 
@@ -6,12 +75,17 @@ var Div = document.createElement('div');
 Div.id = 'MyDiv';
 Div.style.width = '100%';
 Div.style.height = '100px';
-Div.style.backgroundColor = 'offwhite';
-Div.style.position = 'relative'; 
-document.body.appendChild(Div);
+// edit by Elghoul   //+  محتاجة تعديل عشان تلزق في السقف ونظب الدروب دون لست
+Div.style.backgroundColor = 'wheat';
+Div.style.position = 'absolute'; 
+Div.style.left="-10px";
+Div.style.Top="0px";
+Div.style.borderRadius="0px 0px 10px 10px";
+Div.style.zIndex="1000";
+mainOfHome.before(Div);
 
 var CrtIcon = document.createElement('img');
-CrtIcon.src = "./Resources/Cart.png";
+CrtIcon.src = "./rss/Cart.png";
 CrtIcon.style.height = '20px';
 CrtIcon.style.position = 'absolute';
 CrtIcon.style.cursor='pointer';
@@ -20,7 +94,7 @@ CrtIcon.style.right = '120px';
 Div.appendChild(CrtIcon);
 
 var HeartIcon = document.createElement('img');
-HeartIcon.src = "./Resources/Heart.png";
+HeartIcon.src = "./rss/Heart.png";
 HeartIcon.style.height = '23px';
 HeartIcon.style.position = 'absolute';
 HeartIcon.style.right = '170px'; 
@@ -29,7 +103,7 @@ HeartIcon.style.cursor='pointer';
 Div.appendChild(HeartIcon);
 
 var CatIcon = document.createElement('img');
-CatIcon.src = "./Resources/menu.png";
+CatIcon.src = "./rss/menu.png";
 CatIcon.style.height = '23px';
 CatIcon.style.position = 'absolute';
 CatIcon.style.right = '70px'; 
@@ -112,67 +186,4 @@ function applyHoverEffectForCategory(element)
 //end of header
 
 
-
-// made by Elghoul
-var foot1 =document.getElementById("footbtn1");
-foot1.onclick = goTo;
-
-function goTo(){
-    window.location.href="#top";
-}
-
-
-/* search bar */
-let search=document.createElement("input");
-search.type="text";
-search.placeholder="Search";
-let mainOfHome=document.getElementById("top");
-mainOfHome.after(search);
-search.style.width="500px";
-search.style.height="50px";
-search.style.display="none";
-search.id="searchID"; 
-
-
-/*searching button */
-var searching=document.getElementById("searching");
-searching.onclick=makeTextSearch;
-// the value of search;
-let valueOFsearhing;
-/*the event of the button search*/
-function makeTextSearch(){
-
-    //return the element to it's default
-    if (search.style.display === "none") {
-        // Display the search bar
-        search.style.display = "initial";
-        mainOfHome.style.opacity = 0.3;
-        search.focus();
-    } else {
-        // Hide the search bar and reset the input
-        valueOFsearhing=search.value;
-        search.style.display = "none";
-        mainOfHome.style.opacity = 1;
-        search.value = null;
-        
-        console.log(valueOFsearhing);
-
-    }
-
-    // event when press enter 
-    search.addEventListener("keypress",function(ev){
-    if(ev.key=="Enter" ){
-        valueOFsearhing=search.value;
-        search.style.display="none";
-        mainOfHome.style.opacity=1;
-        console.log(valueOFsearhing);
-        search.value=null;
-
-    }
-  
-
-        
-    })
- 
-}
 
