@@ -45,9 +45,9 @@ xhr.onreadystatechange = function () {
             card.appendChild(addToCart)
             main.appendChild(card)
             var num = document.getElementById("items")
-            localStorage.setItem("cartStorge", "[]")
+            localStorage.setItem("cartStorge","[]")
             addToCart.addEventListener("click", function (event) {
-                event.stopPropagation();
+                event.stopPropagation(); 
                 var curnum = parseInt(num.textContent);
                 var newnum = curnum + 1;
                 num.textContent = newnum;
