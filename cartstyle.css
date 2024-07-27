@@ -134,6 +134,11 @@
     margin-top: 20px ;
     position: absolute;
 }
+#Subtotal{
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 230px;
+}
 
   
  

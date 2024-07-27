@@ -13,6 +13,9 @@ if (cart.length == 0) {
     checkproducts.setAttribute("id","empitycartbtn")
     cartdiv.appendChild(empityParag)
     cartdiv.appendChild(checkproducts)
+    checkproducts.addEventListener("click",function () {
+        window.location.href = "Products.html"
+    })
 
 }else{
     var carthead = document.createElement("div")
@@ -96,6 +99,7 @@ if (cart.length == 0) {
     post.setAttribute("placeHolder","Postal Code")
 
 
+
     sidediv.appendChild(summary)
     sidediv.appendChild(shipping)
     sidediv.appendChild(governorate)
@@ -105,7 +109,6 @@ if (cart.length == 0) {
     for (let i = 0; i < cart.length; i++) {
         var cartcarddiv = document.createElement("div")
         cartcarddiv.setAttribute("class","cartcarddiv")
-        // cartcarddiv.setAttribute("id",cart[i].id)
         cartdiv.appendChild(cartcarddiv)
         var cartcardimg = document.createElement("img")
         cartcardimg.setAttribute("class","cartcardimg")
@@ -126,7 +129,7 @@ if (cart.length == 0) {
         price.setAttribute("class","price")
         price.innerHTML = "LE "+cart[i].price 
 
-        var counter = document.createElement("input")
+        const counter = document.createElement("input")
         counter.setAttribute("type","number")
         counter.setAttribute("class","counterinput")
         counter.setAttribute("value",1)
@@ -138,13 +141,12 @@ if (cart.length == 0) {
         totalprice.setAttribute("id",cart[i].id)
         const totalpriceNumber =  parseFloat(cart[i].price)
         console.log(totalpriceNumber);
-        totalprice.innerHTML = "LE "+ counter.value * totalpriceNumber
+        totalprice.innerHTML = "LE "+ totalpriceNumber
         
         var inputs = document.getElementsByClassName("counterinput")
         counter.addEventListener("input",function () {
-            var ss = document.getElementById(cart[i].id)
-            ss.innerHTML = "LE "+ counter.value * totalpriceNumber
-            console.log(totalprice);
+            var tprice = document.getElementById(cart[i].id)
+            tprice.innerHTML = "LE "+ counter.value * totalpriceNumber
         })
         
         var remove = document.createElement("button")
@@ -166,7 +168,14 @@ if (cart.length == 0) {
         cartcarddiv.appendChild(totalprice)
         cartcarddiv.appendChild(counter)
         
-}
+    }
+    const Subtotal = document.createElement("p")
+    Subtotal.setAttribute("id","Subtotal")
+    Subtotal.innerHTML = "Subtotal     " 
+    sidediv.appendChild(Subtotal)
+    
+
+
 }
 
 
