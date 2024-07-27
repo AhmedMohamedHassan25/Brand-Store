@@ -1,11 +1,12 @@
+
 // made by mohamed 
 /// resopnd and cards
 var item = []
 var cartStorge = []
 var xhr = new XMLHttpRequest();
-xhr.open("GET","./test.json")
-xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4  && xhr.status == 200) {
+xhr.open("GET", "./test.json")
+xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
         var json = JSON.parse(xhr.response)
         var main = document.getElementById("main")
         for (let i = 0; i < json.length; i++) {
@@ -23,18 +24,18 @@ xhr.onreadystatechange = function() {
             var title = document.createElement("p")
             title.style.display = "inline-block"
             title.style.width = "100%"
-            title.style.marginBlock ="3px"
+            title.style.marginBlock = "3px"
             var titletext = document.createTextNode(json[i].product_name)
             title.appendChild(titletext)
             // var rate = document.createTextNode( "rate: "+json[i].rating.rate+" ")
             var price = document.createElement("p")
             price.style.display = "inline-block"
-            price.style.marginBlock ="5px"
+            price.style.marginBlock = "5px"
             price.style.width = "100%"
-            var pricetext = document.createTextNode(json[i].price+"  EGP")
+            var pricetext = document.createTextNode(json[i].price + "  EGP")
             price.appendChild(pricetext)
             var addToCart = document.createElement("button")
-            addToCart.style.backgroundColor ="green"
+            addToCart.style.backgroundColor = "green"
             var addtext = document.createTextNode("add to carte")
             addToCart.appendChild(addtext)
             card.appendChild(img)
@@ -44,9 +45,9 @@ xhr.onreadystatechange = function() {
             card.appendChild(addToCart)
             main.appendChild(card)
             var num = document.getElementById("items")
-            localStorage.setItem("cartStorge","[]")
+            localStorage.setItem("cartStorge", "[]")
             addToCart.addEventListener("click", function (event) {
-                event.stopPropagation(); 
+                event.stopPropagation();
                 var curnum = parseInt(num.textContent);
                 var newnum = curnum + 1;
                 num.textContent = newnum;
@@ -59,15 +60,19 @@ xhr.onreadystatechange = function() {
 
             card.addEventListener("click", function (event) {
                 if (!event.target.closest('button')) {
-                    event.stopPropagation(); 
-                    window.open("./product.html");
+                    event.stopPropagation();
+                    const clickedProductId = json[i].id;
+                    console.log(clickedProductId);
+                    const productUrl = `./product.html?id=${clickedProductId}`;
+                    // window.location.href = productUrl;
+                    window.open(productUrl, '_blank');
                     item.push(json[i]);
                     console.log(json[i]);
                     localStorage.setItem("item", JSON.stringify(item));
                     console.log(item);
                 }
             });
-            
+
         }
 
     }
