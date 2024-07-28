@@ -14,11 +14,13 @@ console.log(productID);
 var storedProductData = localStorage.getItem('item');
 console.log(storedProductData);
 
+const productDiv = document.createElement('div');
+productDiv.className = 'product';
 if (storedProductData) {
     product = JSON.parse(storedProductData);
- 
+    
     if (product && product.length > 0) {
-
+        
         console.log("hello");
         var b = product[i];
         for (var i = 0; i < product.length; i++) {
@@ -28,19 +30,18 @@ if (storedProductData) {
             if ((product[i].id) == productID) {
                 console.log("hello");
                 // foundProduct = item;
-
-
-            
-                     // Display product data in the document
-                    const productDisplayDiv = document.getElementById('product-display');
-                    console.log(product[i].id);
-                    const productDiv = document.createElement('div');
-                    productDiv.className = 'product';
-                    // productDiv.style.display='flex';
-                    // productDiv.style.flexDirection = 'column';
-                    // productDiv.style.alignItems = 'center';
-
-
+                
+                
+                
+                // Display product data in the document
+                const productDisplayDiv = document.getElementById('product-display');
+                console.log(product[i].id);
+                // productDiv.style.display='flex';
+                // productDiv.style.flexDirection = 'column';
+                // productDiv.style.alignItems = 'center';
+                
+                
+                    productDiv.innerHTML='';
                     const productName = document.createElement('h2');
                     productName.textContent = product[i].product_name;
                     productName.style.textAlign='center'
