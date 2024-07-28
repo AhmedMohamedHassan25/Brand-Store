@@ -78,7 +78,7 @@ if (cart.length == 0) {
         var selectedGovernorate = governorate.value;
         var cities;
         for (let i = 0; i < allCities.length; i++) {
-            if (allCities[i].governorate === selectedGovernorate) {
+            if (allCities[i].governorate == selectedGovernorate) {
                 cities = allCities[i].cities;
                 break;
             }
@@ -156,7 +156,9 @@ if (cart.length == 0) {
         const itemId = cart[i].id;
         remove.addEventListener("click", function () {
             this.parentElement.remove();
-            cart = cart.filter(item => item.id !== itemId);
+            cart = cart.filter(function(item) {
+                return item.id !== itemId;
+            });
             localStorage.setItem("cartStorge", JSON.stringify(cart));
         });
 

@@ -145,8 +145,8 @@ function applyHoverEffectForCategory(element)
 
 // made by mohamed 
 /// resopnd and cards
-var item = []
-var cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
+let item = []
+let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
 function loadProducts(category) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "./test.json");
@@ -190,23 +190,26 @@ function loadProducts(category) {
             card.appendChild(addToCart);
             main.appendChild(card);
             
+            const itemToAdd = json[i];
             addToCart.addEventListener("click", function (event) {
                 event.stopPropagation(); 
-                var itemToAdd = json[i];
                 function isItemInCart(item) {            
-                    for (var i = 0; i < cartStorge.length; i++) {
+                    for (let i = 0; i < cartStorge.length; i++) {
+                      console.log(item);
                           if (cartStorge[i].id == item.id) {
                               return true; 
-                          }else{
-                              return false;
+                        
+                            }
                           }
-                    }
+                    return false;
                 }
                 if (!isItemInCart(itemToAdd)) {
+                    console.log(itemToAdd);
+                    console.log(cartStorge);
                     var curnum = parseInt(CartNumb.textContent);
                     var newnum = curnum + 1;
                     CartNumb.textContent = newnum;
-                    cartStorge.push(json[i]);
+                    cartStorge.push(itemToAdd);
                     localStorage.setItem("cartStorge", JSON.stringify(cartStorge));
                 }
             });
