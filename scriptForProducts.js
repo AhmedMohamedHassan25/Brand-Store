@@ -70,6 +70,7 @@ dropdown.style.display = 'none';
 dropdown.style.backgroundColor = '#f9f9f9';
 dropdown.style.boxShadow = '0px 8px 16px 0px rgba(0,0,0,0.2)';
 dropdown.style.right = '70px'; 
+dropdown.style.display = 'none';//not expand by default
 dropdown.style.bottom = '-230px';
 Div.appendChild(dropdown);
 var dropvalue
