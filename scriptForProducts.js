@@ -66,6 +66,7 @@ Div.appendChild(CatIcon);
 
 var dropdown = document.createElement('div');
 dropdown.style.position = 'absolute';
+dropdown.style.display = 'none';
 dropdown.style.backgroundColor = '#f9f9f9';
 dropdown.style.boxShadow = '0px 8px 16px 0px rgba(0,0,0,0.2)';
 dropdown.style.right = '70px'; 
