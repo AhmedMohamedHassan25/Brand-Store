@@ -139,11 +139,11 @@ if (cart.length == 0) {
         const totalprice = document.createElement("p")
         totalprice.setAttribute("class","totalprice")
         totalprice.setAttribute("id",cart[i].id)
-        const totalpriceNumber =  parseFloat(cart[i].price)
+        const totalpriceNumber = (cart[i].price)
+        const discouted = (cart[i].price - cart[i].price * 15/100)
         console.log(totalpriceNumber);
         totalprice.innerHTML = "LE "+ totalpriceNumber
         
-        var inputs = document.getElementsByClassName("counterinput")
         counter.addEventListener("input",function () {
             var tprice = document.getElementById(cart[i].id)
             tprice.innerHTML = "LE "+ counter.value * totalpriceNumber

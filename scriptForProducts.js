@@ -160,12 +160,7 @@ function loadProducts(category) {
         for (let i = 0; i < json.length; i++) {
           if (!category || json[i].category === category) {
             var card = document.createElement("div");
-            card.style.display = "inline-block";
-            card.style.border = " solid 1px black";
-            card.style.height = " 340px";
-            card.style.width = " 250px";
-            card.style.float = " left";
-            card.style.margin = "30px";
+            card.setAttribute("class", "card")
             var img = document.createElement("img");
             img.src = json[i].image;
             img.style.width = "250px";
@@ -179,16 +174,27 @@ function loadProducts(category) {
             var price = document.createElement("p");
             price.style.display = "inline-block";
             price.style.marginBlock = "5px";
-            price.style.width = "100%";
-            var pricetext = document.createTextNode(json[i].price + " EGP");
+            price.style.width = "100%";   
+            price.style.fontWeight = "600"       
+            var pricetext = document.createTextNode("LE "+json[i].price);
             price.appendChild(pricetext);
             var addToCart = document.createElement("button");
-            addToCart.style.backgroundColor = "green";
-            var addtext = document.createTextNode("add to carte");
+            addToCart.setAttribute("class", "addtocart")
+            var addtext = document.createTextNode("Add To Carte");
             addToCart.appendChild(addtext);
             card.appendChild(img);
             card.appendChild(title);
             card.appendChild(price);
+            if (json[i].discount) {
+              var dicounted = document.createElement("p");
+              dicounted.setAttribute("class", "dicounted")
+              price.style.width = "35%";          
+              price.style.textDecorationLine = "line-through";          
+              var dicountedtext = document.createTextNode("LE "+ (json[i].price - json[i].price * 15/100)+" (-15%)" );
+              dicounted.appendChild(dicountedtext);
+              card.appendChild(dicounted);
+
+            }
             card.appendChild(addToCart);
             main.appendChild(card);
             
