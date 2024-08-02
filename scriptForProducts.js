@@ -140,7 +140,7 @@ function applyHoverEffectForCategory(element)
     element.style.filter = 'none';
   });
 }
- applyHoverEffect(HeartIcon, 'heart.html');
+ applyHoverEffect(HeartIcon, "wishlist.html");
  applyHoverEffectForCategory(CatIcon);
 
 //end of header
@@ -149,6 +149,8 @@ function applyHoverEffectForCategory(element)
 /// resopnd and cards
 let item = []
 let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
+let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
 function loadProducts(category) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "./test.json");
@@ -165,6 +167,17 @@ function loadProducts(category) {
             img.src = json[i].image;
             img.style.width = "250px";
             img.style.height = "250px";
+            const favIconDiv = document.createElement("div")
+            favIconDiv.setAttribute("class","favIconDiv")
+            const favIcon = document.createElement("i")
+            favIcon.setAttribute("class","fa-solid fa-heart")
+            favIconDiv.appendChild(favIcon)
+            let isBlack = isBlackStorage[json[i].id] || false;
+            if (isBlack) {
+              favIcon.style.color = "black"; 
+            } else {
+              favIcon.style.color = "white"; 
+            }
             var title = document.createElement("p");
             title.style.display = "inline-block";
             title.style.width = "100%";
@@ -183,9 +196,13 @@ function loadProducts(category) {
             var addtext = document.createTextNode("Add To Carte");
             addToCart.appendChild(addtext);
             card.appendChild(img);
+            card.appendChild(favIconDiv);
             card.appendChild(title);
             card.appendChild(price);
             if (json[i].discount) {
+              var markForDis = document.createElement("div")
+              markForDis.setAttribute("class","markForDis")
+              markForDis.innerHTML = "Sale 15%"
               var dicounted = document.createElement("p");
               dicounted.setAttribute("class", "dicounted")
               price.style.width = "35%";          
@@ -193,11 +210,29 @@ function loadProducts(category) {
               var dicountedtext = document.createTextNode("LE "+ (json[i].price - json[i].price * 15/100)+" (-15%)" );
               dicounted.appendChild(dicountedtext);
               card.appendChild(dicounted);
-
+              card.appendChild(markForDis)
             }
             card.appendChild(addToCart);
             main.appendChild(card);
-            
+
+            const targtedProduct = json[i]
+            favIconDiv.addEventListener("click",function (event) {
+              event.stopPropagation(); 
+              if (!isBlack) {
+                favIcon.style.color = "Black"; 
+                favourites.push(targtedProduct)
+                isBlackStorage[json[i].id] = true;
+              } else {
+                favIcon.style.color = "White"; 
+                favourites = favourites.filter(function(item) {
+                  return item.id !== targtedProduct.id;
+                });
+                delete isBlackStorage[targtedProduct.id];
+              }
+              localStorage.setItem("favourites", JSON.stringify(favourites));
+              localStorage.setItem("isBlackStorage", JSON.stringify(isBlackStorage));
+              isBlack = !isBlack;
+            })
             const itemToAdd = json[i];
             addToCart.addEventListener("click", function (event) {
                 event.stopPropagation(); 
