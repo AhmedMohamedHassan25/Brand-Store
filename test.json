@@ -2,7 +2,7 @@
     {
         "id": 1,
         "product_name": "Slim Fit Rebel",
-        "size": "XS",
+        "size": 6,
         "price": 602,
         "quantity": 216,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -13,7 +13,7 @@
     {
         "id": 2,
         "product_name": "Classic Stonewash",
-        "size": "3XL",
+        "size": 18,
         "price": 770,
         "quantity": 332,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -24,7 +24,7 @@
     {
         "id": 3,
         "product_name": "Vintage Indigo",
-        "size": "L",
+        "size": 12,
         "price": 380,
         "quantity": 221,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -35,7 +35,7 @@
     {
         "id": 4,
         "product_name": "Urban Stretch",
-        "size": "XL",
+        "size": 14,
         "price": 762,
         "quantity": 132,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -46,7 +46,7 @@
     {
         "id": 5,
         "product_name": "Retro Blue",
-        "size": "XL",
+        "size": 14,
         "price": 439,
         "quantity": 291,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -57,7 +57,7 @@
     {
         "id": 6,
         "product_name": "Modern Fit",
-        "size": "XL",
+        "size": 14,
         "price": 707,
         "quantity": 709,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -68,7 +68,7 @@
     {
         "id": 7,
         "product_name": "Dark Wash Legend",
-        "size": "3XL",
+        "size": 18,
         "price": 977,
         "quantity": 663,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -79,7 +79,7 @@
     {
         "id": 8,
         "product_name": "Blue Horizon",
-        "size": "3XL",
+        "size": 18,
         "price": 680,
         "quantity": 161,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -90,7 +90,7 @@
     {
         "id": 9,
         "product_name": "Skyline Denim",
-        "size": "2XL",
+        "size": 16,
         "price": 788,
         "quantity": 219,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -101,7 +101,7 @@
     {
         "id": 10,
         "product_name": "Classic Black",
-        "size": "3XL",
+        "size": 18,
         "price": 497,
         "quantity": 692,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -112,7 +112,7 @@
     {
         "id": 11,
         "product_name": "Vintage Indigo",
-        "size": "M",
+        "size": 10,
         "price": 995,
         "quantity": 342,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -123,7 +123,7 @@
     {
         "id": 12,
         "product_name": "Urban Stretch",
-        "size": "L",
+        "size": 12,
         "price": 791,
         "quantity": 386,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -134,18 +134,18 @@
     {
         "id": 13,
         "product_name": "Sunset Vibes",
-        "size": "L",
+        "size": 12,
         "price": 901,
         "quantity": 600,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
         "category": "t-shirts",
         "discount": true,
-        "description": "Soft, 100% cotton tees in vibrant colors – perfect for everyday wear. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long."
+        "description": "Soft, 100% cotton tees in vibrant colors \u2013 perfect for everyday wear. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long."
     },
     {
         "id": 14,
         "product_name": "Urban Jungle",
-        "size": "M",
+        "size": 10,
         "price": 273,
         "quantity": 870,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -156,7 +156,7 @@
     {
         "id": 15,
         "product_name": "Vintage Wave",
-        "size": "L",
+        "size": 12,
         "price": 599,
         "quantity": 451,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -167,7 +167,7 @@
     {
         "id": 16,
         "product_name": "Forest Escape",
-        "size": "L",
+        "size": 12,
         "price": 530,
         "quantity": 16,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -178,7 +178,7 @@
     {
         "id": 17,
         "product_name": "Desert Storm",
-        "size": "L",
+        "size": 12,
         "price": 928,
         "quantity": 175,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -189,7 +189,7 @@
     {
         "id": 18,
         "product_name": "Night Sky",
-        "size": "S",
+        "size": 8,
         "price": 632,
         "quantity": 919,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -200,7 +200,7 @@
     {
         "id": 19,
         "product_name": "Cosmic Dream",
-        "size": "S",
+        "size": 8,
         "price": 561,
         "quantity": 361,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -211,18 +211,18 @@
     {
         "id": 20,
         "product_name": "Golden Hour",
-        "size": "M",
+        "size": 10,
         "price": 905,
         "quantity": 978,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
         "category": "t-shirts",
         "discount": true,
-        "description": "Soft, 100% cotton tees in vibrant colors – perfect for everyday wear. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long."
+        "description": "Soft, 100% cotton tees in vibrant colors \u2013 perfect for everyday wear. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long."
     },
     {
         "id": 21,
         "product_name": "Crimson Tide",
-        "size": "S",
+        "size": 8,
         "price": 694,
         "quantity": 55,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -233,7 +233,7 @@
     {
         "id": 22,
         "product_name": "Urban Legend",
-        "size": "L",
+        "size": 12,
         "price": 570,
         "quantity": 16,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -244,7 +244,7 @@
     {
         "id": 23,
         "product_name": "Electric Feel",
-        "size": "XS",
+        "size": 6,
         "price": 237,
         "quantity": 898,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -255,19 +255,18 @@
     {
         "id": 24,
         "product_name": "Celestial Harmony",
-        "size": "3XL",
+        "size": 18,
         "price": 969,
         "quantity": 965,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
         "category": "t-shirts",
         "discount": true,
-        "description": "Soft, 100% cotton tees in vibrant colors – perfect for everyday wear. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long."
+        "description": "Soft, 100% cotton tees in vibrant colors \u2013 perfect for everyday wear. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long."
     },
-
     {
         "id": 25,
         "product_name": "Cozy Vibes Hoodie",
-        "size": "S",
+        "size": 8,
         "price": 680,
         "quantity": 280,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -278,7 +277,7 @@
     {
         "id": 26,
         "product_name": "Urban Chill Hoodie",
-        "size": "3XL",
+        "size": 18,
         "price": 775,
         "quantity": 915,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -289,7 +288,7 @@
     {
         "id": 27,
         "product_name": "Classic Comfort Hoodie",
-        "size": "L",
+        "size": 12,
         "price": 420,
         "quantity": 945,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -300,7 +299,7 @@
     {
         "id": 28,
         "product_name": "Street Style Hoodie",
-        "size": "S",
+        "size": 8,
         "price": 210,
         "quantity": 509,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -311,7 +310,7 @@
     {
         "id": 29,
         "product_name": "Ultimate Warmth Hoodie",
-        "size": "M",
+        "size": 10,
         "price": 629,
         "quantity": 43,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -322,7 +321,7 @@
     {
         "id": 30,
         "product_name": "Retro Vibes Hoodie",
-        "size": "S",
+        "size": 8,
         "price": 706,
         "quantity": 373,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -333,7 +332,7 @@
     {
         "id": 31,
         "product_name": "Chill Zone Hoodie",
-        "size": "L",
+        "size": 12,
         "price": 483,
         "quantity": 370,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -344,7 +343,7 @@
     {
         "id": 32,
         "product_name": "Urban Explorer Hoodie",
-        "size": "XL",
+        "size": 14,
         "price": 501,
         "quantity": 714,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -355,7 +354,7 @@
     {
         "id": 33,
         "product_name": "Adventure Ready Hoodie",
-        "size": "L",
+        "size": 12,
         "price": 353,
         "quantity": 767,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -366,7 +365,7 @@
     {
         "id": 34,
         "product_name": "Cozy Retreat Hoodie",
-        "size": "2XL",
+        "size": 16,
         "price": 237,
         "quantity": 635,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -377,7 +376,7 @@
     {
         "id": 35,
         "product_name": "Modern Classic Hoodie",
-        "size": "M",
+        "size": 10,
         "price": 908,
         "quantity": 277,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -388,7 +387,7 @@
     {
         "id": 36,
         "product_name": "Essential Comfort Hoodie",
-        "size": "S",
+        "size": 8,
         "price": 736,
         "quantity": 240,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -399,7 +398,7 @@
     {
         "id": 37,
         "product_name": "Classic Fit Shirt",
-        "size": "3XL",
+        "size": 18,
         "price": 808,
         "quantity": 334,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -410,7 +409,7 @@
     {
         "id": 38,
         "product_name": "Comfort Stretch Shirt",
-        "size": "3XL",
+        "size": 18,
         "price": 808,
         "quantity": 487,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -421,7 +420,7 @@
     {
         "id": 39,
         "product_name": "Elegant Office Shirt",
-        "size": "M",
+        "size": 10,
         "price": 757,
         "quantity": 574,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -432,7 +431,7 @@
     {
         "id": 40,
         "product_name": "Weekend Casual Shirt",
-        "size": "XL",
+        "size": 14,
         "price": 529,
         "quantity": 381,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -443,7 +442,7 @@
     {
         "id": 41,
         "product_name": "Modern Fit Shirt",
-        "size": "3XL",
+        "size": 18,
         "price": 847,
         "quantity": 344,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -454,7 +453,7 @@
     {
         "id": 42,
         "product_name": "Essential Comfort Shirt",
-        "size": "L",
+        "size": 12,
         "price": 730,
         "quantity": 990,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -465,7 +464,7 @@
     {
         "id": 43,
         "product_name": "Vintage Style Shirt",
-        "size": "L",
+        "size": 12,
         "price": 336,
         "quantity": 723,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -476,7 +475,7 @@
     {
         "id": 44,
         "product_name": "Slim Fit Shirt",
-        "size": "3XL",
+        "size": 18,
         "price": 781,
         "quantity": 27,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -487,7 +486,7 @@
     {
         "id": 45,
         "product_name": "Relaxed Fit Shirt",
-        "size": "2XL",
+        "size": 16,
         "price": 498,
         "quantity": 569,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -498,7 +497,7 @@
     {
         "id": 46,
         "product_name": "Urban Chic Shirt",
-        "size": "2XL",
+        "size": 16,
         "price": 413,
         "quantity": 438,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -509,7 +508,7 @@
     {
         "id": 47,
         "product_name": "Premium Cotton Shirt",
-        "size": "3XL",
+        "size": 18,
         "price": 592,
         "quantity": 24,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -520,18 +519,18 @@
     {
         "id": 48,
         "product_name": "Casual Day Shirt",
-        "size": "3XL",
+        "size": 18,
         "price": 782,
         "quantity": 533,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
         "category": "shirts",
         "discount": false,
         "description": "Our casual day shirts offer a relaxed and comfortable fit, perfect for everyday activities and leisure."
-    }, 
+    },
     {
         "id": 49,
         "product_name": "Lightweight Windbreaker",
-        "size": "XS",
+        "size": 6,
         "price": 217,
         "quantity": 6,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -542,7 +541,7 @@
     {
         "id": 50,
         "product_name": "Cozy Fleece Jacket",
-        "size": "L",
+        "size": 12,
         "price": 274,
         "quantity": 616,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -553,7 +552,7 @@
     {
         "id": 51,
         "product_name": "Classic Denim Jacket",
-        "size": "XS",
+        "size": 6,
         "price": 476,
         "quantity": 789,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -564,7 +563,7 @@
     {
         "id": 52,
         "product_name": "Insulated Winter Jacket",
-        "size": "XL",
+        "size": 14,
         "price": 217,
         "quantity": 419,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -575,7 +574,7 @@
     {
         "id": 53,
         "product_name": "Stylish Bomber Jacket",
-        "size": "S",
+        "size": 8,
         "price": 257,
         "quantity": 739,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -586,7 +585,7 @@
     {
         "id": 54,
         "product_name": "Casual Hoodie Jacket",
-        "size": "L",
+        "size": 12,
         "price": 843,
         "quantity": 891,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -597,7 +596,7 @@
     {
         "id": 55,
         "product_name": "Waterproof Rain Jacket",
-        "size": "L",
+        "size": 12,
         "price": 932,
         "quantity": 108,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -608,7 +607,7 @@
     {
         "id": 56,
         "product_name": "Chic Trench Coat",
-        "size": "S",
+        "size": 8,
         "price": 768,
         "quantity": 303,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -619,7 +618,7 @@
     {
         "id": 57,
         "product_name": "Versatile Utility Jacket",
-        "size": "M",
+        "size": 10,
         "price": 570,
         "quantity": 649,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -630,7 +629,7 @@
     {
         "id": 58,
         "product_name": "Tailored Blazer",
-        "size": "XL",
+        "size": 14,
         "price": 217,
         "quantity": 675,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -641,7 +640,7 @@
     {
         "id": 59,
         "product_name": "Quilted Puffer Jacket",
-        "size": "M",
+        "size": 10,
         "price": 284,
         "quantity": 146,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -652,7 +651,7 @@
     {
         "id": 60,
         "product_name": "Softshell Jacket",
-        "size": "XS",
+        "size": 6,
         "price": 730,
         "quantity": 61,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -663,7 +662,7 @@
     {
         "id": 61,
         "product_name": "Rev",
-        "size": "3XL",
+        "size": 18,
         "price": 215,
         "quantity": 545,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -674,7 +673,7 @@
     {
         "id": 62,
         "product_name": "Mrs",
-        "size": "XL",
+        "size": 14,
         "price": 742,
         "quantity": 976,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -685,7 +684,7 @@
     {
         "id": 63,
         "product_name": "Ms",
-        "size": "L",
+        "size": 12,
         "price": 696,
         "quantity": 582,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -696,7 +695,7 @@
     {
         "id": 64,
         "product_name": "Mrs",
-        "size": "3XL",
+        "size": 18,
         "price": 774,
         "quantity": 304,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -707,7 +706,7 @@
     {
         "id": 65,
         "product_name": "Mrs",
-        "size": "L",
+        "size": 12,
         "price": 405,
         "quantity": 568,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -718,7 +717,7 @@
     {
         "id": 66,
         "product_name": "Honorable",
-        "size": "S",
+        "size": 8,
         "price": 928,
         "quantity": 623,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -729,7 +728,7 @@
     {
         "id": 67,
         "product_name": "Honorable",
-        "size": "L",
+        "size": 12,
         "price": 563,
         "quantity": 757,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -740,7 +739,7 @@
     {
         "id": 68,
         "product_name": "Dr",
-        "size": "S",
+        "size": 8,
         "price": 806,
         "quantity": 269,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -751,7 +750,7 @@
     {
         "id": 69,
         "product_name": "Ms",
-        "size": "S",
+        "size": 8,
         "price": 416,
         "quantity": 493,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",
@@ -762,7 +761,7 @@
     {
         "id": 70,
         "product_name": "Ms",
-        "size": "2XL",
+        "size": 16,
         "price": 939,
         "quantity": 296,
         "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfQy8BHa3k_BSw-bsDnS-ihEo2QEvSk97iYhNYaVPVidgUUmfC",

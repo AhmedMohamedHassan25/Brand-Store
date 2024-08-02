@@ -10,7 +10,7 @@ Div.style.left="-10px";
 Div.style.Top="0px";
 Div.style.borderRadius="0px 0px 10px 10px";
 Div.style.zIndex="1000";
-main.before(Div);
+fillters.before(Div);
 
 var CrtIcon = document.createElement('img');
 CrtIcon.src = "./rss/Cart.png";
@@ -73,7 +73,8 @@ dropdown.style.right = '70px';
 dropdown.style.display = 'none';//not expand by default
 dropdown.style.bottom = '-230px';
 Div.appendChild(dropdown);
-var dropvalue
+var dropvalue;
+console.log(dropvalue);
 var CatArr = ["jeans", "t-shirts", "shirts","hoodies","jackets","accessories"];
 
 CatArr.forEach(function(item) {
@@ -92,8 +93,7 @@ CatArr.forEach(function(item) {
   });
   a.addEventListener('click', function() {
     dropvalue = item
-    console.log(dropvalue);
-    loadProducts(dropvalue);
+    loadProducts(dropvalue, PriceRange.value, sizeRange.value);
   });
   dropdown.appendChild(a);
 });
@@ -147,20 +147,34 @@ function applyHoverEffectForCategory(element)
 
 // made by mohamed 
 /// resopnd and cards
+var PriceRange = document.getElementById("priceRange")
+var priceIndecator = document.getElementById("indPrice")
+PriceRange.addEventListener("change", function () {
+  priceIndecator.value = PriceRange.value;
+  loadProducts(dropvalue,PriceRange.value, sizeRange.value)
+})
+var sizeIndecator = document.getElementById("indSize")
+var sizeRange = document.getElementById("sizeRange")
+sizeRange.addEventListener("change",function () {
+  sizeIndecator.value = sizeRange.value;
+  loadProducts(dropvalue,PriceRange.value, sizeRange.value)
+})
+
+console.log(sizeRange.value);
 let item = []
 let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
 let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
-function loadProducts(category) {
+function loadProducts(category,PriceRange,Size) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "./test.json");
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
         var json = JSON.parse(xhr.response);
-        var main = document.getElementById("main");
-        main.innerHTML = ''; 
+        main.innerHTML = ""; 
         for (let i = 0; i < json.length; i++) {
-          if (!category || json[i].category === category) {
+          if ((!category || json[i].category == category) &&(!PriceRange || PriceRange > json[i].price)
+          &&(!Size|| json[i].size == Size)){
             var card = document.createElement("div");
             card.setAttribute("class", "card")
             var img = document.createElement("img");
@@ -193,7 +207,7 @@ function loadProducts(category) {
             price.appendChild(pricetext);
             var addToCart = document.createElement("button");
             addToCart.setAttribute("class", "addtocart")
-            var addtext = document.createTextNode("Add To Carte");
+            var addtext = document.createTextNode("Add To Cart");
             addToCart.appendChild(addtext);
             card.appendChild(img);
             card.appendChild(favIconDiv);
@@ -212,6 +226,10 @@ function loadProducts(category) {
               card.appendChild(dicounted);
               card.appendChild(markForDis)
             }
+            var size = document.createElement("p")
+            size.setAttribute("class", "size")
+            size.innerHTML = "Size: " + json[i].size
+            card.appendChild(size);
             card.appendChild(addToCart);
             main.appendChild(card);
 

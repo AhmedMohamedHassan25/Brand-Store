@@ -5,7 +5,21 @@
     <link rel="stylesheet" href="products-style.css">
 </head>
 <body>
-    
+
+    <div id="fillters">
+        <div id="fillterByPrice">
+            <label id="priceLable" for="Pricerangr">Filter by Price</label><br>
+            <span id="startingPrice">150</span>
+            <input id="priceRange" type="range" min="150" max="1000" step="1" value="1000" name="Pricerangr">
+            <input type="text" class="indecator" id="indPrice" value="1000" readonly>
+        </div>
+        <div id="fillterBySize">
+            <label id="sizeLable" for="Size">Filter by Size</label><br>
+            <span id="startingSize">6</span>
+            <input id="sizeRange" type="range" min="6" max="18" value="18" step="2" name="Size">
+            <input type="text" class="indecator" id="indSize" value="18" readonly>
+        </div>
+    </div>
     <div id="main"></div>
     <script src="./scriptForProducts.js"></script>
 </body>
