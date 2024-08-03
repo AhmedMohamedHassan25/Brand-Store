@@ -80,12 +80,26 @@
     margin-left: 250px ;
     margin-top: 80px ;
     position: absolute;
+    font-size: 16px;
+    font-weight: 600;
+    
+}
+.dicounted{
+    display: inline-block;
+    margin-left: 270px ;
+    margin-top: 80px ;
+    position: absolute;
+    color: red;
+    font-size: 16px;
+    font-weight: 600;
 }
 .totalprice{
     display: inline-block;
     margin-left: 610px ;
     margin-top: 80px ;
     position: absolute;
+    font-size: 16px;
+    font-weight: 600;
 }
 .counterinput{
     display: inline-block;
@@ -130,7 +144,7 @@
 }
 .remove{
     display: inline-block;
-    margin-left: 130px ;
+    margin-left: 680px ;
     margin-top: 20px ;
     position: absolute;
 }
