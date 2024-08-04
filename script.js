@@ -76,12 +76,15 @@ Div.id = 'MyDiv';
 Div.style.width = '100%';
 Div.style.height = '100px';
 // edit by Elghoul   //+  محتاجة تعديل عشان تلزق في السقف ونظب الدروب دون لست
-Div.style.backgroundColor = 'wheat';
+Div.style.backgroundColor = 'rgba(245, 222, 179, 0)';
 Div.style.position = 'absolute'; 
-Div.style.left="-10px";
 Div.style.Top="0px";
 Div.style.borderRadius="0px 0px 10px 10px";
 Div.style.zIndex="1000";
+Div.style.padding="0px";
+Div.style.margin="0px";
+
+
 mainOfHome.before(Div);
 
 var CrtIcon = document.createElement('img');

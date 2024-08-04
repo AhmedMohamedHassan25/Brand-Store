@@ -1,8 +1,4 @@
 
-body{
-    box-sizing: border-box;
-}
-
 #foot{
     display: flex;
     justify-content: center;
@@ -55,5 +51,6 @@ body{
         box-shadow: 0  0 10px 10px rgba(144, 144, 144, 0.347);
         /* display: ; */
     }
+    
 
    
