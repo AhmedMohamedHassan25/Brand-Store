@@ -138,17 +138,17 @@ if (cart.length == 0) {
         cartcarddiv.appendChild(price)
 
         if (cart[i].discount) {
-            // var markForDis = document.createElement("div")
-            // markForDis.setAttribute("class","markForDis")
-            // markForDis.innerHTML = "Sale 15%"
+            var markForDis = document.createElement("div")
+            markForDis.setAttribute("class","markForDis")
+            markForDis.innerHTML = "Sale 15%"
             const dicounted = document.createElement("p");
             dicounted.setAttribute("class", "dicounted")
             price.style.marginLeft = "200px";          
             price.style.textDecorationLine = "line-through";          
             dicounted.innerHTML = "LE "+ (cart[i].price - cart[i].price * 15/100)+" (-15%)" 
             cartcarddiv.appendChild(dicounted);
-            // cartcarddiv.appendChild(markForDis)
-          }
+            cartcarddiv.appendChild(markForDis);
+           }
 
         const counter = document.createElement("input")
         counter.setAttribute("type","number")
@@ -175,6 +175,7 @@ if (cart.length == 0) {
 
         
         const tprice = document.getElementById(cart[i].id)
+        let countValue = counter.value
         counter.addEventListener("change",function () {
             if (cart[i].discount) {
                 tprice.innerHTML = "LE "+ counter.value * discountedTotal
@@ -195,10 +196,10 @@ if (cart.length == 0) {
         const itemId = cart[i].id;
         remove.addEventListener("click", function () {
             if (isDiscount) {
-                overAllPrice -= discountedTotal
+                overAllPrice -= discountedTotal * counter.value
             }
             else{
-                overAllPrice -= totalpriceNumber
+                overAllPrice -= totalpriceNumber * counter.value
             }
             console.log(overAllPrice);
             this.parentElement.remove();

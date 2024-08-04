@@ -14,7 +14,7 @@ fillters.before(Div);
 
 var CrtIcon = document.createElement('img');
 CrtIcon.src = "./rss/Cart.png";
-CrtIcon.style.height = '20px';
+CrtIcon.style.height = '25px';
 CrtIcon.style.position = 'absolute';
 CrtIcon.style.cursor='pointer';
 CrtIcon.style.bottom='40px'
@@ -25,8 +25,8 @@ CrtIcon.addEventListener('click', function() {
 });
 
 var CartNumbDiv = document.createElement("div")
-CartNumbDiv.style.height = '30px';
-CartNumbDiv.style.width = '30px';
+CartNumbDiv.style.height = '25px';
+CartNumbDiv.style.width = '25px';
 CartNumbDiv.style.position = 'absolute';
 CartNumbDiv.style.bottom='60px'
 CartNumbDiv.style.right = '105px'; 

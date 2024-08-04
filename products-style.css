@@ -38,7 +38,6 @@
 }
 .markForDis{
     height: 20px;
-    width: px;
     position: absolute;
     background-color: red;
     display: inline-block;
