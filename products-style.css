@@ -23,6 +23,7 @@
 .addtocart:hover {
     background-color: black;
     color: white;
+    cursor: pointer;
   }
 @font-face {
     font-family: myFont;

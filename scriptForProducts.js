@@ -178,7 +178,7 @@ function loadProducts(category,PriceRange,Size) {
             var card = document.createElement("div");
             card.setAttribute("class", "card")
             var img = document.createElement("img");
-            img.src = json[i].image;
+            img.src = json[i].image[0];
             img.style.width = "250px";
             img.style.height = "250px";
             const favIconDiv = document.createElement("div")
