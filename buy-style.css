@@ -57,6 +57,10 @@
     margin-bottom: 10px;
     margin-top: 10px;
 }
+#payment{
+    transition: all .5s;
+    height: auto;
+}
 #pay{
     height: 55px;
     width: 410px;

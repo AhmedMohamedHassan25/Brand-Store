@@ -298,7 +298,6 @@ function loadProducts(category, PriceRange, Size) {
           });
           card.addEventListener("mouseover", function () {
             img.src = json[i].image[1];
-            console.log(json[i].image);
           });
           card.addEventListener("mouseleave", function () {
             img.src = json[i].image[0];
