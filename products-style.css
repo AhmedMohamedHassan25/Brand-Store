@@ -12,6 +12,9 @@
 .card:hover{
     transform: scale(1.1);
 }
+.cardimg{
+    transition: all 1s;
+}
 .addtocart{
     margin-top: 10px;
     height: 30px;

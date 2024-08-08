@@ -280,7 +280,7 @@ if (cart.length == 0) {
   sidediv.appendChild(buybtn);
   check.addEventListener("change", function () {
     if (check.checked) {
-      buybtn.disabled = true;
+      buybtn.disabled = false;
       buybtn.style.backgroundColor = "white";
       buybtn.style.cursor = "Pointer";
     } else {
@@ -289,12 +289,14 @@ if (cart.length == 0) {
       buybtn.style.cursor = "auto";
     }
   });
+  buybtn.addEventListener("click", function () {
+    window.open("buy.html", "_self");
+  });
+  const continueShopping = document.createElement("button");
+  continueShopping.setAttribute("id", "continueShopping");
+  continueShopping.innerHTML = "Continue Shopping";
+  sidediv.appendChild(continueShopping);
+  continueShopping.addEventListener("click", function () {
+    window.open("Products.html", "_self");
+  });
 }
-
-const continueShopping = document.createElement("button");
-continueShopping.setAttribute("id", "continueShopping");
-continueShopping.innerHTML = "Continue Shopping";
-sidediv.appendChild(continueShopping);
-continueShopping.addEventListener("click", function () {
-  window.open("Products.html", "_blank");
-});

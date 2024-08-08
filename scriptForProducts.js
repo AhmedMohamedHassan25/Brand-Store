@@ -24,15 +24,15 @@ CrtIcon.addEventListener("click", function () {
   window.open("cart.html", "_blank");
 });
 
-var CartNumbDiv = document.createElement("div")
-CartNumbDiv.style.height = '25px';
-CartNumbDiv.style.width = '25px';
-CartNumbDiv.style.position = 'absolute';
-CartNumbDiv.style.bottom='60px'
-CartNumbDiv.style.right = '105px'; 
-CartNumbDiv.style.backgroundColor = 'red'; 
-CartNumbDiv.style.borderRadius = '50%'; 
-CartNumbDiv.style.textAlign = 'center'; 
+var CartNumbDiv = document.createElement("div");
+CartNumbDiv.style.height = "25px";
+CartNumbDiv.style.width = "25px";
+CartNumbDiv.style.position = "absolute";
+CartNumbDiv.style.bottom = "60px";
+CartNumbDiv.style.right = "105px";
+CartNumbDiv.style.backgroundColor = "red";
+CartNumbDiv.style.borderRadius = "50%";
+CartNumbDiv.style.textAlign = "center";
 
 var CartNumb = document.createElement("p");
 CartNumb.style.marginTop = "-1px";
@@ -184,7 +184,8 @@ function loadProducts(category, PriceRange, Size) {
         ) {
           var card = document.createElement("div");
           card.setAttribute("class", "card");
-          var img = document.createElement("img");
+          const img = document.createElement("img");
+          img.setAttribute("class", "cardimg");
           img.src = json[i].image[0];
           img.style.width = "250px";
           img.style.height = "250px";
@@ -295,8 +296,12 @@ function loadProducts(category, PriceRange, Size) {
               localStorage.setItem("item", JSON.stringify(item));
             }
           });
-          card.addEventListener("mousemove", function () {
+          card.addEventListener("mouseover", function () {
             img.src = json[i].image[1];
+            console.log(json[i].image);
+          });
+          card.addEventListener("mouseleave", function () {
+            img.src = json[i].image[0];
           });
           updateCartDisplay();
         }
