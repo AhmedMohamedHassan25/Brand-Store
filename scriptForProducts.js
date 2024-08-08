@@ -21,7 +21,7 @@ CrtIcon.style.bottom='40px'
 CrtIcon.style.right = '120px'; 
 Div.appendChild(CrtIcon);
 CrtIcon.addEventListener('click', function() {
-    window.open("cart.html", '_blank');
+    window.open("cart.html", '_self');
 });
 
 var CartNumbDiv = document.createElement("div")
@@ -279,7 +279,7 @@ function loadProducts(category,PriceRange,Size) {
               if (!event.target.closest('button')) {
                 const clickedProductId = json[i].id;
                 const productUrl = `./product.html?id=${clickedProductId}`;
-                window.open(productUrl, '_blank');
+                window.open(productUrl, '_self');
                 item.push(json[i]);
                 localStorage.setItem("item", JSON.stringify(item));
               }
