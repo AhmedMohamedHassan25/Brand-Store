@@ -24,15 +24,23 @@ CrtIcon.addEventListener('click', function() {
     window.open("cart.html", '_blank');
 });
 
+//edit by elghoul
 var CartNumbDiv = document.createElement("div")
 CartNumbDiv.style.height = '25px';
 CartNumbDiv.style.width = '25px';
-CartNumbDiv.style.position = 'absolute';
-CartNumbDiv.style.bottom='60px'
-CartNumbDiv.style.right = '105px'; 
-CartNumbDiv.style.backgroundColor = 'red'; 
+// CartNumbDiv.style.position = 'absolute';
+// CartNumbDiv.style.bottom='60px'
+// CartNumbDiv.style.right = '105px'; 
 CartNumbDiv.style.borderRadius = '50%'; 
 CartNumbDiv.style.textAlign = 'center'; 
+CartNumbDiv.style.position = 'absolute';
+CartNumbDiv.style.right = '125px'; 
+CartNumbDiv.style.top = '57px'; 
+CartNumbDiv.style.display="flex";
+CartNumbDiv.style.color="brown";
+CartNumbDiv.style.fontSize="20px";
+CartNumbDiv.style.fontWeight="bold";
+
 
 var CartNumb= document.createElement("p")
 CartNumb.style.marginTop = '-1px'; 
