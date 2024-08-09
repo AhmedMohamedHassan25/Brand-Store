@@ -234,7 +234,6 @@ function loadProducts(category,PriceRange,Size) {
             card.appendChild(addToCart);
             main.appendChild(card);
 
-//<<<<<<< HEAD
             const targtedProduct = json[i]
             favIconDiv.addEventListener("click",function (event) {
               event.stopPropagation(); 
