@@ -93,9 +93,9 @@ if (storedData) {
           if (!isItemInCart(itemToAdd)) {
               console.log(itemToAdd);
               console.log(cartStorge);
-              var curnum = parseInt(CartNumb.textContent);
-              var newnum = curnum + 1;
-              CartNumb.textContent = newnum;
+             // var curnum = parseInt(CartNumb.textContent);
+              //var newnum = curnum + 1;
+             // CartNumb.textContent = newnum;
               cartStorge.push(itemToAdd);
               localStorage.setItem("cartStorge", JSON.stringify(cartStorge));
           }
