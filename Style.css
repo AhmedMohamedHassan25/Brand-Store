@@ -5,7 +5,7 @@
     flex-direction: row;
     position: fixed;
     
-    left: 36%;
+    left:37.8%;
     bottom: 0;
     z-index: 1000;
 
@@ -14,17 +14,16 @@
 
 
 
-.FOOTbtn{
+#foot .FOOTbtn{
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 50%;
     border: 0px wheat solid;
-  
+    background-color: #fefbf7;
     height: 40px;
     width: 40px;
     margin: 40px;
-    box-shadow: 0  0 10px 10px rgba(144, 144, 144, 0.347);
     
 }
 
@@ -39,9 +38,7 @@
           justify-content: space-around;
             width: 15px;
           height: 5px;
-          
           flex: 100%;
-          
       }
       
     #searchID{
@@ -52,10 +49,20 @@
         top: 43%;
         font-size: 20px;
         padding: 10px;
-        border-color:#1d2430 ;
-        box-shadow: 0  0 10px 10px rgba(144, 144, 144, 0.347);
+        border-color:#dddddd ;
+   
         /* display: ; */
     }
     
+    #footbtn2{
+
+        position: relative;
+        left: 40px;
+    }
+    #footbtn1{
+
+        position: relative;
+        right: 40px;
+    }
 
    
