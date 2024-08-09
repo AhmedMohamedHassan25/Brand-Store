@@ -31,8 +31,8 @@ if (storedData) {
     
     var thumbnails =document.getElementsByClassName("thumbnails")[0];
     
-    thumbnails.style.textAlign="center";
-    
+    thumbnails.style.marginTop="20px";
+
     var img1 =document.getElementById("img1");
     img1.src=Product.image[1];
     img1.style.cursor="pointer";
@@ -89,10 +89,10 @@ if (storedData) {
     
     
 
-    var productCategory = document.getElementById('p_category');
-    productCategory.innerHTML = `<strong>Category:</strong> ${Product.category}`;
-    // productCategory.style.display='inline-block';
-    productDiv.appendChild(productCategory);
+    // var productCategory = document.getElementById('p_category');
+    // productCategory.innerHTML = `<strong>Category:</strong> ${Product.category}`;
+    // // productCategory.style.display='inline-block';
+    // productDiv.appendChild(productCategory);
     
     
     
