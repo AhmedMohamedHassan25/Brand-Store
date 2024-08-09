@@ -25,8 +25,13 @@ if (storedData) {
     productImage.style.width='50%' ;
     productImage.style.marginLeft= '20px' ;
     productImage.style.borderRadius = '20px';
+    
+    productDiv.appendChild(productImage);
 
+    
     var thumbnails =document.getElementsByClassName("thumbnails")[0];
+    
+    thumbnails.style.textAlign="center";
     
     var img1 =document.getElementById("img1");
     img1.src=Product.image[1];
@@ -60,7 +65,6 @@ if (storedData) {
     productDiv.appendChild(thumbnails);
     
 
-    productDiv.appendChild(productImage);
 
 
     var thumbnaills = document.querySelectorAll('.thumbnails img');
@@ -90,10 +94,7 @@ if (storedData) {
     // productCategory.style.display='inline-block';
     productDiv.appendChild(productCategory);
     
-    var productId = document.getElementById('p_id');
-    productId.innerHTML = `<strong>ID:</strong> ${Product.id}`;
-    // productId.style.display='inline-block';
-    productDiv.appendChild(productId);
+    
     
     var productDescription = document.getElementById('p_decsription');
     productDescription.innerHTML = `<strong>Description:</strong> ${Product.description}`;
@@ -111,16 +112,7 @@ if (storedData) {
     productQuantity.innerHTML = `<strong>Quantity:</strong> ${Product.quantity}`;
     productDiv.appendChild(productQuantity);
 
-    if (Product.BestSeller)
-    {
 
-        var img_best= document.getElementById("p_best");
-        img_best.src='./best_seller.png';
-        
-        //productDiv.appendChild(img_best);
-
-        document.getElementById('product-display').appendChild(productDiv);
-    }
     
     var productDiscount = document.createElement('p');
     productDiscount.innerHTML = `<strong>Discount:</strong> ${Product.discount ? 'Yes' : 'No'}`;
