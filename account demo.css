@@ -1,0 +1,32 @@
+.title {
+    display: flex;
+    justify-content: center;  
+    font-size: 35px;
+    margin-top: 120px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    color: #000000; 
+    letter-spacing: 2px; 
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column; 
+    text-align: center; 
+   padding: 20px; 
+   color: #efcfa0 ;
+    border-radius: 10px;
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+.profile-label {
+    width: 450px;
+    font-size: 25px;
+    margin: 10px auto; 
+    text-align: start; 
+    background-color:#532200;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
