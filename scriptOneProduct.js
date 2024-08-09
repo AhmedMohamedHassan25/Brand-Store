@@ -77,6 +77,7 @@ if (storedData) {
 
 }    
  else {
+    
     console.log("Product with ID", productID, "not found in local storage");
 }
 

@@ -287,7 +287,7 @@ function applyHoverEffectForCategory(element)
   });
 }
  applyHoverEffect(CrtIcon, 'cart.html');
- applyHoverEffect(HeartIcon, 'heart.html');
+ applyHoverEffect(HeartIcon, 'favourite.html');
  
  applyHoverEffectForCategory();
 

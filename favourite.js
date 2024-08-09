@@ -1,4 +1,7 @@
 var storedData = localStorage.getItem('favourites');
+let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
+let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
 
 if (storedData) {
   var products = JSON.parse(storedData);
@@ -15,7 +18,7 @@ if (storedData) {
       console.log(product); // Check product in console
 
       var productDiv = document.createElement('div');
-    //   productDiv.style.display="flex";
+    //productDiv.style.display="flex";
       productDiv.style.border='1px solid black';
       productDiv.style.width='100%';
       productDiv.style.marginBottom='15px';
@@ -42,31 +45,53 @@ if (storedData) {
       
       var productprice=document.createElement('p');
       productprice.textContent=" Price : "+product.price +" "+" LE";
-    //   productprice.style.verticalAlign="top";
       productprice.style.display="inline";
-    //   productprice.style.margin="30px";
-    //   productprice.style.marginBlock="50px";
-      
+
+      if (product.discount) {
+        var markForDis = document.createElement("div")
+        markForDis.setAttribute("class","markForDis")
+        markForDis.innerHTML = "Sale 15%"
+        var dicounted = document.createElement("p");
+        dicounted.setAttribute("class", "dicounted")
+        productprice.style.width = "35%";          
+        productprice.style.textDecorationLine = "line-through";          
+        var dicountedtext = document.createTextNode("LE "+ (product.price - product.price * 15/100)+" (-15%)" );
+        dicounted.appendChild(dicountedtext);
+        productDiv.appendChild(dicounted);
+        productDiv.appendChild(markForDis)
+      }
       productDiv.appendChild(productprice);
+      
+
       
       
       var productDescription=document.createElement('p');
       productDescription.textContent=" Description: "+product.description;
+
       productDiv.appendChild(productDescription);
 
 
 
 
 
+
       document.getElementById('product_fav').appendChild(productDiv);
-      // OR
-      // document.getElementById('container').appendChild(productDiv);
+
     });
-  } else {
-    console.log('No favorite products found in local storage.');
-  }
 } else {
-  console.log('No favourites found in local storage.');
+    var had =document.createElement("h2");
+    had.textContent="Your Fav Products Is Empty";
+    
+    document.getElementById('empty').appendChild(had);
+    console.log('No favorite products found in local storage.');
+}
+} else {
+    
+    var had =document.createElement("h2");
+    had.textContent="Your Fav Products";
+    
+    document.getElementById('empty').appendChild(had);
+    console.log('No favourites found in local storage.');
 }
 
 
