@@ -281,7 +281,7 @@ function loadProducts(category,PriceRange,Size) {
               if (!event.target.closest('button')) {
                 const clickedProductId = json[i].id;
                 const productUrl = `./product.html?id=${clickedProductId}`;
-                window.open(productUrl, '_blank');
+                window.open(productUrl, '_self');
                 item.push(json[i]);
                 localStorage.setItem("item", JSON.stringify(item));
               }
@@ -292,7 +292,7 @@ function loadProducts(category,PriceRange,Size) {
             if (!event.target.closest("button")) {
               const clickedProductId = json[i].id;
               const productUrl = `./product.html?id=${clickedProductId}`;
-              window.open(productUrl, "_self");
+              window.open(productUrl, "_blank");
               item.push(json[i]);
               localStorage.setItem("item", JSON.stringify(item));
             }
