@@ -8,14 +8,6 @@ if (storedData) {
     var Product= product[0];
     var productDisplayDiv = document.getElementById('product-display');
     console.log(Product);
-    //const productDiv = document.createElement('div');
-    //productDiv.className = 'product';
-    //productDiv.innerHTML='';
-    //const productName = document.createElement('h2');
-   // productName.textContent = Product.product_name;
-    //productName.style.textAlign='center'
-    
-    //productDiv.appendChild(productName);
 
     var productDiv=document.getElementById('container');
     var productName=document.getElementById('p_name');
@@ -26,6 +18,9 @@ if (storedData) {
     
     var productImage = document.getElementById('p_image');
     productImage.src = Product.image[0];
+    productImage.style.display='block';
+    productImage.style.marginLeft='20px';
+    productImage.style.marginRight='auto';
     productImage.alt = Product.product_name;
     productImage.style.width='50%' ;
     productImage.style.marginLeft= '20px' ;
@@ -59,6 +54,17 @@ if (storedData) {
     var productQuantity = document.createElement('p');
     productQuantity.innerHTML = `<strong>Quantity:</strong> ${Product.quantity}`;
     productDiv.appendChild(productQuantity);
+
+    if (Product.BestSeller)
+    {
+
+        var img_best= document.getElementById("p_best");
+        img_best.src='./best_seller.png';
+        
+        //productDiv.appendChild(img_best);
+
+        document.getElementById('product-display').appendChild(productDiv);
+    }
     
     var productDiscount = document.createElement('p');
     productDiscount.innerHTML = `<strong>Discount:</strong> ${Product.discount ? 'Yes' : 'No'}`;
