@@ -178,7 +178,7 @@ function loadProducts(category,PriceRange,Size) {
           &&(!Size|| json[i].size == Size)){
             var card = document.createElement("div");
             card.setAttribute("class", "card")
-            var img = document.createElement("img");
+            const img = document.createElement("img");
             img.src = json[i].image[0];
             img.style.width = "250px";
             img.style.height = "250px";
@@ -286,7 +286,6 @@ function loadProducts(category,PriceRange,Size) {
             //   }
             // });
             updateCartDisplay();
-          }
           card.addEventListener("click", function (event) {
             if (!event.target.closest("button")) {
               const clickedProductId = json[i].id;
@@ -304,6 +303,7 @@ function loadProducts(category,PriceRange,Size) {
           });
           updateCartDisplay();
         }
+      }
       }
     };
     xhr.send();
