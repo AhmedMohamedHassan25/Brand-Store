@@ -1,3 +1,52 @@
+var Div = document.createElement('div');
+Div.id = 'MyDiv';
+Div.style.width = '100%';
+Div.style.height = '100px';
+// edit by Elghoul   //+  محتاجة تعديل عشان تلزق في السقف ونظب الدروب دون لست
+Div.style.backgroundColor = 'wheat';
+Div.style.position = 'sticky'; 
+Div.style.top = '0'; 
+Div.style.left="-10px";
+Div.style.Top="0px";
+Div.style.borderRadius="0px 0px 10px 10px";
+Div.style.zIndex="1000";
+//fillters.before(Div);
+
+var CrtIcon = document.createElement('img');
+CrtIcon.src = "./rss/Cart.png";
+CrtIcon.style.height = '25px';
+CrtIcon.style.position = 'absolute';
+CrtIcon.style.cursor='pointer';
+CrtIcon.style.bottom='40px'
+CrtIcon.style.right = '120px'; 
+Div.appendChild(CrtIcon);
+CrtIcon.addEventListener('click', function() {
+    window.open("cart.html", '_self');
+});
+
+
+var CartNumbDiv = document.createElement("div")
+CartNumbDiv.style.height = '25px';
+CartNumbDiv.style.width = '25px';
+CartNumbDiv.style.position = 'absolute';
+CartNumbDiv.style.bottom='60px'
+CartNumbDiv.style.right = '105px'; 
+CartNumbDiv.style.backgroundColor = 'red'; 
+CartNumbDiv.style.borderRadius = '50%'; 
+CartNumbDiv.style.textAlign = 'center'; 
+
+var CartNumb= document.createElement("p")
+CartNumb.style.marginTop = '-1px'; 
+
+function updateCartDisplay() {
+    CartNumb.textContent = cartStorge.length.toString();
+}
+
+CartNumbDiv.appendChild(CartNumb)
+Div.appendChild(CartNumbDiv);
+
+
+
 var storedData = localStorage.getItem('favourites');
 let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
 let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
@@ -9,15 +58,16 @@ if (storedData) {
   if (products.length > 0) {
     var head =document.createElement("h1");
     head.textContent="Your Fav Products";
-
     document.getElementById('hh').appendChild(head);
 
 
 
+    
     products.forEach(product => {
-      console.log(product); // Check product in console
+        
+        var productDiv = document.createElement('div');
+        productDiv.setAttribute("class", "card")
 
-      var productDiv = document.createElement('div');
     //productDiv.style.display="flex";
       productDiv.style.border='1px solid black';
       productDiv.style.width='100%';
@@ -42,6 +92,14 @@ if (storedData) {
       
       productDiv.appendChild(productImage);
       
+      productImage.addEventListener("mouseover", function () {
+        productImage.src = product.image[0];
+      });
+      productImage.addEventListener("mouseleave", function () {
+        productImage.src = product.image[1];
+      });
+
+
       
       var productprice=document.createElement('p');
       productprice.textContent=" Price : "+product.price +" "+" LE";
@@ -61,7 +119,36 @@ if (storedData) {
         productDiv.appendChild(markForDis)
       }
       productDiv.appendChild(productprice);
+      var addToCart = document.createElement("button");
+      addToCart.setAttribute("class", "addtocart")
+      var addtext = document.createTextNode("Add To Cart");
+      addToCart.appendChild(addtext);
+      productDiv.appendChild(addToCart);
+
       
+      const itemToAdd = product;
+      addToCart.addEventListener("click", function (event) {
+          event.stopPropagation(); 
+          function isItemInCart(item) {            
+              for (let i = 0; i < cartStorge.length; i++) {
+                console.log(product);
+                    if (cartStorge[i].id == product.id) {
+                        return true; 
+                  
+                      }
+                    }
+              return false;
+          }
+          if (!isItemInCart(itemToAdd)) {
+              console.log(itemToAdd);
+              console.log(cartStorge);
+              var curnum = parseInt(CartNumb.textContent);
+              var newnum = curnum + 1;
+              CartNumb.textContent = newnum;
+              cartStorge.push(itemToAdd);
+              localStorage.setItem("cartStorge", JSON.stringify(cartStorge));
+          }
+      });
 
       
       
@@ -69,11 +156,6 @@ if (storedData) {
       productDescription.textContent=" Description: "+product.description;
 
       productDiv.appendChild(productDescription);
-
-
-
-
-
 
       document.getElementById('product_fav').appendChild(productDiv);
 
@@ -93,20 +175,4 @@ if (storedData) {
     document.getElementById('empty').appendChild(had);
     console.log('No favourites found in local storage.');
 }
-
-
-    //var Product= product;
-    //  for (var i=0 ; i<=product.le;i++){
-
-    //      var productDisplayDiv = document.getElementById('container');
-    //     // console.log(Product);
-
-    //      var productDiv=document.getElementById('product_fav');
-    //      var productName=document.getElementById('p_name');
-    //      productName.textContent=Product.product_name;
-    //      productName.style.textAlign='center'
-    //      productDiv.appendChild(productName)
-
-    //  }
-
 
