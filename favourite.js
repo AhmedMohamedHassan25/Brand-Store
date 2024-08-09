@@ -15,22 +15,49 @@ if (storedData) {
       console.log(product); // Check product in console
 
       var productDiv = document.createElement('div');
+    //   productDiv.style.display="flex";
+      productDiv.style.border='1px solid black';
+      productDiv.style.width='100%';
+      productDiv.style.marginBottom='15px';
+      productDiv.style.marginRight='20px';
+      productDiv.style.padding='15px';
+
+      
+      var productName = document.createElement('p');
+      productName.textContent =product.product_name; // Use id or name if available
+      productName.style.display="block";
+      productName.style.margin="20";
+      
+      productDiv.appendChild(productName);
       
       var productImage = document.createElement('img');
       productImage.src = product.image[1] || ''; // Set default empty src if image[0] is missing
       productImage.style.display = 'block';
-      productImage.style.width = '100%';
-      productImage.style.height = '350px';
+      productImage.style.width = '200px';
+      productImage.style.margin = '0 20px 20px 0';
+      productImage.style.height = '200px';
+      
       productDiv.appendChild(productImage);
       
-      var productName = document.createElement('p');
-      productName.textContent =product.product_name; // Use id or name if available
-      productDiv.style.display="inline-block";
-      productDiv.style.border='1px solid black';
-      productDiv.style.margin='15px';
       
-      productDiv.appendChild(productName);
-      // Append to preferred container (choose one)
+      var productprice=document.createElement('p');
+      productprice.textContent=" Price : "+product.price +" "+" LE";
+    //   productprice.style.verticalAlign="top";
+      productprice.style.display="inline";
+    //   productprice.style.margin="30px";
+    //   productprice.style.marginBlock="50px";
+      
+      productDiv.appendChild(productprice);
+      
+      
+      var productDescription=document.createElement('p');
+      productDescription.textContent=" Description: "+product.description;
+      productDiv.appendChild(productDescription);
+
+
+
+
+
       document.getElementById('product_fav').appendChild(productDiv);
       // OR
       // document.getElementById('container').appendChild(productDiv);
