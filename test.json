@@ -221,7 +221,7 @@
         "category": "t-shirts",
         "discount": false,
         "description": "Refresh your basics with our premium cotton T-shirts. Versatile and trendy, they suit any wardrobe. Enjoy a perfect fit and lasting quality.",
-        "BestSeller": true
+        "BestSeller": false
     },
     {
         "id": 15,

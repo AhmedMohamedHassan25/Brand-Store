@@ -3,6 +3,7 @@ var cart = JSON.parse(localStorage.getItem("cartStorge"));
 console.log(cart);
 if (cart.length == 0) {
   var empityParag = document.createElement("p");
+  empityParag.setAttribute("id", "empityParag");
   empityParag.innerHTML = "Your cart is Empity";
   empityParag.style.textAlign = "center";
   var checkproducts = document.createElement("button");
@@ -14,11 +15,18 @@ if (cart.length == 0) {
   checkproducts.addEventListener("click", function () {
     window.location.href = "Products.html";
   });
+  const line = document.createElement("hr");
+  cartdiv.appendChild(line);
+  const bestSel = document.createElement("p");
+  bestSel.setAttribute("id", "bestSel");
+  bestSel.innerHTML = "Best Sellers";
+  cartdiv.appendChild(bestSel);
   const bestProd = document.createElement("div");
   cartdiv.appendChild(bestProd);
   function updateCartDisplay() {
     CartNumb.textContent = cartStorge.length.toString();
   }
+
   const CartNumb = document.createElement("p");
   let item = [];
   let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
@@ -32,9 +40,9 @@ if (cart.length == 0) {
       for (let i = 0; i < json.length; i++) {
         if (json[i].BestSeller) {
           const cardemp = document.createElement("div");
-          cardemp.setAttribute("class", "card");
+          cardemp.setAttribute("class", "cardemp");
           const imgemp = document.createElement("img");
-          imgemp.setAttribute("class", "cardimg");
+          imgemp.setAttribute("class", "imgemp");
           imgemp.src = json[i].image[0];
           imgemp.style.width = "250px";
           imgemp.style.height = "250px";
@@ -72,21 +80,21 @@ if (cart.length == 0) {
           cardemp.appendChild(priceEmp);
           if (json[i].discount) {
             var markForDis = document.createElement("div");
-            markForDis.setAttribute("class", "markForDis");
+            markForDis.setAttribute("class", "markForDisEmp");
             markForDis.innerHTML = "Sale 15%";
-            var dicounted = document.createElement("p");
-            dicounted.setAttribute("class", "dicounted");
+            var dicountedEmb = document.createElement("p");
+            dicountedEmb.setAttribute("class", "dicountedEmb");
             priceEmp.style.width = "35%";
             priceEmp.style.textDecorationLine = "line-through";
             var dicountedtext = document.createTextNode(
               "LE " + (json[i].price - (json[i].price * 15) / 100) + " (-15%)"
             );
-            dicounted.appendChild(dicountedtext);
-            cardemp.appendChild(dicounted);
+            dicountedEmb.appendChild(dicountedtext);
+            cardemp.appendChild(dicountedEmb);
             cardemp.appendChild(markForDis);
           }
           var sizeEmp = document.createElement("p");
-          sizeEmp.setAttribute("class", "size");
+          sizeEmp.setAttribute("class", "sizeEmp");
           sizeEmp.innerHTML = "Size: " + json[i].size;
           cardemp.appendChild(sizeEmp);
           cardemp.appendChild(addToCart);
