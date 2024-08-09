@@ -307,7 +307,7 @@ function loadProducts(category, PriceRange, Size) {
   };
   xhr.send();
 }
-let SentCat = JSON.parse(localStorage.getItem("category"));
+let SentCat = localStorage.getItem("category");
 console.log(SentCat);
 
 loadProducts(SentCat);
