@@ -14,6 +14,7 @@ if (cart.length == 0) {
   cartdiv.appendChild(empityParag);
   cartdiv.appendChild(checkproducts);
   checkproducts.addEventListener("click", function () {
+    localStorage.removeItem("category");
     window.location.href = "Products.html";
   });
   const line = document.createElement("hr");
@@ -447,6 +448,7 @@ if (cart.length == 0) {
   continueShopping.innerHTML = "Continue Shopping";
   sidediv.appendChild(continueShopping);
   continueShopping.addEventListener("click", function () {
+    localStorage.removeItem("category");
     window.open("Products.html", "_self");
   });
 }
