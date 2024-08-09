@@ -173,7 +173,7 @@ C6.style.border="0";
 C7.style.border="0";
 
 
-C1.onclick = function() { sending("Products"); };
+C1.onclick = function() {  window.open("./Products.html", "_self")};
 C2.onclick = function() { sending("Jackets"); };
 C3.onclick = function() { sending("Hoodies"); };
 C4.onclick = function() { sending("Jeans"); };
