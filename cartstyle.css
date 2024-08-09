@@ -150,8 +150,15 @@
 }
 #Subtotal{
     display: inline-block;
-    margin-top: 20px;
-    margin-right: 230px;
+    margin-top: 40px;
+    width: 40%;
+    margin-right: 60px;
+}
+#SubtotalAmount{
+    display: inline-block;
+    margin-top: 5px;
+    width: 40%;
+
 }
 .markForDis{
     height: 20px;
@@ -162,5 +169,27 @@
     margin-left: -162px ;
     margin-top: 5;
 }
+#buyBtn{
+    width: 90%;
+    margin-top: 20px;
+    height: 40px;
+    background-color: gray;
+    color: black;
+
+}
+#continueShopping{
+    width: 90%;
+    margin-top: 20px;
+    height: 40px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+
+}
+/* #buyBtn:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  } */
   
  

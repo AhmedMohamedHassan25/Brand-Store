@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="buy-style.css">
+</head>
+<body>
+    <div id="Body">
+    <form action="">
+        <label class="Clabel" for="Email">Contact</label><br>
+        <input id="Einput" type="text" placeholder="Email"><br>
+        <input id="Pinput" type="text" placeholder="Phone"><br>
+        <label class="Dlabel" for="">Delivery</label><br>
+        <input class="Fname" type="text" placeholder="First Name">
+        <input class="Lname" type="text" placeholder="Last Name"><br>
+        <select name="gover" id="Governorate"></select>
+        <select name="City" id="City"></select>
+    </form>
+    <label id="paymentlabel" for="">Payment</label><br>
+    <div id="payment">
+        <img id="pay" src="./rss/cardspay.png"><br>
+        <input id="cardnumber" type="text" placeholder="Card number"><br>
+        <input id="security" type="text" placeholder="Security Code"><br>
+        <input id="cardName" type="text" placeholder="Name on Card"><br>
+    </div>
+    <div id="CashOnDel">
+        <input id="check" type="checkbox" name="cash on del">
+        <label id="cod" for="cash on del">Cash On Delivery</label>
+    </div>
+    <button id="btnPay">Pay Now</button>
+    </div>
+    <script src="buy.js"></script>
+</body>
+</html>
