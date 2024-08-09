@@ -1,5 +1,6 @@
 var cartdiv = document.getElementById("cartdiv");
 var cart = JSON.parse(localStorage.getItem("cartStorge"));
+ 
 console.log(cart);
 if (cart.length == 0) {
   var empityParag = document.createElement("p");
