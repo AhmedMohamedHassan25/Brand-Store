@@ -93,10 +93,10 @@ if (storedData) {
       productDiv.appendChild(productImage);
       
       productImage.addEventListener("mouseover", function () {
-        productImage.src = product.image[1];
+        productImage.src = product.image[0];
       });
       productImage.addEventListener("mouseleave", function () {
-        productImage.src = product.image[0];
+        productImage.src = product.image[1];
       });
 
 
