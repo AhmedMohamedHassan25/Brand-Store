@@ -100,9 +100,9 @@ if (storedData) {
     productDescription.innerHTML = `<strong>Description:</strong> ${Product.description}`;
     productDiv.appendChild(productDescription);
     
-    var productPrice = document.getElementById('p_price');
-    productPrice.textContent= "Price: "+ Product.price+"  LE";
-    productDiv.appendChild(productPrice);
+    // var productPrice = document.getElementById('p_price');
+    // productPrice.textContent= "Price: "+ Product.price+"  LE";
+    // productDiv.appendChild(productPrice);
     
     var productSize = document.getElementById('p_size');
     productSize.innerHTML = `<strong>Size:</strong> ${Product.size}`;
@@ -111,11 +111,38 @@ if (storedData) {
     var productQuantity = document.createElement('p');
     productQuantity.innerHTML = `<strong>Quantity:</strong> ${Product.quantity}`;
     productDiv.appendChild(productQuantity);
-
-
+    
+    
     
     var productDiscount = document.createElement('p');
-    productDiscount.innerHTML = `<strong>Discount:</strong> ${Product.discount ? 'Yes' : 'No'}`;
+    
+    if (!Product.discount) {
+        
+        var productPrice = document.getElementById('p_price');
+        productPrice.innerHTML = `<strong>Price : </strong> ${Product.price} LE `;
+        productDiv.appendChild(productPrice);
+    }
+    else{
+         
+        var productPrice = document.getElementById('p_price');
+        productPrice.innerHTML = ` `;
+        productDiv.appendChild(productPrice);
+        
+        var markForDis = document.createElement("div")
+        var dicountedtext=document.createElement("p")
+        var dicounted = document.createElement("p");
+        markForDis.innerHTML =  `<strong>Sale : </strong>  -15%  `;
+        markForDis.setAttribute("class","markForDis")
+        dicounted.setAttribute("class", "dicounted")
+        productPrice.style.width = "35%";          
+        productPrice.style.textDecorationLine = "line-through";          
+        dicountedtext .innerHTML=` <strong>Price After Sale:</strong> ${(Product.price - Product.price * 15/100)} LE `;
+        productDiv.appendChild(markForDis)
+        dicounted.appendChild(dicountedtext);
+        productDiv.appendChild(dicounted);
+        
+      }
+
     productDiv.appendChild(productDiscount);
     
     // Append the productDiv to the document body or any other container
