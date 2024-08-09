@@ -92,6 +92,14 @@ if (storedData) {
       
       productDiv.appendChild(productImage);
       
+      productImage.addEventListener("mouseover", function () {
+        productImage.src = product.image[1];
+      });
+      productImage.addEventListener("mouseleave", function () {
+        productImage.src = product.image[0];
+      });
+
+
       
       var productprice=document.createElement('p');
       productprice.textContent=" Price : "+product.price +" "+" LE";
