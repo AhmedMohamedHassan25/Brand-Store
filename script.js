@@ -183,10 +183,9 @@ C7.onclick = function() { sending("Accessories"); };
 
 
 function sending( category ){
+  localStorage.setItem("category",category);
   window.open("./Products.html", "_self");
-  localStorage.setItem(key="category",value=category);
 }
-
 
 function HoverEffect(element) {
   element.addEventListener('mouseover', function() {

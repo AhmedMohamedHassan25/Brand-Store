@@ -10,9 +10,9 @@
             ".\\materials\\T-shirts\\1\\t2.webp",
             ".\\materials\\T-shirts\\1\\t3.webp"
         ],
-        "category": "t-shirts",
+        "category": "T-shirts",
         "discount": true,
-        "description": "Soft, 100% cotton tees in vibrant colors – perfect for everyday wear. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
+        "description": "Soft, 100% cotton tees in vibrant colors \u2013 perfect for everyday wear. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": true
     },
     {
@@ -26,7 +26,7 @@
             ".\\materials\\T-shirts\\2\\t2.webp",
             ".\\materials\\T-shirts\\2\\t3.webp"
         ],
-        "category": "t-shirts",
+        "category": "T-shirts",
         "discount": false,
         "description": "Refresh your basics with our premium cotton T-shirts. Versatile and trendy, they suit any wardrobe. Enjoy a perfect fit and lasting quality.",
         "BestSeller": false
@@ -42,7 +42,7 @@
             ".\\materials\\T-shirts\\3\\t2.webp",
             ".\\materials\\T-shirts\\3\\t3.webp"
         ],
-        "category": "t-shirts",
+        "category": "T-shirts",
         "discount": true,
         "description": "Express yourself with our high-quality graphic tees. Soft and comfortable, they are perfect for any casual setting. Choose from a variety of unique designs and colors.",
         "BestSeller": false
@@ -58,7 +58,7 @@
             ".\\materials\\T-shirts\\4\\t2.webp",
             ".\\materials\\T-shirts\\4\\t3.webp"
         ],
-        "category": "t-shirts",
+        "category": "T-shirts",
         "discount": true,
         "description": "Stylish graphic T-shirts that combine comfort with standout designs. Each piece combines striking designs with unmatched comfort. Elevate your casual wear effortlessly.",
         "BestSeller": false
@@ -74,7 +74,7 @@
             ".\\materials\\T-shirts\\5\\t2.webp",
             ".\\materials\\T-shirts\\5\\t3.webp"
         ],
-        "category": "t-shirts",
+        "category": "T-shirts",
         "discount": true,
         "description": "Discover the perfect blend of style and durability with our tees. Made from breathable fabric, they are ideal for everyday wear. Stand out with our unique patterns and colors.",
         "BestSeller": false
@@ -90,7 +90,7 @@
             ".\\materials\\T-shirts\\6\\t2.webp",
             ".\\materials\\T-shirts\\6\\t3.webp"
         ],
-        "category": "t-shirts",
+        "category": "T-shirts",
         "discount": true,
         "description": "Refresh your basics with our premium cotton T-shirts. Versatile and trendy, they suit any wardrobe. Enjoy a perfect fit and lasting quality.",
         "BestSeller": false
@@ -106,7 +106,7 @@
             ".\\materials\\T-shirts\\7\\t2.webp",
             ".\\materials\\T-shirts\\7\\t3.webp"
         ],
-        "category": "t-shirts",
+        "category": "T-shirts",
         "discount": false,
         "description": "Express yourself with our high-quality graphic tees. Soft and comfortable, they are perfect for any casual setting. Choose from a variety of unique designs and colors.",
         "BestSeller": false
@@ -122,9 +122,9 @@
             ".\\materials\\T-shirts\\8\\t2.webp",
             ".\\materials\\T-shirts\\8\\t3.webp"
         ],
-        "category": "t-shirts",
+        "category": "T-shirts",
         "discount": true,
-        "description": "Soft, 100% cotton tees in vibrant colors – perfect for everyday wear. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
+        "description": "Soft, 100% cotton tees in vibrant colors \u2013 perfect for everyday wear. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
     },
     {
@@ -138,7 +138,7 @@
             ".\\materials\\T-shirts\\9\\t2.webp",
             ".\\materials\\T-shirts\\9\\t3.webp"
         ],
-        "category": "t-shirts",
+        "category": "T-shirts",
         "discount": true,
         "description": "Discover the perfect blend of style and durability with our tees. Made from breathable fabric, they are ideal for everyday wear. Stand out with our unique patterns and colors.",
         "BestSeller": false
@@ -154,7 +154,7 @@
             ".\\materials\\T-shirts\\10\\t2.webp",
             ".\\materials\\T-shirts\\10\\t3.webp"
         ],
-        "category": "t-shirts",
+        "category": "T-shirts",
         "discount": false,
         "description": "Stylish graphic T-shirts that combine comfort with standout designs. Each piece combines striking designs with unmatched comfort. Elevate your casual wear effortlessly.",
         "BestSeller": false
@@ -170,7 +170,7 @@
             ".\\materials\\T-shirts\\11\\t2.webp",
             ".\\materials\\T-shirts\\11\\t3.webp"
         ],
-        "category": "t-shirts",
+        "category": "T-shirts",
         "discount": true,
         "description": "Express yourself with our high-quality graphic tees. Soft and comfortable, they are perfect for any casual setting. Choose from a variety of unique designs and colors.",
         "BestSeller": false
@@ -186,9 +186,9 @@
             ".\\materials\\T-shirts\\12\\t2.webp",
             ".\\materials\\T-shirts\\12\\t3.webp"
         ],
-        "category": "t-shirts",
+        "category": "T-shirts",
         "discount": true,
-        "description": "Soft, 100% cotton tees in vibrant colors – perfect for everyday wear. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
+        "description": "Soft, 100% cotton tees in vibrant colors \u2013 perfect for everyday wear. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
     },
     {
@@ -202,7 +202,7 @@
             ".\\materials\\jeans\\1\\j2.webp",
             ".\\materials\\jeans\\1\\j3.webp"
         ],
-        "category": "jeans",
+        "category": "Jeans",
         "discount": true,
         "description": "Crafted with precision, our jeans offer a perfect blend of style and comfort. Featuring durable denim and a flattering fit, they are a wardrobe essential. Stay trendy and comfortable all day long.",
         "BestSeller": false
@@ -218,7 +218,7 @@
             ".\\materials\\jeans\\2\\j2.webp",
             ".\\materials\\jeans\\2\\j3.webp"
         ],
-        "category": "jeans",
+        "category": "Jeans",
         "discount": false,
         "description": "Upgrade your denim collection with our versatile jeans. Designed for durability and comfort, they are perfect for any occasion. Make a statement with our stylish cuts and washes.",
         "BestSeller": false
@@ -234,7 +234,7 @@
             ".\\materials\\jeans\\3\\j2.webp",
             ".\\materials\\jeans\\3\\j3.webp"
         ],
-        "category": "jeans",
+        "category": "Jeans",
         "discount": true,
         "description": "Experience the perfect blend of rugged and refined with our jeans. Made from premium denim, they offer superior comfort and style. Ideal for both casual and smart-casual looks.",
         "BestSeller": false
@@ -250,7 +250,7 @@
             ".\\materials\\jeans\\4\\j2.webp",
             ".\\materials\\jeans\\4\\j3.webp"
         ],
-        "category": "jeans",
+        "category": "Jeans",
         "discount": false,
         "description": "Our jeans are designed for the modern lifestyle. Featuring a comfortable stretch and a sleek silhouette, they are perfect for everyday wear. Stand out with our unique denim finishes.",
         "BestSeller": false
@@ -266,7 +266,7 @@
             ".\\materials\\jeans\\5\\j2.webp",
             ".\\materials\\jeans\\5\\j3.webp"
         ],
-        "category": "jeans",
+        "category": "Jeans",
         "discount": true,
         "description": "Step into style with our classic jeans. Crafted from high-quality denim, they offer unmatched comfort and durability. Perfect for any casual or semi-formal occasion.",
         "BestSeller": false
@@ -282,7 +282,7 @@
             ".\\materials\\jeans\\6\\j2.webp",
             ".\\materials\\jeans\\6\\j3.webp"
         ],
-        "category": "jeans",
+        "category": "Jeans",
         "discount": true,
         "description": "Elevate your wardrobe with our stylish jeans. Featuring a contemporary fit and durable construction, they are perfect for any setting. Stay comfortable and fashionable effortlessly.",
         "BestSeller": false
@@ -298,7 +298,7 @@
             ".\\materials\\jeans\\7\\j2.webp",
             ".\\materials\\jeans\\7\\j3.webp"
         ],
-        "category": "jeans",
+        "category": "Jeans",
         "discount": true,
         "description": "Our jeans combine classic style with modern comfort. Perfectly tailored for a flattering fit, they are a must-have for any wardrobe. Enjoy all-day comfort and timeless style.",
         "BestSeller": false
@@ -314,7 +314,7 @@
             ".\\materials\\jeans\\8\\j2.webp",
             ".\\materials\\jeans\\8\\j3.webp"
         ],
-        "category": "jeans",
+        "category": "Jeans",
         "discount": false,
         "description": "Stay ahead in fashion with our premium jeans. Crafted from soft, durable denim, they offer exceptional comfort and style. Perfect for any casual or dressy occasion.",
         "BestSeller": false
@@ -330,7 +330,7 @@
             ".\\materials\\jeans\\9\\j2.webp",
             ".\\materials\\jeans\\9\\j3.webp"
         ],
-        "category": "jeans",
+        "category": "Jeans",
         "discount": false,
         "description": "Our jeans are the epitome of modern style and comfort. With a classic fit and durable fabric, they are perfect for any occasion. Elevate your denim collection with these must-haves.",
         "BestSeller": false
@@ -346,7 +346,7 @@
             ".\\materials\\jeans\\10\\j2.webp",
             ".\\materials\\jeans\\10\\j3.webp"
         ],
-        "category": "jeans",
+        "category": "Jeans",
         "discount": false,
         "description": "Revamp your wardrobe with our high-quality jeans. Designed for a perfect fit, they offer unmatched style and comfort. Ideal for any casual or semi-formal look.",
         "BestSeller": false
@@ -362,7 +362,7 @@
             ".\\materials\\jeans\\11\\j2.webp",
             ".\\materials\\jeans\\11\\j3.webp"
         ],
-        "category": "jeans",
+        "category": "Jeans",
         "discount": true,
         "description": "Stay ahead in fashion with our premium jeans. Crafted from soft, durable denim, they offer exceptional comfort and style. Perfect for any casual or dressy occasion.",
         "BestSeller": false
@@ -378,7 +378,7 @@
             ".\\materials\\jeans\\12\\j2.webp",
             ".\\materials\\jeans\\12\\j3.webp"
         ],
-        "category": "jeans",
+        "category": "Jeans",
         "discount": false,
         "description": "Crafted with precision, our jeans offer a perfect blend of style and comfort. Featuring durable denim and a flattering fit, they are a wardrobe essential. Stay trendy and comfortable all day long.",
         "BestSeller": false
@@ -394,7 +394,7 @@
             ".\\materials\\hoodies\\1\\h2.webp",
             ".\\materials\\hoodies\\1\\h3.webp"
         ],
-        "category": "hoodies",
+        "category": "Hoodies",
         "discount": true,
         "description": "Stay warm and comfortable with our cozy hoodies, perfect for chilly days and casual outings.",
         "BestSeller": false
@@ -410,7 +410,7 @@
             ".\\materials\\hoodies\\2\\h2.webp",
             ".\\materials\\hoodies\\2\\h3.webp"
         ],
-        "category": "hoodies",
+        "category": "Hoodies",
         "discount": true,
         "description": "Experience the perfect blend of style and comfort with our urban chill hoodies, designed for everyday wear.",
         "BestSeller": false
@@ -426,7 +426,7 @@
             ".\\materials\\hoodies\\3\\h2.webp",
             ".\\materials\\hoodies\\3\\h3.webp"
         ],
-        "category": "hoodies",
+        "category": "Hoodies",
         "discount": true,
         "description": "Our classic comfort hoodies offer a timeless look with unmatched softness and warmth.",
         "BestSeller": false
@@ -442,7 +442,7 @@
             ".\\materials\\hoodies\\4\\h2.webp",
             ".\\materials\\hoodies\\4\\h3.webp"
         ],
-        "category": "hoodies",
+        "category": "Hoodies",
         "discount": true,
         "description": "Add a touch of urban flair to your wardrobe with our street style hoodies, perfect for any casual outing.",
         "BestSeller": false
@@ -458,7 +458,7 @@
             ".\\materials\\hoodies\\5\\h2.webp",
             ".\\materials\\hoodies\\5\\h3.webp"
         ],
-        "category": "hoodies",
+        "category": "Hoodies",
         "discount": true,
         "description": "Stay cozy and stylish with our ultimate warmth hoodies, designed for maximum comfort in cold weather.",
         "BestSeller": false
@@ -474,7 +474,7 @@
             ".\\materials\\hoodies\\6\\h2.webp",
             ".\\materials\\hoodies\\6\\h3.webp"
         ],
-        "category": "hoodies",
+        "category": "Hoodies",
         "discount": false,
         "description": "Embrace a retro look with our vintage-inspired hoodies, combining classic designs with modern comfort.",
         "BestSeller": false
@@ -490,7 +490,7 @@
             ".\\materials\\hoodies\\7\\h2.webp",
             ".\\materials\\hoodies\\7\\h3.webp"
         ],
-        "category": "hoodies",
+        "category": "Hoodies",
         "discount": false,
         "description": "Relax in style with our chill zone hoodies, perfect for lounging at home or casual outings.",
         "BestSeller": false
@@ -506,7 +506,7 @@
             ".\\materials\\hoodies\\8\\h2.webp",
             ".\\materials\\hoodies\\8\\h3.webp"
         ],
-        "category": "hoodies",
+        "category": "Hoodies",
         "discount": true,
         "description": "Our urban explorer hoodies are designed for the modern adventurer, offering both style and functionality.",
         "BestSeller": false
@@ -522,7 +522,7 @@
             ".\\materials\\hoodies\\9\\h2.webp",
             ".\\materials\\hoodies\\9\\h3.webp"
         ],
-        "category": "hoodies",
+        "category": "Hoodies",
         "discount": true,
         "description": "Get ready for your next adventure with our durable and stylish hoodies, designed for active lifestyles.",
         "BestSeller": false
@@ -538,7 +538,7 @@
             ".\\materials\\hoodies\\10\\h2.webp",
             ".\\materials\\hoodies\\10\\h3.webp"
         ],
-        "category": "hoodies",
+        "category": "Hoodies",
         "discount": true,
         "description": "Enjoy a cozy retreat with our super soft hoodies, perfect for relaxing at home or staying warm on the go.",
         "BestSeller": false
@@ -554,7 +554,7 @@
             ".\\materials\\hoodies\\11\\h2.webp",
             ".\\materials\\hoodies\\11\\h3.webp"
         ],
-        "category": "hoodies",
+        "category": "Hoodies",
         "discount": true,
         "description": "Our modern classic hoodies combine contemporary design with timeless comfort, perfect for any occasion.",
         "BestSeller": false
@@ -570,7 +570,7 @@
             ".\\materials\\hoodies\\12\\h2.webp",
             ".\\materials\\hoodies\\12\\h3.webp"
         ],
-        "category": "hoodies",
+        "category": "Hoodies",
         "discount": true,
         "description": "Experience essential comfort with our hoodies, perfect for layering and staying warm in style.",
         "BestSeller": false
@@ -586,7 +586,7 @@
             ".\\materials\\shirts\\1\\s2.webp",
             ".\\materials\\shirts\\1\\s3.webp"
         ],
-        "category": "shirts",
+        "category": "Shirts",
         "discount": true,
         "description": "Discover timeless elegance with our classic fit shirts, designed to offer both style and comfort for any occasion.",
         "BestSeller": false
@@ -602,7 +602,7 @@
             ".\\materials\\shirts\\2\\s2.webp",
             ".\\materials\\shirts\\2\\s3.webp"
         ],
-        "category": "shirts",
+        "category": "Shirts",
         "discount": true,
         "description": "Experience the perfect blend of flexibility and style with our comfort stretch shirts, ideal for both work and play.",
         "BestSeller": false
@@ -618,7 +618,7 @@
             ".\\materials\\shirts\\3\\s2.webp",
             ".\\materials\\shirts\\3\\s3.webp"
         ],
-        "category": "shirts",
+        "category": "Shirts",
         "discount": false,
         "description": "Our elegant office shirts offer a sophisticated look, perfect for professional settings and formal occasions.",
         "BestSeller": false
@@ -634,7 +634,7 @@
             ".\\materials\\shirts\\4\\s2.webp",
             ".\\materials\\shirts\\4\\s3.webp"
         ],
-        "category": "shirts",
+        "category": "Shirts",
         "discount": true,
         "description": "Relax in style with our weekend casual shirts, perfect for a laid-back look on your days off.",
         "BestSeller": true
@@ -650,7 +650,7 @@
             ".\\materials\\shirts\\5\\s2.webp",
             ".\\materials\\shirts\\5\\s3.webp"
         ],
-        "category": "shirts",
+        "category": "Shirts",
         "discount": true,
         "description": "Our modern fit shirts offer a sleek and contemporary look, perfect for those who love to stay on trend.",
         "BestSeller": false
@@ -666,7 +666,7 @@
             ".\\materials\\shirts\\6\\s2.webp",
             ".\\materials\\shirts\\6\\s3.webp"
         ],
-        "category": "shirts",
+        "category": "Shirts",
         "discount": true,
         "description": "Experience essential comfort with our classic shirts, perfect for everyday wear and versatile styling.",
         "BestSeller": false
@@ -682,7 +682,7 @@
             ".\\materials\\shirts\\7\\s2.webp",
             ".\\materials\\shirts\\7\\s3.webp"
         ],
-        "category": "shirts",
+        "category": "Shirts",
         "discount": true,
         "description": "Embrace a retro look with our vintage style shirts, offering timeless designs with a modern twist.",
         "BestSeller": false
@@ -698,7 +698,7 @@
             ".\\materials\\shirts\\8\\s2.webp",
             ".\\materials\\shirts\\8\\s3.webp"
         ],
-        "category": "shirts",
+        "category": "Shirts",
         "discount": true,
         "description": "Our slim fit shirts provide a tailored look, perfect for those who prefer a fitted and polished appearance.",
         "BestSeller": false
@@ -714,7 +714,7 @@
             ".\\materials\\shirts\\9\\s2.webp",
             ".\\materials\\shirts\\9\\s3.webp"
         ],
-        "category": "shirts",
+        "category": "Shirts",
         "discount": false,
         "description": "Enjoy the ultimate comfort with our relaxed fit shirts, perfect for casual wear and easygoing style.",
         "BestSeller": false
@@ -730,7 +730,7 @@
             ".\\materials\\shirts\\10\\s2.webp",
             ".\\materials\\shirts\\10\\s3.webp"
         ],
-        "category": "shirts",
+        "category": "Shirts",
         "discount": true,
         "description": "Our urban chic shirts combine style and comfort, perfect for modern fashionistas looking to make a statement.",
         "BestSeller": false
@@ -746,7 +746,7 @@
             ".\\materials\\shirts\\11\\s2.webp",
             ".\\materials\\shirts\\11\\s3.webp"
         ],
-        "category": "shirts",
+        "category": "Shirts",
         "discount": false,
         "description": "Experience the luxury of our premium cotton shirts, designed to provide maximum comfort and durability.",
         "BestSeller": false
@@ -762,7 +762,7 @@
             ".\\materials\\shirts\\12\\s2.webp",
             ".\\materials\\shirts\\12\\s3.webp"
         ],
-        "category": "shirts",
+        "category": "Shirts",
         "discount": false,
         "description": "Our casual day shirts offer a relaxed and comfortable fit, perfect for everyday activities and leisure.",
         "BestSeller": false
@@ -778,7 +778,7 @@
             ".\\materials\\jackets\\1\\jack2.webp",
             ".\\materials\\jackets\\1\\jack3.webp"
         ],
-        "category": "jackets",
+        "category": "Jackets",
         "discount": false,
         "description": "Stay protected from the elements with our lightweight windbreaker, perfect for outdoor activities and casual wear.",
         "BestSeller": false
@@ -794,7 +794,7 @@
             ".\\materials\\jackets\\2\\jack2.webp",
             ".\\materials\\jackets\\2\\jack3.webp"
         ],
-        "category": "jackets",
+        "category": "Jackets",
         "discount": true,
         "description": "Experience the warmth and comfort of our cozy fleece jacket, ideal for chilly days and casual outings.",
         "BestSeller": false
@@ -810,7 +810,7 @@
             ".\\materials\\jackets\\3\\jack2.webp",
             ".\\materials\\jackets\\3\\jack3.webp"
         ],
-        "category": "jackets",
+        "category": "Jackets",
         "discount": true,
         "description": "Add a timeless piece to your wardrobe with our classic denim jacket, perfect for a versatile and stylish look.",
         "BestSeller": false
@@ -826,7 +826,7 @@
             ".\\materials\\jackets\\4\\jack2.webp",
             ".\\materials\\jackets\\4\\jack3.webp"
         ],
-        "category": "jackets",
+        "category": "Jackets",
         "discount": true,
         "description": "Keep warm during the colder months with our insulated winter jacket, designed for maximum warmth and comfort.",
         "BestSeller": false
@@ -842,7 +842,7 @@
             ".\\materials\\jackets\\5\\jack2.webp",
             ".\\materials\\jackets\\5\\jack3.webp"
         ],
-        "category": "jackets",
+        "category": "Jackets",
         "discount": false,
         "description": "Elevate your style with our stylish bomber jacket, perfect for a modern and edgy look.",
         "BestSeller": false
@@ -858,7 +858,7 @@
             ".\\materials\\jackets\\6\\jack2.webp",
             ".\\materials\\jackets\\6\\jack3.webp"
         ],
-        "category": "jackets",
+        "category": "Jackets",
         "discount": false,
         "description": "Enjoy the relaxed fit and casual style of our hoodie jacket, perfect for everyday wear and layering.",
         "BestSeller": false
@@ -874,7 +874,7 @@
             ".\\materials\\jackets\\7\\jack2.webp",
             ".\\materials\\jackets\\7\\jack3.webp"
         ],
-        "category": "jackets",
+        "category": "Jackets",
         "discount": true,
         "description": "Stay dry in any weather with our waterproof rain jacket, designed for ultimate protection against the elements.",
         "BestSeller": false
@@ -890,7 +890,7 @@
             ".\\materials\\jackets\\8\\jack2.webp",
             ".\\materials\\jackets\\8\\jack3.webp"
         ],
-        "category": "jackets",
+        "category": "Jackets",
         "discount": false,
         "description": "Make a statement with our chic trench coat, offering a sophisticated and timeless look for any occasion.",
         "BestSeller": false
@@ -906,7 +906,7 @@
             ".\\materials\\jackets\\9\\jack2.webp",
             ".\\materials\\jackets\\9\\jack3.webp"
         ],
-        "category": "jackets",
+        "category": "Jackets",
         "discount": false,
         "description": "Our versatile utility jacket is perfect for outdoor adventures, offering multiple pockets and durable design.",
         "BestSeller": false
@@ -922,7 +922,7 @@
             ".\\materials\\jackets\\10\\jack2.webp",
             ".\\materials\\jackets\\10\\jack3.webp"
         ],
-        "category": "jackets",
+        "category": "Jackets",
         "discount": false,
         "description": "Our tailored blazer offers a polished and professional look, perfect for business meetings and formal events.",
         "BestSeller": false
@@ -938,7 +938,7 @@
             ".\\materials\\jackets\\11\\jack2.webp",
             ".\\materials\\jackets\\11\\jack3.webp"
         ],
-        "category": "jackets",
+        "category": "Jackets",
         "discount": true,
         "description": "Stay warm and stylish with our quilted puffer jacket, designed to provide insulation and a trendy look.",
         "BestSeller": false
@@ -954,7 +954,7 @@
             ".\\materials\\jackets\\12\\jack2.webp",
             ".\\materials\\jackets\\12\\jack3.webp"
         ],
-        "category": "jackets",
+        "category": "Jackets",
         "discount": true,
         "description": "Our softshell jacket offers a perfect blend of comfort and functionality, ideal for outdoor activities and casual wear.",
         "BestSeller": true
@@ -970,7 +970,7 @@
             ".\\materials\\accessories\\1\\a2.webp",
             ".\\materials\\accessories\\1\\a3.webp"
         ],
-        "category": "accessories",
+        "category": "Accessories",
         "discount": true,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": true
@@ -986,7 +986,7 @@
             ".\\materials\\accessories\\2\\a2.webp",
             ".\\materials\\accessories\\2\\a3.webp"
         ],
-        "category": "accessories",
+        "category": "Accessories",
         "discount": false,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
@@ -1002,7 +1002,7 @@
             ".\\materials\\accessories\\3\\a2.webp",
             ".\\materials\\accessories\\3\\a3.webp"
         ],
-        "category": "accessories",
+        "category": "Accessories",
         "discount": false,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
@@ -1018,7 +1018,7 @@
             ".\\materials\\accessories\\4\\a2.webp",
             ".\\materials\\accessories\\4\\a3.webp"
         ],
-        "category": "accessories",
+        "category": "Accessories",
         "discount": false,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
@@ -1034,7 +1034,7 @@
             ".\\materials\\accessories\\5\\a2.webp",
             ".\\materials\\accessories\\5\\a3.webp"
         ],
-        "category": "accessories",
+        "category": "Accessories",
         "discount": false,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
@@ -1050,7 +1050,7 @@
             ".\\materials\\accessories\\6\\a2.webp",
             ".\\materials\\accessories\\6\\a3.webp"
         ],
-        "category": "accessories",
+        "category": "Accessories",
         "discount": false,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
@@ -1066,7 +1066,7 @@
             ".\\materials\\accessories\\7\\a2.webp",
             ".\\materials\\accessories\\7\\a3.webp"
         ],
-        "category": "accessories",
+        "category": "Accessories",
         "discount": false,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
@@ -1082,7 +1082,7 @@
             ".\\materials\\accessories\\8\\a2.webp",
             ".\\materials\\accessories\\8\\a3.webp"
         ],
-        "category": "accessories",
+        "category": "Accessories",
         "discount": false,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
@@ -1098,7 +1098,7 @@
             ".\\materials\\accessories\\9\\a2.webp",
             ".\\materials\\accessories\\9\\a3.webp"
         ],
-        "category": "accessories",
+        "category": "Accessories",
         "discount": true,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
@@ -1114,7 +1114,7 @@
             ".\\materials\\accessories\\10\\a2.webp",
             ".\\materials\\accessories\\10\\a3.webp"
         ],
-        "category": "accessories",
+        "category": "Accessories",
         "discount": false,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
@@ -1130,7 +1130,7 @@
             ".\\materials\\accessories\\11\\a2.webp",
             ".\\materials\\accessories\\11\\a3.webp"
         ],
-        "category": "accessories",
+        "category": "Accessories",
         "discount": true,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
@@ -1146,7 +1146,7 @@
             ".\\materials\\accessories\\12\\a2.webp",
             ".\\materials\\accessories\\12\\a3.webp"
         ],
-        "category": "accessories",
+        "category": "Accessories",
         "discount": false,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
@@ -1162,7 +1162,7 @@
             ".\\materials\\accessories\\13\\a2.webp",
             ".\\materials\\accessories\\13\\a3.webp"
         ],
-        "category": "accessories",
+        "category": "Accessories",
         "discount": true,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
@@ -1178,7 +1178,7 @@
             ".\\materials\\accessories\\14\\a2.webp",
             ".\\materials\\accessories\\14\\a3.webp"
         ],
-        "category": "accessories",
+        "category": "Accessories",
         "discount": false,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
@@ -1194,7 +1194,7 @@
             ".\\materials\\accessories\\15\\a2.webp",
             ".\\materials\\accessories\\15\\a3.webp"
         ],
-        "category": "accessories",
+        "category": "Accessories",
         "discount": false,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
@@ -1210,7 +1210,7 @@
             ".\\materials\\accessories\\16\\a2.webp",
             ".\\materials\\accessories\\16\\a3.webp"
         ],
-        "category": "accessories",
+        "category": "Accessories",
         "discount": false,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
