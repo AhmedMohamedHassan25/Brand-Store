@@ -8,21 +8,56 @@
 </head>
 <body>
     <div class="login-container">
-        <h1>Login</h1>
+        <h1>Welcome Back</h1>
         <form id="loginForm">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
-        <p id="message"></p>
+        <p id="loginMessage"></p>
         <p>Don't have an account? <button id="registerBtn">Register</button></p>
     </div>
 
     <div class="register-container" style="display: none;">
-        <h1>Register</h1>
+        <h1>Create your Account</h1>
         <form id="registerForm">
-            <input type="text" id="newUsername" placeholder="Username" required>
-            <input type="password" id="newPassword" placeholder="Password" required>
+            <input type="text" id="firstName" placeholder="First Name" required>
+            <input type="text" id="lastName" placeholder="Last Name" required>
+            <input type="text" id="registerUsername" placeholder="Username" required>
+            <input type="email" id="registerEmail" placeholder="Email" required>
+            <input type="text" id="phone" placeholder="Phone" required>
+            <select id="Gender" required>
+                <option value="Male" disabled selected>Select your Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <select id="city" required>
+                <option value="" disabled selected>Select your city</option>
+                <option value="Cairo">Cairo</option>
+                <option value="Alexandria">Alexandria</option>
+                <option value="Giza">Giza</option>
+                <option value="Port Said">Port Said</option>
+                <option value="Suez">Suez</option>
+                <option value="Luxor">Luxor</option>
+                <option value="Aswan">Aswan</option>
+                <option value="Tanta">Tanta</option>
+                <option value="Mansoura">Mansoura</option>
+                <option value="Ismailia">Ismailia</option>
+                <option value="Damanhur">Damanhur</option>
+                <option value="Minya">Minya</option>
+                <option value="Sohag">Sohag</option>
+                <option value="Fayoum">Fayoum</option>
+                <option value="Qena">Qena</option>
+                <option value="Beni Suef">Beni Suef</option>
+                <option value="Kafr el-Sheikh">Kafr el-Sheikh</option>
+                <option value="Benha">Benha</option>
+                <option value="Zagazig">Zagazig</option>
+                <option value="6th of October">6th of October</option>
+                <option value="New Cairo">New Cairo</option>
+            </select>
+            <input type="text" id="detailedAddress" placeholder="Detailed Address" required>
+            <input type="password" id="registerPassword" placeholder="Password" required>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
             <button type="submit">Register</button>
         </form>
         <p id="registerMessage"></p>
