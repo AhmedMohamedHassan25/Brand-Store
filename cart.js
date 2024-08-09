@@ -1,10 +1,11 @@
 var cartdiv = document.getElementById("cartdiv");
 var cart = JSON.parse(localStorage.getItem("cartStorge"));
+
 console.log(cart);
 if (cart.length == 0) {
   var empityParag = document.createElement("p");
-  var empitytext = document.createTextNode("Your cart is Empity");
-  empityParag.appendChild(empitytext);
+  empityParag.setAttribute("id", "empityParag");
+  empityParag.innerHTML = "Your cart is Empity";
   empityParag.style.textAlign = "center";
   var checkproducts = document.createElement("button");
   var checkproductstext = document.createTextNode("Chick out our products");
@@ -15,6 +16,155 @@ if (cart.length == 0) {
   checkproducts.addEventListener("click", function () {
     window.location.href = "Products.html";
   });
+  const line = document.createElement("hr");
+  cartdiv.appendChild(line);
+  const bestSel = document.createElement("p");
+  bestSel.setAttribute("id", "bestSel");
+  bestSel.innerHTML = "Best Sellers";
+  cartdiv.appendChild(bestSel);
+  const bestProd = document.createElement("div");
+  cartdiv.appendChild(bestProd);
+  function updateCartDisplay() {
+    CartNumb.textContent = cartStorge.length.toString();
+  }
+
+  const CartNumb = document.createElement("p");
+  let item = [];
+  let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
+  let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+  let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "./test.json");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      var json = JSON.parse(xhr.response);
+      for (let i = 0; i < json.length; i++) {
+        if (json[i].BestSeller) {
+          const cardemp = document.createElement("div");
+          cardemp.setAttribute("class", "cardemp");
+          const imgemp = document.createElement("img");
+          imgemp.setAttribute("class", "imgemp");
+          imgemp.src = json[i].image[0];
+          imgemp.style.width = "250px";
+          imgemp.style.height = "250px";
+          const favIconDiv = document.createElement("div");
+          favIconDiv.setAttribute("class", "favIconDiv");
+          const favIcon = document.createElement("i");
+          favIcon.setAttribute("class", "fa-solid fa-heart");
+          favIconDiv.appendChild(favIcon);
+          let isBlack = isBlackStorage[json[i].id] || false;
+          if (isBlack) {
+            favIcon.style.color = "black";
+          } else {
+            favIcon.style.color = "white";
+          }
+          var titleEmp = document.createElement("p");
+          titleEmp.style.display = "inline-block";
+          titleEmp.style.width = "100%";
+          titleEmp.style.marginBlock = "3px";
+          var titletext = document.createTextNode(json[i].product_name);
+          titleEmp.appendChild(titletext);
+          var priceEmp = document.createElement("p");
+          priceEmp.style.display = "inline-block";
+          priceEmp.style.marginBlock = "5px";
+          priceEmp.style.width = "100%";
+          priceEmp.style.fontWeight = "600";
+          var pricetext = document.createTextNode("LE " + json[i].price);
+          priceEmp.appendChild(pricetext);
+          var addToCart = document.createElement("button");
+          addToCart.setAttribute("class", "addtocart");
+          var addtext = document.createTextNode("Add To Cart");
+          addToCart.appendChild(addtext);
+          cardemp.appendChild(imgemp);
+          cardemp.appendChild(favIconDiv);
+          cardemp.appendChild(titleEmp);
+          cardemp.appendChild(priceEmp);
+          if (json[i].discount) {
+            var markForDis = document.createElement("div");
+            markForDis.setAttribute("class", "markForDisEmp");
+            markForDis.innerHTML = "Sale 15%";
+            var dicountedEmb = document.createElement("p");
+            dicountedEmb.setAttribute("class", "dicountedEmb");
+            priceEmp.style.width = "35%";
+            priceEmp.style.textDecorationLine = "line-through";
+            var dicountedtext = document.createTextNode(
+              "LE " + (json[i].price - (json[i].price * 15) / 100) + " (-15%)"
+            );
+            dicountedEmb.appendChild(dicountedtext);
+            cardemp.appendChild(dicountedEmb);
+            cardemp.appendChild(markForDis);
+          }
+          var sizeEmp = document.createElement("p");
+          sizeEmp.setAttribute("class", "sizeEmp");
+          sizeEmp.innerHTML = "Size: " + json[i].size;
+          cardemp.appendChild(sizeEmp);
+          cardemp.appendChild(addToCart);
+          bestProd.appendChild(cardemp);
+
+          const targtedProduct = json[i];
+          favIconDiv.addEventListener("click", function (event) {
+            event.stopPropagation();
+            if (!isBlack) {
+              favIcon.style.color = "Black";
+              favourites.push(targtedProduct);
+              isBlackStorage[json[i].id] = true;
+            } else {
+              favIcon.style.color = "White";
+              favourites = favourites.filter(function (item) {
+                return item.id !== targtedProduct.id;
+              });
+              delete isBlackStorage[targtedProduct.id];
+            }
+            localStorage.setItem("favourites", JSON.stringify(favourites));
+            localStorage.setItem(
+              "isBlackStorage",
+              JSON.stringify(isBlackStorage)
+            );
+            isBlack = !isBlack;
+          });
+          const itemToAdd = json[i];
+          addToCart.addEventListener("click", function (event) {
+            event.stopPropagation();
+            function isItemInCart(item) {
+              for (let i = 0; i < cartStorge.length; i++) {
+                console.log(item);
+                if (cartStorge[i].id == item.id) {
+                  return true;
+                }
+              }
+              return false;
+            }
+            if (!isItemInCart(itemToAdd)) {
+              console.log(itemToAdd);
+              console.log(cartStorge);
+              var curnum = parseInt(CartNumb.textContent);
+              var newnum = curnum + 1;
+              CartNumb.textContent = newnum;
+              cartStorge.push(itemToAdd);
+              localStorage.setItem("cartStorge", JSON.stringify(cartStorge));
+            }
+          });
+
+          cardemp.addEventListener("click", function (event) {
+            if (!event.target.closest("button")) {
+              const clickedProductId = json[i].id;
+              window.open("./product.html", "_self");
+              item.push(json[i]);
+              localStorage.setItem("item", JSON.stringify(item));
+            }
+          });
+          cardemp.addEventListener("mouseover", function () {
+            imgemp.src = json[i].image[1];
+          });
+          cardemp.addEventListener("mouseleave", function () {
+            imgemp.src = json[i].image[0];
+          });
+          updateCartDisplay();
+        }
+      }
+    }
+  };
+  xhr.send();
 } else {
   var carthead = document.createElement("div");
   var productdiv = document.createElement("p");

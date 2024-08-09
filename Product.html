@@ -6,19 +6,47 @@
     <title>Document</title>
 
      <style>
-        .product {
+
+        #p_best{
+            width: 110px;
+            /* height: 130px; */
+            float:left;
+            transform: rotate(-30deg);
+        }
+        #container {
             border: 1px solid #363333;
             padding: 10px;
             margin: 10px;
             max-width:100%;
         }
-        .product img {
+        #container img {
             max-width: 20%;
         }
     </style>
 </head>
 <body>
-    <div id="product-display"></div>
+
+
+   <div id="product-display">
+
+        <div id="container">
+            <img src="" alt="" id="p_best">
+    
+            <h2 id="p_name">
+    
+            </h2>
+    
+            <img id="p_image">
+    
+            <p id="p_category"> </p>
+            <p id="p_id"></p>
+            <p id="p_decsription"></p>
+            <p id="p_price"></p>
+            <p id="p_size"></p>
+    
+        </div>
+
+    </div>
     <script src="scriptOneProduct.js"></script>
     
 </body>
