@@ -288,7 +288,6 @@ function loadProducts(category,PriceRange,Size) {
             });
             updateCartDisplay();
           }
-//=======
           card.addEventListener("click", function (event) {
             if (!event.target.closest("button")) {
               const clickedProductId = json[i].id;
@@ -305,7 +304,6 @@ function loadProducts(category,PriceRange,Size) {
             img.src = json[i].image[0];
           });
           updateCartDisplay();
-///>>>>>>> 639d73b95f1492c6d5a2b8e366764038fa13e589
         }
       }
     };
