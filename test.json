@@ -61,7 +61,7 @@
         "category": "jeans",
         "discount": false,
         "description": "Our jeans are designed for the modern lifestyle. Featuring a comfortable stretch and a sleek silhouette, they are perfect for everyday wear. Stand out with our unique denim finishes.",
-        "BestSeller": false
+        "BestSeller": true
     },
     {
         "id": 5,
