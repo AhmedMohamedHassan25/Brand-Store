@@ -16,7 +16,7 @@ if (storedData) {
     productDiv.appendChild(productName)
 
     
-    var productImage = document.getElementById('p_image');
+    var productImage = document.getElementById('main-image');
     productImage.src = Product.image[0];
     productImage.style.display='block';
     productImage.style.marginLeft='20px';
@@ -26,7 +26,63 @@ if (storedData) {
     productImage.style.marginLeft= '20px' ;
     productImage.style.borderRadius = '20px';
 
+    var thumbnails =document.getElementsByClassName("thumbnails")[0];
+    
+    var img1 =document.getElementById("img1");
+    img1.src=Product.image[1];
+    img1.style.cursor="pointer";
+    img1.style.width="130px";
+    img1.style.height="130px";
+
+    thumbnails.appendChild(img1);
+    productDiv.appendChild(thumbnails);
+    //    thumbnails.appendChild(img1);
+    
+    var img2 =document.getElementById("img2");
+    img2.src=Product.image[2];
+    img2.style.cursor="pointer";
+    img2.style.width= "130px";
+    img2.style.height="130px";
+    
+    thumbnails.appendChild(img2);
+    productDiv.appendChild(thumbnails);
+    
+    // thumbnails.appendChild(img2);
+    
+    var img3 =document.getElementById("img3");
+    img3.style.cursor="pointer";
+    img3.style.width="130px";
+    img3.style.height="130px";
+    img3.src=Product.image[0];
+    // thumbnails.appendChild(img3);
+    
+    thumbnails.appendChild(img3);
+    productDiv.appendChild(thumbnails);
+    
+
     productDiv.appendChild(productImage);
+
+
+    var thumbnaills = document.querySelectorAll('.thumbnails img');
+    console.log(thumbnaills);
+    
+    var mainImage = document.getElementById('main-image');
+
+    thumbnaills.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            // Change the main image source
+            console.log(this);
+            
+            mainImage.src = this.src;
+
+            // Remove the active class from all thumbnails
+            thumbnaills.forEach(img => img.classList.remove('active-thumbnail'));
+
+            // Add the active class to the clicked thumbnail
+            this.classList.add('active-thumbnail');
+        });
+    });
+    
     
 
     var productCategory = document.getElementById('p_category');
@@ -44,7 +100,7 @@ if (storedData) {
     productDiv.appendChild(productDescription);
     
     var productPrice = document.getElementById('p_price');
-    productPrice.innerHTML = `<strong>Price:</strong> $${Product.price}`;
+    productPrice.textContent= "Price: "+ Product.price+"  LE";
     productDiv.appendChild(productPrice);
     
     var productSize = document.getElementById('p_size');
@@ -77,9 +133,11 @@ if (storedData) {
 
 }    
  else {
-    
     console.log("Product with ID", productID, "not found in local storage");
 }
+
+
+
 
 
 
