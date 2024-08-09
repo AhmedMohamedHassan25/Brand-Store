@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-     <style>
-
-        #p_best{
+    <style>
+        #p_best {
             width: 110px;
             /* height: 130px; */
-            float:left;
+            float: left;
             transform: rotate(-30deg);
         }
+
         #container {
             border: 1px solid #363333;
             padding: 10px;
             margin: 10px;
-            max-width:100%;
+            max-width: 100%;
         }
+
         #container img {
             max-width: 20%;
         }
     </style>
 </head>
+
 <body>
 
 
-   <div id="product-display">
+    <div id="product-display">
 
         <div id="container">
-            <img src="" alt="" id="p_best">
-    
-            <h2 id="p_name">
-    
-            </h2>
-    
-            <div class="gallery-container">
 
-                <div class="thumbnails">
+            <h2 id="p_name"></h2>
+
+            <div class="gallery-container" style="display: flex;">
+ 
+                <div class="main-image" style="display: inline-block;">
+                    <img id="main-image" src="">
+
+                </div>
+
+                <div class="thumbnails" style="display: inline-block;">
                     <img src="" alt="" id="img1">
                     <img src="" alt="" id="img2">
                     <img src="" alt="" id="img3">
                 </div>
 
-                <div class="main-image">
-                    <img id="main-image" src="">
-
-                </div>
-                
             </div>
-            <p id="p_decsription"></p>
-            <p id="p_price"></p>
-            <p id="p_size"></p>
-    
+            <div id="pras" style="display: inline-block;">
+                <p id="p_size"></p>
+                <p id="p_decsription"></p>
+                <p id="p_price"></p>
+                <div id="discound"></div>
+            </div>
+
         </div>
     </div>
 
@@ -75,9 +78,10 @@
         //         this.classList.add('active-thumbnail');
         //     });
         // });
-  
+
 
     </script>
-    
+
 </body>
+
 </html>

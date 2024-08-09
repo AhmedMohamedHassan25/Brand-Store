@@ -94,11 +94,15 @@ if (storedData) {
     // // productCategory.style.display='inline-block';
     // productDiv.appendChild(productCategory);
     
+    var paras=document.getElementById("pras");
     
     
     var productDescription = document.getElementById('p_decsription');
     productDescription.innerHTML = `<strong>Description:</strong> ${Product.description}`;
-    productDiv.appendChild(productDescription);
+    paras.appendChild(productDescription);
+
+
+    productDiv.appendChild(paras);
     
     // var productPrice = document.getElementById('p_price');
     // productPrice.textContent= "Price: "+ Product.price+"  LE";
@@ -106,11 +110,21 @@ if (storedData) {
     
     var productSize = document.getElementById('p_size');
     productSize.innerHTML = `<strong>Size:</strong> ${Product.size}`;
-    productDiv.appendChild(productSize);
+
+    paras.appendChild(productSize);
+    productDiv.appendChild(paras);
+
+
+
+    //productDiv.appendChild(productSize);
+
+
     
     var productQuantity = document.createElement('p');
     productQuantity.innerHTML = `<strong>Quantity:</strong> ${Product.quantity}`;
-    productDiv.appendChild(productQuantity);
+
+    paras.appendChild(productQuantity);
+    productDiv.appendChild(paras);
     
     
     
@@ -121,29 +135,51 @@ if (storedData) {
         var productPrice = document.getElementById('p_price');
         productPrice.innerHTML = `<strong>Price : </strong> ${Product.price} LE `;
         productDiv.appendChild(productPrice);
+        paras.appendChild(productPrice);
+
+
+    productDiv.appendChild(paras);
     }
     else{
+        var discount =document.getElementById("discound") ;
+        discount.innerHTML=`<strong>Sale: </strong> -15%`;
+        //discount.style.textAlign="center";
+
+        paras.appendChild(discount)
          
         var productPrice = document.getElementById('p_price');
-        productPrice.innerHTML = ` `;
-        productDiv.appendChild(productPrice);
+        productPrice.innerHTML = `<strong>Price After Sale : </strong> ${(Product.price - Product.price * 15/100)}LE `;
+      //  productDiv.appendChild(productPrice);
+
+        paras.appendChild(productPrice);
+
+
+        productDiv.appendChild(paras);
+
+    //     var productPrice = document.getElementById('p_price');
+    //     productPrice.innerHTML = ` `;
+    //     productDiv.appendChild(productPrice);
         
-        var markForDis = document.createElement("div")
-        var dicountedtext=document.createElement("p")
-        var dicounted = document.createElement("p");
-        markForDis.innerHTML =  `<strong>Sale : </strong>  -15%  `;
-        markForDis.setAttribute("class","markForDis")
-        dicounted.setAttribute("class", "dicounted")
-        productPrice.style.width = "35%";          
-        productPrice.style.textDecorationLine = "line-through";          
-        dicountedtext .innerHTML=` <strong>Price After Sale:</strong> ${(Product.price - Product.price * 15/100)} LE `;
-        productDiv.appendChild(markForDis)
-        dicounted.appendChild(dicountedtext);
-        productDiv.appendChild(dicounted);
+    //     var markForDis = document.createElement("div")
+    //     var dicountedtext=document.createElement("p")
+    //     // var dicounted = document.createElement("p");
+    //     markForDis.innerHTML =  `<strong>Sale : </strong>  -15%  `;
+    //     // markForDis.setAttribute("class","markForDis")
+    //     // dicounted.setAttribute("class", "dicounted")
+    //     productPrice.style.width = "35%";          
+    //     productPrice.style.textDecorationLine = "line-through";          
+    //     dicountedtext .innerHTML=` <strong>Price After Sale:</strong> ${(Product.price - Product.price * 15/100)} LE `;
+    //     productDiv.appendChild(markForDis)
+    //     dicounted.appendChild(dicountedtext);
+    //    // productDiv.appendChild(dicounted);
+    //     paras.appendChild(dicounted);
+    //     productDiv.appendChild(paras);
+
+
         
       }
 
-    productDiv.appendChild(productDiscount);
+    //productDiv.appendChild(productDiscount);
     
     // Append the productDiv to the document body or any other container
     document.getElementById('product-display').appendChild(productDiv);
@@ -158,73 +194,3 @@ if (storedData) {
 
 
 
-
-
-
-
-// var len;
-// var product;
-
-// // get product data from local storage
-// var urlParams = new URLSearchParams(window.location.search);
-// var productID = urlParams.get('id');
-
-// console.log(productID);
-
-// var storedProductData = localStorage.getItem('item');
-// console.log(storedProductData);
-
-// if (storedProductData) 
-//     product = JSON.parse(storedProductData);
-    
-//     if (product && product.length > 0) {
-        
-//         console.log("hello");
-//         var b = product[i];
-//         for (var i = 0; i < product.length; i++) {
-            
-
-//             console.log(product[i].id);
-//             if ((product[i].id) == productID) {
-//                 console.log("hello");
-//                 // foundProduct = item;
-                
-                
-                
-//                 // Display product data in the document
-//                 console.log(product[i].id);
-//                 // productDiv.style.display='flex';
-//                 // productDiv.style.flexDirection = 'column';
-//                 // productDiv.style.alignItems = 'center';
-                
-                
-
-
-
-//             }
-//         }
-//     }
-
-
-
-
-
-// // function parseURLParams(url) {
-// //     var queryStart = url.indexOf("?") + 1,
-// //         queryEnd = url.indexOf("#") + 1 || url.length + 1,
-// //         query = url.slice(queryStart, queryEnd - 1),
-// //         pairs = query.replace(/\+/g, " ").split("&"),
-// //         parms = {}, i, n, v, nv;
-
-// //     if (query === url || query === "") return;
-
-// //     for (i = 0; i < pairs.length; i++) {
-// //         nv = pairs[i].split("=", 2);
-// //         n = decodeURIComponent(nv[0]);
-// //         v = decodeURIComponent(nv[1]);
-
-// //         if (!parms.hasOwnProperty(n)) parms[n] = [];
-// //         parms[n].push(nv.length === 2 ? v : null);
-// //     }
-// //     return parms;
-// // }
