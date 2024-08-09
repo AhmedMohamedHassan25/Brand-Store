@@ -141,7 +141,7 @@ function applyHoverEffectForCategory(element)
     element.style.filter = 'none';
   });
 }
- applyHoverEffect(HeartIcon, "wishlist.html");
+ applyHoverEffect(HeartIcon, "favourite.html");
  applyHoverEffectForCategory(CatIcon);
 
 //end of header
