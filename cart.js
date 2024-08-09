@@ -1,6 +1,6 @@
 var cartdiv = document.getElementById("cartdiv");
 var cart = JSON.parse(localStorage.getItem("cartStorge"));
- 
+
 console.log(cart);
 if (cart.length == 0) {
   var empityParag = document.createElement("p");
@@ -148,8 +148,7 @@ if (cart.length == 0) {
           cardemp.addEventListener("click", function (event) {
             if (!event.target.closest("button")) {
               const clickedProductId = json[i].id;
-              const productUrl = `./product.html?id=${clickedProductId}`;
-              window.open(productUrl, "_blank");
+              window.open("./product.html", "_self");
               item.push(json[i]);
               localStorage.setItem("item", JSON.stringify(item));
             }
