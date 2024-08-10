@@ -26,9 +26,9 @@ logo.style.top = "-13px";
 
 logo.style.cursor = "pointer";
 logo.id = "logo";
-logo.addEventListener("click",function(){
+logo.addEventListener("click", function () {
   window.location.href = "../index.html";
-})
+});
 Div.appendChild(logo);
 
 // categories
@@ -163,15 +163,15 @@ LIST.style.transition = "transform";
 Div.appendChild(LIST);
 
 // cart icon
-var CrtIcon = document.createElement("img");
-CrtIcon.src = "../rss/Cart2.png";
-CrtIcon.style.height = "22px";
-CrtIcon.style.position = "absolute";
-CrtIcon.style.cursor = "pointer";
-CrtIcon.style.bottom = "40px";
-CrtIcon.style.right = "120px";
-Div.appendChild(CrtIcon);
+var person = document.createElement("img");
+person.src = "../rss/icons8-administrator-male-96.png";
+person.style.height = "22px";
+person.style.position = "absolute";
+person.style.cursor = "pointer";
+person.style.bottom = "40px";
+person.style.right = "120px";
 
+Div.appendChild(person);
 
 //heart icon
 var HeartIcon = document.createElement("img");
@@ -197,26 +197,26 @@ function applyHoverEffect(element, url) {
   });
 }
 
-applyHoverEffect(CrtIcon, "../cart/cart.html");
+applyHoverEffect(person, "../login/login.html");
 applyHoverEffect(HeartIcon, "../fav/favourite.html");
 
-var CartNumbDiv = document.createElement("div");
-CartNumbDiv.style.height = "20px";
-CartNumbDiv.style.width = "20px";
-CartNumbDiv.style.position = "absolute";
-CartNumbDiv.style.bottom = "60px";
-CartNumbDiv.style.right = "105px";
-CartNumbDiv.style.backgroundColor = "yellow";
-CartNumbDiv.style.borderRadius = "50%";
-CartNumbDiv.style.textAlign = "center";
-var CartNumb = document.createElement("p");
-CartNumb.style.marginTop = "-1px";
+// var CartNumbDiv = document.createElement("div");
+// CartNumbDiv.style.height = "20px";
+// CartNumbDiv.style.width = "20px";
+// CartNumbDiv.style.position = "absolute";
+// CartNumbDiv.style.bottom = "60px";
+// CartNumbDiv.style.right = "105px";
+// CartNumbDiv.style.backgroundColor = "yellow";
+// CartNumbDiv.style.borderRadius = "50%";
+// CartNumbDiv.style.textAlign = "center";
+// var CartNumb = document.createElement("p");
+// CartNumb.style.marginTop = "-1px";
 
-CartNumbDiv.appendChild(CartNumb);
-if (parseInt(localStorage.getItem("numOfProducts")) == NaN) {
-  CartNumb.textContent = 0;
-}
-Div.appendChild(CartNumbDiv);
+// CartNumbDiv.appendChild(CartNumb);
+// if (parseInt(localStorage.getItem("numOfProducts")) == NaN) {
+//   CartNumb.textContent = 0;
+// }
+// Div.appendChild(CartNumbDiv);
 
 //end of header
 
@@ -262,7 +262,7 @@ if (cart.length == 0) {
       var json = JSON.parse(xhr.response);
       for (let i = 0; i < json.length; i++) {
         if (json[i].BestSeller) {
-          CartNumb.textContent = productsOnCart.toString();
+          // CartNumb.textContent = productsOnCart.toString();
           const cardemp = document.createElement("div");
           cardemp.setAttribute("class", "cardemp");
           const imgemp = document.createElement("img");
@@ -392,7 +392,7 @@ if (cart.length == 0) {
   };
   xhr.send();
 } else {
-  CartNumb.textContent = productsOnCart.toString();
+  // CartNumb.textContent = productsOnCart.toString();
   var carthead = document.createElement("div");
   var productdiv = document.createElement("p");
   carthead.setAttribute("id", "carthead");
@@ -536,7 +536,7 @@ if (cart.length == 0) {
       localStorage.setItem("cartStorge", JSON.stringify(cart));
       productsOnCart -= 1;
       console.log(productsOnCart);
-      CartNumb.innerHTML = productsOnCart;
+      // CartNumb.innerHTML = productsOnCart;
       localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
       SubtotalAmount.innerHTML = overAllPrice;
       if (cart.length == 0) {
