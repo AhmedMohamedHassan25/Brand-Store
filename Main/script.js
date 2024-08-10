@@ -73,7 +73,7 @@ Div.style.margin = "0px";
 mainOfHome.before(Div);
 // logo
 var logo = document.createElement("img");
-logo.src = "./rss/Brown-logo.png";
+logo.src = "../rss/Brown-logo.png";
 logo.style.height = "140px";
 logo.style.width = "220px";
 logo.style.position = "absolute";
@@ -142,7 +142,7 @@ C7.style.border = "0";
 
 C1.onclick = function () {
   localStorage.removeItem("category");
-  window.open("./Products.html", "_self");
+  window.open("../products/Products.html", "_self");
 };
 C2.onclick = function () {
   sending("Jackets");
@@ -165,7 +165,7 @@ C7.onclick = function () {
 
 function sending(category) {
   localStorage.setItem("category", category);
-  window.open("./Products.html", "_self");
+  window.open("../products/Products.html", "_self");
 }
 
 function HoverEffect(element) {
@@ -217,7 +217,7 @@ Div.appendChild(LIST);
 
 // cart icon
 var CrtIcon = document.createElement("img");
-CrtIcon.src = "./rss/Cart2.png";
+CrtIcon.src = "../rss/Cart2.png";
 CrtIcon.style.height = "22px";
 CrtIcon.style.position = "absolute";
 CrtIcon.style.cursor = "pointer";
@@ -228,7 +228,7 @@ Div.appendChild(CrtIcon);
 
 //heart icon
 var HeartIcon = document.createElement("img");
-HeartIcon.src = "./rss/Heart2.png";
+HeartIcon.src = "../rss/Heart2.png";
 HeartIcon.style.height = "23px";
 HeartIcon.style.position = "absolute";
 HeartIcon.style.right = "170px";
@@ -249,18 +249,9 @@ function applyHoverEffect(element, url) {
     window.location.href = url;
   });
 }
-function applyHoverEffectForCategory(element) {
-  element.addEventListener("mouseover", function () {
-    element.style.filter = "invert(50%) hue-rotate(180deg)";
-  });
 
-  element.addEventListener("mouseout", function () {
-    element.style.filter = "none";
-  });
-}
-applyHoverEffect(CrtIcon, "cart.html");
-applyHoverEffect(HeartIcon, "favourite.html");
+applyHoverEffect(CrtIcon, "../cart/cart.html");
+applyHoverEffect(HeartIcon, "../fav/favourite.html");
 
-applyHoverEffectForCategory();
 
 //end of header

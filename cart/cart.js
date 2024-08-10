@@ -15,7 +15,7 @@ if (cart.length == 0) {
   cartdiv.appendChild(checkproducts);
   checkproducts.addEventListener("click", function () {
     localStorage.removeItem("category");
-    window.location.href = "Products.html";
+    window.location.href = "../products/Products.html";
   });
   const line = document.createElement("hr");
   cartdiv.appendChild(line);
@@ -149,7 +149,7 @@ if (cart.length == 0) {
           cardemp.addEventListener("click", function (event) {
             if (!event.target.closest("button")) {
               const clickedProductId = json[i].id;
-              window.open("./product.html", "_self");
+              window.open("../oneProduct/product.html", "_self");
               item.push(json[i]);
               localStorage.setItem("item", JSON.stringify(item));
             }
@@ -449,6 +449,6 @@ if (cart.length == 0) {
   sidediv.appendChild(continueShopping);
   continueShopping.addEventListener("click", function () {
     localStorage.removeItem("category");
-    window.open("Products.html", "_self");
+    window.open("../products/Products.html", "_self");
   });
 }
