@@ -163,14 +163,16 @@ LIST.style.transition = "transform";
 Div.appendChild(LIST);
 
 // cart icon
-var CrtIcon = document.createElement("img");
-CrtIcon.src = "../rss/Cart2.png";
-CrtIcon.style.height = "22px";
-CrtIcon.style.position = "absolute";
-CrtIcon.style.cursor = "pointer";
-CrtIcon.style.bottom = "40px";
-CrtIcon.style.right = "120px";
-Div.appendChild(CrtIcon);
+var person = document.createElement("img");
+person.src = "../rss/icons8-administrator-male-96.png";
+person.style.height = "22px";
+person.style.position = "absolute";
+person.style.cursor = "pointer";
+person.style.bottom = "40px";
+person.style.right = "120px";
+
+
+Div.appendChild(person);
 
 
 //heart icon
