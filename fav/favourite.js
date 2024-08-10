@@ -1,49 +1,45 @@
-var storedData = localStorage.getItem('favourites');
+// var storedData = localStorage.getItem('favourites');
 let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
-let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+let favourites = JSON.parse(localStorage.getItem("favourites"));
 let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
 //var cart = JSON.parse(localStorage.getItem("favourites")); // Assuming "cart" is the correct key
 //var cart = JSON.parse(localStorage.getItem("favourites"));
 
-var bigDiv = document.getElementById('product_fav');
+var bigDiv = document.getElementById("product_fav");
 var footer = document.getElementById("footer");
 
-if (storedData) {
-  var products = JSON.parse(storedData);
+if (favourites) {
+  // var products = JSON.parse(storedData);
 
-  if (products.length > 0) {
+  if (favourites.length > 0) {
     var head = document.createElement("h1");
     head.textContent = "Your Fav Products";
-    document.getElementById('hh').appendChild(head);
+    document.getElementById("hh").appendChild(head);
 
-
-
-    products.forEach(product => {
-
-      var productDiv = document.createElement('div');
-      productDiv.setAttribute("class", "card")
+    favourites.forEach((product) => {
+      var productDiv = document.createElement("div");
+      productDiv.setAttribute("class", "card");
 
       //productDiv.style.display="flex";
-      productDiv.style.border = '1px solid black';
-      productDiv.style.width = '100%';
-      productDiv.style.marginBottom = '15px';
-      productDiv.style.marginRight = '20px';
-      productDiv.style.padding = '15px';
+      productDiv.style.border = "1px solid black";
+      productDiv.style.width = "100%";
+      productDiv.style.marginBottom = "15px";
+      productDiv.style.marginRight = "20px";
+      productDiv.style.padding = "15px";
 
-
-      var productName = document.createElement('p');
+      var productName = document.createElement("p");
       productName.textContent = product.product_name; // Use id or name if available
       productName.style.display = "block";
       productName.style.margin = "20";
 
       productDiv.appendChild(productName);
 
-      var productImage = document.createElement('img');
-      productImage.src = product.image[1] || ''; // Set default empty src if image[0] is missing
-      productImage.style.display = 'block';
-      productImage.style.width = '200px';
-      productImage.style.margin = '0 20px 20px 0';
-      productImage.style.height = '200px';
+      var productImage = document.createElement("img");
+      productImage.src = product.image[1] || ""; // Set default empty src if image[0] is missing
+      productImage.style.display = "block";
+      productImage.style.width = "200px";
+      productImage.style.margin = "0 20px 20px 0";
+      productImage.style.height = "200px";
 
       productDiv.appendChild(productImage);
 
@@ -54,32 +50,31 @@ if (storedData) {
         productImage.src = product.image[1];
       });
 
-
-
-      var productprice = document.createElement('p');
+      var productprice = document.createElement("p");
       productprice.textContent = " Price : " + product.price + " " + " LE";
       productprice.style.display = "inline";
 
       if (product.discount) {
-        var markForDis = document.createElement("div")
-        markForDis.setAttribute("class", "markForDis")
-        markForDis.innerHTML = "Sale 15%"
+        var markForDis = document.createElement("div");
+        markForDis.setAttribute("class", "markForDis");
+        markForDis.innerHTML = "Sale 15%";
         var dicounted = document.createElement("p");
-        dicounted.setAttribute("class", "dicounted")
+        dicounted.setAttribute("class", "dicounted");
         productprice.style.width = "35%";
         productprice.style.textDecorationLine = "line-through";
-        var dicountedtext = document.createTextNode("LE " + (product.price - product.price * 15 / 100) + " (-15%)");
+        var dicountedtext = document.createTextNode(
+          "LE " + (product.price - (product.price * 15) / 100) + " (-15%)"
+        );
         dicounted.appendChild(dicountedtext);
         productDiv.appendChild(dicounted);
-        productDiv.appendChild(markForDis)
+        productDiv.appendChild(markForDis);
       }
       productDiv.appendChild(productprice);
       var addToCart = document.createElement("button");
-      addToCart.setAttribute("class", "addtocart")
+      addToCart.setAttribute("class", "addtocart");
       var addtext = document.createTextNode("Add To Cart");
       addToCart.appendChild(addtext);
       productDiv.appendChild(addToCart);
-
 
       const itemToAdd = product;
       addToCart.addEventListener("click", function (event) {
@@ -89,7 +84,6 @@ if (storedData) {
             console.log(product);
             if (cartStorge[i].id == product.id) {
               return true;
-
             }
           }
           return false;
@@ -105,99 +99,70 @@ if (storedData) {
         }
       });
 
-      var productDescription = document.createElement('p');
+      var productDescription = document.createElement("p");
 
       productDescription.textContent = " Description: " + product.description;
 
       productDiv.appendChild(productDescription);
 
-
-
-
-      var favourites = JSON.parse(localStorage.getItem("favourites")); // Use "favourites" key
+      // var favourites = JSON.parse(localStorage.getItem("favourites")); // Use "favourites" key
 
       let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts")); // Assuming this tracks cart items
-      
-      var remove = document.createElement("button");
+
+      const remove = document.createElement("button");
       remove.setAttribute("class", "remove");
       remove.innerHTML = "X";
       productDiv.appendChild(remove);
-      
+
+      const itemId = product.id; // Assuming `product.id` is available in the scope
       remove.addEventListener("click", function () {
-        const itemId = product.id; // Assuming `product.id` is available in the scope
-      
         this.parentElement.remove(); // Remove element from DOM
-      
+
         // Update favourites data in memory
         favourites = favourites.filter(function (item) {
           return item.id !== itemId; // Keep items except the one with matching id
         });
-      
-        // Persist the updated favourites data in local storage (potentially asynchronous)
         localStorage.setItem("favourites", JSON.stringify(favourites));
-      
+        console.log(favourites);
+
+        // Persist the updated favourites data in local storage (potentially asynchronous)
+
         // Update productsOnCart only if it's relevant to favourites
-        if (productsOnCart) { // Check if productsOnCart exists
+        if (productsOnCart) {
+          // Check if productsOnCart exists
           productsOnCart -= 1;
           console.log(productsOnCart);
           localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
         }
       });
 
-
-
-      try {
-        var favourites = JSON.parse(localStorage.getItem("favourites"));
-      } catch (error) {
-        console.error("Error parsing favourites data:", error);
-        favourites = []; // Initialize with an empty array if parsing fails
-      }
-      
-      
-      
-
-
-
-
+      // try {
+      //   var favourites = JSON.parse(localStorage.getItem("favourites"));
+      // } catch (error) {
+      //   console.error("Error parsing favourites data:", error);
+      //   favourites = []; // Initialize with an empty array if parsing fails
+      // }
 
       bigDiv.appendChild(productDiv);
-
-
     });
-
   } else {
     var had = document.createElement("h2");
     had.textContent = "Your Fav Products Is Empty";
 
-    document.getElementById('empty').appendChild(had);
-    console.log('No favorite products found in local storage.');
+    document.getElementById("empty").appendChild(had);
+    console.log("No favorite products found in local storage.");
   }
 } else {
-
   var had = document.createElement("h2");
   had.textContent = "Your Fav Products";
 
-  document.getElementById('empty').appendChild(had);
-  console.log('No favourites found in local storage.');
+  document.getElementById("empty").appendChild(had);
+  console.log("No favourites found in local storage.");
 }
-
-
-
 
 bigDiv.after(footer);
 
-
-
-
-
-
-
-
-
 //start of header
-
-
-
 
 var Div = document.createElement("div");
 Div.style.display = "flex";
@@ -227,7 +192,7 @@ logo.style.cursor = "pointer";
 logo.id = "logo";
 logo.addEventListener("click", function () {
   window.location.href = "../index.html";
-})
+});
 Div.appendChild(logo);
 
 // categories
@@ -398,6 +363,5 @@ function applyHoverEffect(element, url) {
 
 applyHoverEffect(CrtIcon, "../cart/cart.html");
 applyHoverEffect(HeartIcon, "../login/login.html");
-
 
 //end of header
