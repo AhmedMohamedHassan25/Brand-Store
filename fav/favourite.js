@@ -2,7 +2,8 @@ var storedData = localStorage.getItem('favourites');
 let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
 let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
-var cart = JSON.parse(localStorage.getItem("favourites"));
+//var cart = JSON.parse(localStorage.getItem("favourites")); // Assuming "cart" is the correct key
+//var cart = JSON.parse(localStorage.getItem("favourites"));
 
 var bigDiv = document.getElementById('product_fav');
 var footer = document.getElementById("footer");
@@ -111,39 +112,48 @@ if (storedData) {
       productDiv.appendChild(productDescription);
 
 
-      // var remove = document.createElement("button");
-      // remove.setAttribute("class", "remove");
-      // remove.innerHTML = "X";
-      // productDiv.appendChild(remove);
-      // console.log(cart.length);
-      let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts"));
+
+
+      var favourites = JSON.parse(localStorage.getItem("favourites")); // Use "favourites" key
+
+      let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts")); // Assuming this tracks cart items
+      
       var remove = document.createElement("button");
       remove.setAttribute("class", "remove");
       remove.innerHTML = "X";
       productDiv.appendChild(remove);
       
       remove.addEventListener("click", function () {
-          // Get the id of the product that you want to remove
-          const itemId = product.id;  // Assuming `product.id` is available in the scope
+        const itemId = product.id; // Assuming `product.id` is available in the scope
       
-          // Remove the product from the DOM
-          this.parentElement.remove();
+        this.parentElement.remove(); // Remove element from DOM
       
-          // Filter out the removed item from the cart array
-          cart = cart.filter(function (item) {
-              return item.id !== itemId; // Keep all items except the one with the matching id
-          });
+        // Update favourites data in memory
+        favourites = favourites.filter(function (item) {
+          return item.id !== itemId; // Keep items except the one with matching id
+        });
       
-          // Update the cart in localStorage
-          localStorage.setItem("cartStorge", JSON.stringify(cart));
+        // Persist the updated favourites data in local storage (potentially asynchronous)
+        localStorage.setItem("favourites", JSON.stringify(favourites));
       
-          // Decrease the number of products in the cart
+        // Update productsOnCart only if it's relevant to favourites
+        if (productsOnCart) { // Check if productsOnCart exists
           productsOnCart -= 1;
           console.log(productsOnCart);
-      
-          // Update the number of products in localStorage
           localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
+        }
       });
+
+
+
+      try {
+        var favourites = JSON.parse(localStorage.getItem("favourites"));
+      } catch (error) {
+        console.error("Error parsing favourites data:", error);
+        favourites = []; // Initialize with an empty array if parsing fails
+      }
+      
+      
       
 
 
