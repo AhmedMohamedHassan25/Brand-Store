@@ -6,6 +6,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+
 }
 
 #product_fav {
@@ -58,5 +59,11 @@ footer {
 .footer-copy {
     font-size: 0.8em;
     color: white;
+}
+
+#desc{
+    white-space: nowrap;        
+    overflow: hidden;         
+    text-overflow: ellipsis;
 }
 

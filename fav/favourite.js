@@ -105,6 +105,7 @@ if (favourites) {
       var productDescription = document.createElement("p");
 
       productDescription.textContent = " Description: " + product.description;
+      productDescription.id="desc";
 
       productDiv.appendChild(productDescription);
 
