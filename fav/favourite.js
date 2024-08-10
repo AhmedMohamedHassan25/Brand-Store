@@ -4,48 +4,48 @@ let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
 var cart = JSON.parse(localStorage.getItem("favourites"));
 
-var bigDiv=document.getElementById('product_fav');
-var footer=document.getElementById("footer");
+var bigDiv = document.getElementById('product_fav');
+var footer = document.getElementById("footer");
 
 if (storedData) {
   var products = JSON.parse(storedData);
- 
+
   if (products.length > 0) {
-    var head =document.createElement("h1");
-    head.textContent="Your Fav Products";
+    var head = document.createElement("h1");
+    head.textContent = "Your Fav Products";
     document.getElementById('hh').appendChild(head);
-    
-    
-    
+
+
+
     products.forEach(product => {
-      
+
       var productDiv = document.createElement('div');
       productDiv.setAttribute("class", "card")
-      
+
       //productDiv.style.display="flex";
-      productDiv.style.border='1px solid black';
-      productDiv.style.width='100%';
-      productDiv.style.marginBottom='15px';
-      productDiv.style.marginRight='20px';
-      productDiv.style.padding='15px';
-      
-      
+      productDiv.style.border = '1px solid black';
+      productDiv.style.width = '100%';
+      productDiv.style.marginBottom = '15px';
+      productDiv.style.marginRight = '20px';
+      productDiv.style.padding = '15px';
+
+
       var productName = document.createElement('p');
-      productName.textContent =product.product_name; // Use id or name if available
-      productName.style.display="block";
-      productName.style.margin="20";
-      
+      productName.textContent = product.product_name; // Use id or name if available
+      productName.style.display = "block";
+      productName.style.margin = "20";
+
       productDiv.appendChild(productName);
-      
+
       var productImage = document.createElement('img');
       productImage.src = product.image[1] || ''; // Set default empty src if image[0] is missing
       productImage.style.display = 'block';
       productImage.style.width = '200px';
       productImage.style.margin = '0 20px 20px 0';
       productImage.style.height = '200px';
-      
+
       productDiv.appendChild(productImage);
-      
+
       productImage.addEventListener("mouseover", function () {
         productImage.src = product.image[0];
       });
@@ -54,20 +54,20 @@ if (storedData) {
       });
 
 
-      
-      var productprice=document.createElement('p');
-      productprice.textContent=" Price : "+product.price +" "+" LE";
-      productprice.style.display="inline";
+
+      var productprice = document.createElement('p');
+      productprice.textContent = " Price : " + product.price + " " + " LE";
+      productprice.style.display = "inline";
 
       if (product.discount) {
         var markForDis = document.createElement("div")
-        markForDis.setAttribute("class","markForDis")
+        markForDis.setAttribute("class", "markForDis")
         markForDis.innerHTML = "Sale 15%"
         var dicounted = document.createElement("p");
         dicounted.setAttribute("class", "dicounted")
-        productprice.style.width = "35%";          
-        productprice.style.textDecorationLine = "line-through";          
-        var dicountedtext = document.createTextNode("LE "+ (product.price - product.price * 15/100)+" (-15%)" );
+        productprice.style.width = "35%";
+        productprice.style.textDecorationLine = "line-through";
+        var dicountedtext = document.createTextNode("LE " + (product.price - product.price * 15 / 100) + " (-15%)");
         dicounted.appendChild(dicountedtext);
         productDiv.appendChild(dicounted);
         productDiv.appendChild(markForDis)
@@ -79,92 +79,101 @@ if (storedData) {
       addToCart.appendChild(addtext);
       productDiv.appendChild(addToCart);
 
-      
+
       const itemToAdd = product;
       addToCart.addEventListener("click", function (event) {
-          event.stopPropagation(); 
-          function isItemInCart(item) {            
-              for (let i = 0; i < cartStorge.length; i++) {
-                console.log(product);
-                    if (cartStorge[i].id == product.id) {
-                        return true; 
-                  
-                      }
-                    }
-              return false;
+        event.stopPropagation();
+        function isItemInCart(item) {
+          for (let i = 0; i < cartStorge.length; i++) {
+            console.log(product);
+            if (cartStorge[i].id == product.id) {
+              return true;
+
+            }
           }
-          if (!isItemInCart(itemToAdd)) {
-              console.log(itemToAdd);
-              console.log(cartStorge);
-             // var curnum = parseInt(CartNumb.textContent);
-              //var newnum = curnum + 1;
-             // CartNumb.textContent = newnum;
-              cartStorge.push(itemToAdd);
-              localStorage.setItem("cartStorge", JSON.stringify(cartStorge));
-          }
+          return false;
+        }
+        if (!isItemInCart(itemToAdd)) {
+          console.log(itemToAdd);
+          console.log(cartStorge);
+          // var curnum = parseInt(CartNumb.textContent);
+          //var newnum = curnum + 1;
+          // CartNumb.textContent = newnum;
+          cartStorge.push(itemToAdd);
+          localStorage.setItem("cartStorge", JSON.stringify(cartStorge));
+        }
       });
 
-      var productDescription=document.createElement('p');
+      var productDescription = document.createElement('p');
 
-      productDescription.textContent=" Description: "+product.description;
+      productDescription.textContent = " Description: " + product.description;
 
       productDiv.appendChild(productDescription);
 
 
+      // var remove = document.createElement("button");
+      // remove.setAttribute("class", "remove");
+      // remove.innerHTML = "X";
+      // productDiv.appendChild(remove);
+      // console.log(cart.length);
+      let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts"));
       var remove = document.createElement("button");
       remove.setAttribute("class", "remove");
       remove.innerHTML = "X";
       productDiv.appendChild(remove);
-      console.log(cart.length);
-
-      for(var i=0;i<cart.length ;i++){
-
-        var itemId = cart[i].id;
-        
-        remove.addEventListener("click", function () {
-          if (isDiscount) {
-            overAllPrice -= discountedTotal * counter.value;
-          } else {
-            overAllPrice -= totalpriceNumber * counter.value;
-          }
-          console.log(overAllPrice);
+      
+      remove.addEventListener("click", function () {
+          // Get the id of the product that you want to remove
+          const itemId = product.id;  // Assuming `product.id` is available in the scope
+      
+          // Remove the product from the DOM
           this.parentElement.remove();
+      
+          // Filter out the removed item from the cart array
           cart = cart.filter(function (item) {
-            return item.id !== itemId;
+              return item.id !== itemId; // Keep all items except the one with the matching id
           });
+      
+          // Update the cart in localStorage
           localStorage.setItem("cartStorge", JSON.stringify(cart));
-          SubtotalAmount.innerHTML = overAllPrice;
-        });
-      }
-
-
-
+      
+          // Decrease the number of products in the cart
+          productsOnCart -= 1;
+          console.log(productsOnCart);
+      
+          // Update the number of products in localStorage
+          localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
+      });
       
 
+
+
+
+
       bigDiv.appendChild(productDiv);
-    
+
 
     });
-  
-} else {
-    var had =document.createElement("h2");
-    had.textContent="Your Fav Products Is Empty";
-    
+
+  } else {
+    var had = document.createElement("h2");
+    had.textContent = "Your Fav Products Is Empty";
+
     document.getElementById('empty').appendChild(had);
     console.log('No favorite products found in local storage.');
-}
+  }
 } else {
-    
-    var had =document.createElement("h2");
-    had.textContent="Your Fav Products";
-    
-    document.getElementById('empty').appendChild(had);
-    console.log('No favourites found in local storage.');
+
+  var had = document.createElement("h2");
+  had.textContent = "Your Fav Products";
+
+  document.getElementById('empty').appendChild(had);
+  console.log('No favourites found in local storage.');
 }
 
 
 
- 
+
 bigDiv.after(footer);
 
 
@@ -189,7 +198,7 @@ Div.style.backgroundColor = "#14202E";
 Div.style.position = "absolute";
 Div.style.top = "0px";
 Div.style.zIndex = "1000";
-Div.style.left="0px";
+Div.style.left = "0px";
 Div.style.padding = "0px";
 Div.style.margin = "0px";
 
@@ -206,7 +215,7 @@ logo.style.top = "-13px";
 
 logo.style.cursor = "pointer";
 logo.id = "logo";
-logo.addEventListener("click",function(){
+logo.addEventListener("click", function () {
   window.location.href = "../index.html";
 })
 Div.appendChild(logo);
@@ -295,14 +304,14 @@ function sending(category) {
 }
 
 function HoverEffect(element) {
-  element.style.color="#f6ead9";
+  element.style.color = "#f6ead9";
   element.addEventListener("mouseover", function () {
     element.style.transition =
       "transform 0.2s ease-in-out, color 0.2s ease-in-out";
     element.style.transform = "scale(1.05)";
     element.style.color = "#E1A140";
   });
-  
+
   element.addEventListener("mouseout", function () {
     element.style.transform = "scale(1)";
     element.style.color = "white";
