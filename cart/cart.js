@@ -401,3 +401,10 @@ if (cart.length == 0) {
     window.open("../products/Products.html", "_self");
   });
 }
+
+
+
+
+
+
+
