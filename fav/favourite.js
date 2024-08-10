@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 // var storedData = localStorage.getItem('favourites');
 let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
 let favourites = JSON.parse(localStorage.getItem("favourites"));
+=======
+var storedData = localStorage.getItem('favourites')|| [];
+let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
+//let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+>>>>>>> ed85e854b4942abd4f593e8cba26f21b219931a3
 let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
-//var cart = JSON.parse(localStorage.getItem("favourites")); // Assuming "cart" is the correct key
-//var cart = JSON.parse(localStorage.getItem("favourites"));
+
 
 var bigDiv = document.getElementById("product_fav");
 var footer = document.getElementById("footer");
@@ -91,9 +96,7 @@ if (favourites) {
         if (!isItemInCart(itemToAdd)) {
           console.log(itemToAdd);
           console.log(cartStorge);
-          // var curnum = parseInt(CartNumb.textContent);
-          //var newnum = curnum + 1;
-          // CartNumb.textContent = newnum;
+
           cartStorge.push(itemToAdd);
           localStorage.setItem("cartStorge", JSON.stringify(cartStorge));
         }
@@ -105,7 +108,13 @@ if (favourites) {
 
       productDiv.appendChild(productDescription);
 
+<<<<<<< HEAD
       // var favourites = JSON.parse(localStorage.getItem("favourites")); // Use "favourites" key
+=======
+
+
+
+>>>>>>> ed85e854b4942abd4f593e8cba26f21b219931a3
 
       let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts")); // Assuming this tracks cart items
 
@@ -119,14 +128,21 @@ if (favourites) {
         this.parentElement.remove(); // Remove element from DOM
 
         // Update favourites data in memory
-        favourites = favourites.filter(function (item) {
+        storedData = storedData.filter(function (item) {
           return item.id !== itemId; // Keep items except the one with matching id
         });
+<<<<<<< HEAD
         localStorage.setItem("favourites", JSON.stringify(favourites));
         console.log(favourites);
 
         // Persist the updated favourites data in local storage (potentially asynchronous)
 
+=======
+      
+        // Persist the updated favourites data in local storage (potentially asynchronous)
+        localStorage.setItem("favourites", JSON.stringify(storedData));
+      
+>>>>>>> ed85e854b4942abd4f593e8cba26f21b219931a3
         // Update productsOnCart only if it's relevant to favourites
         if (productsOnCart) {
           // Check if productsOnCart exists
@@ -136,12 +152,30 @@ if (favourites) {
         }
       });
 
+<<<<<<< HEAD
       // try {
       //   var favourites = JSON.parse(localStorage.getItem("favourites"));
       // } catch (error) {
       //   console.error("Error parsing favourites data:", error);
       //   favourites = []; // Initialize with an empty array if parsing fails
       // }
+=======
+
+
+      try {
+        var storedData = JSON.parse(localStorage.getItem("favourites"));
+      } catch (error) {
+        console.error("Error parsing favourites data:", error);
+        storedData = []; // Initialize with an empty array if parsing fails
+      }
+      
+      
+      
+
+
+
+
+>>>>>>> ed85e854b4942abd4f593e8cba26f21b219931a3
 
       bigDiv.appendChild(productDiv);
     });
