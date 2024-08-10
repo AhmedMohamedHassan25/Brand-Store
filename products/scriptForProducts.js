@@ -313,8 +313,7 @@ Div.style.left = "0px";
 Div.style.padding = "0px";
 Div.style.margin = "0px";
 
-const fillters = document.getElementById("fillters")
-fillters.before(Div);
+document.body.append(Div);
 // logo
 var logo = document.createElement("img");
 logo.src = "../rss/White-Logo.png";
