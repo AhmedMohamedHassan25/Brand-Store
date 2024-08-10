@@ -38,7 +38,7 @@ var CartNumb = document.createElement("p");
 CartNumb.style.marginTop = "-1px";
 
 function updateCartDisplay() {
-  CartNumb.textContent = cartStorge.length.toString();
+  CartNumb.textContent = parseInt(localStorage.getItem("numOfProducts"));
 }
 
 CartNumbDiv.appendChild(CartNumb);
@@ -166,9 +166,10 @@ sizeRange.addEventListener("change", function () {
 
 console.log(sizeRange.value);
 let item = [];
-let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
+let cartStorge = parseInt(localStorage.getItem("cartStorge")) || [];
 let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
+let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts")) || 0;
 function loadProducts(category, PriceRange, Size) {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "../json/test.json");
@@ -278,11 +279,15 @@ function loadProducts(category, PriceRange, Size) {
             if (!isItemInCart(itemToAdd)) {
               console.log(itemToAdd);
               console.log(cartStorge);
-              var curnum = parseInt(CartNumb.textContent);
-              var newnum = curnum + 1;
-              CartNumb.textContent = newnum;
+              // var curnum = parseInt(CartNumb.textContent);
+              // var newnum = curnum + 1;
+              // CartNumb.textContent = newnum;
+              productsOnCart += 1;
+              CartNumb.textContent = productsOnCart.toString();
               cartStorge.push(itemToAdd);
               localStorage.setItem("cartStorge", JSON.stringify(cartStorge));
+              localStorage.setItem("numOfProducts",JSON.stringify(productsOnCart)
+              );
             }
           });
           updateCartDisplay();
@@ -300,7 +305,6 @@ function loadProducts(category, PriceRange, Size) {
           card.addEventListener("mouseleave", function () {
             img.src = json[i].image[0];
           });
-          updateCartDisplay();
         }
       }
     }
