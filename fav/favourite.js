@@ -136,6 +136,8 @@ if (storedData) {
         });
       }
 
+      var product_fav=document.getElementById("product_fav");
+      
 
 
       
@@ -159,6 +161,8 @@ if (storedData) {
     console.log('No favourites found in local storage.');
 }
 
+var footer = document.getElementById("footer");
+var divb=document.getElementById('product_fav');
 
 
 

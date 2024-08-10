@@ -98,7 +98,7 @@ if (storedData) {
     
     
     var productDescription = document.getElementById('p_decsription');
-    productDescription.innerHTML = `<strong>Description:</strong> ${Product.description}`;
+    productDescription.textContent= `<strong>Description:</strong> ${Product.description}`;
     paras.appendChild(productDescription);
 
 
@@ -109,7 +109,7 @@ if (storedData) {
     // productDiv.appendChild(productPrice);
     
     var productSize = document.getElementById('p_size');
-    productSize.innerHTML = `<strong>Size:</strong> ${Product.size}`;
+    productSize.textContent= `<strong>Size:</strong> ${Product.size}`;
 
     paras.appendChild(productSize);
     productDiv.appendChild(paras);
@@ -121,7 +121,7 @@ if (storedData) {
 
     
     var productQuantity = document.createElement('p');
-    productQuantity.innerHTML = `<strong>Quantity:</strong> ${Product.quantity}`;
+    productQuantity.textContent = `<strong>Quantity:</strong> ${Product.quantity}`;
 
     paras.appendChild(productQuantity);
     productDiv.appendChild(paras);
@@ -133,7 +133,7 @@ if (storedData) {
     if (!Product.discount) {
         
         var productPrice = document.getElementById('p_price');
-        productPrice.innerHTML = `<strong>Price : </strong> ${Product.price} LE `;
+        productPrice.textContent = `<strong>Price : </strong> ${Product.price} LE `;
         productDiv.appendChild(productPrice);
         paras.appendChild(productPrice);
 
@@ -142,13 +142,13 @@ if (storedData) {
     }
     else{
         var discount =document.getElementById("discound") ;
-        discount.innerHTML=`<strong>Sale: </strong> -15%`;
+        discount.textContent=`<strong>Sale: </strong> -15%`;
         //discount.style.textAlign="center";
 
         paras.appendChild(discount)
          
         var productPrice = document.getElementById('p_price');
-        productPrice.innerHTML = `<strong>Price After Sale : </strong> ${(Product.price - Product.price * 15/100)}LE `;
+        productPrice.innerteHTML = `<strong>Price After Sale : </strong> ${(Product.price - Product.price * 15/100)}LE `;
       //  productDiv.appendChild(productPrice);
 
         paras.appendChild(productPrice);
