@@ -26,10 +26,12 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     if (user) {
         message.textContent = 'Login successful!';
         message.style.color = 'green';
-        window.location.href = 'index.html'; // Redirect on success
+        window.location.href = '../index.html'; // Redirect on success
+
     } else {
         message.textContent = 'Invalid email or password.';
         message.style.color = 'red';
+
     }
 });
 
@@ -84,6 +86,8 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
     }
 
     const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
+    
+
     if (storedUsers.find(u => u.email === email)) {
         registerMessage.textContent = 'Email already exists.';
         registerMessage.style.color = 'red';
@@ -98,7 +102,6 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
         localStorage.setItem('users', JSON.stringify(storedUsers));
         registerMessage.textContent = 'Registration successful! Please log in.';
         registerMessage.style.color = 'green';
-        window.location.href = 'https://google.com'; 
    
     }
 });
