@@ -17,7 +17,7 @@ document.body.appendChild(Div);
 
 // logo
 var logo = document.createElement("img");
-logo.src = "./Brand-Store-main/rss/White-Logo.png";
+logo.src = "../rss/White-Logo.png";
 logo.style.height = "140px";
 logo.style.width = "220px";
 logo.style.position = "absolute";
@@ -27,7 +27,9 @@ logo.style.top = "-13px";
 
 logo.style.cursor = "pointer";
 logo.id = "logo";
-
+logo.addEventListener("click", function () {
+  window.location.href = "../index.html";
+});
 Div.appendChild(logo);
 
 // categories
@@ -181,7 +183,7 @@ Div.appendChild(logoutBtn);
 
 // cart icon
 var CrtIcon = document.createElement("img");
-CrtIcon.src = "./Brand-Store-main/rss/Cart2.png";
+CrtIcon.src = "../rss/Cart2.png";
 CrtIcon.style.height = "22px";
 CrtIcon.style.position = "absolute";
 CrtIcon.style.cursor = "pointer";
@@ -192,7 +194,7 @@ Div.appendChild(CrtIcon);
 
 //heart icon
 var HeartIcon = document.createElement("img");
-HeartIcon.src = "./Brand-Store-main/rss/Heart2.png";
+HeartIcon.src = "../rss/Heart2.png";
 HeartIcon.style.height = "23px";
 HeartIcon.style.position = "absolute";
 HeartIcon.style.right = "170px";
@@ -285,7 +287,7 @@ if(ActiveUserData)
 
     document.getElementById('logoutBtn').addEventListener('click', function() {
         localStorage.removeItem("users");
-        window.location.href = 'login.html'; 
+        window.location.href = '../login/login.html'; 
     });
     
     //footer
