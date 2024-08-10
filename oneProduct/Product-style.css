@@ -1,0 +1,99 @@
+#pras{
+    margin-top: 200px;
+    position: absolute;
+    margin-top: -300px;
+
+}
+@font-face {
+    font-family: myFont;
+    src: url(../Fonts/Poppins-Medium.ttf);
+}
+#discound{
+    color: red;
+}
+#container{
+    margin-top: 125px;
+    font-family: myFont;
+}
+#addcart{
+    position: absolute;
+    margin-top: 300px;
+    height: 30px;
+    width: 60%;
+    font-family: myFont;
+    background-color: white;
+    transition: all .5s;
+}
+
+#addcart:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#product_fav {
+    flex: 1; /* This ensures that the content area expands to fill the remaining space */
+}
+
+footer {
+    background-color: #14202E;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    flex-shrink: 0; /* Keeps the footer at the bottom */
+    width: 96.7%;
+    margin-top: 100px;
+}
+
+.social-media a,
+.team a,
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2em;
+}
+
+.social-media a:hover,
+.team a:hover,
+.footer-links a:hover {
+    color: #E1A140;
+}
+
+.social-media {
+    margin-bottom: 20px;
+}
+
+.team {
+    margin-bottom: 20px;
+}
+
+.team p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-copy {
+    font-size: 0.8em;
+    color: white;
+}
+
+
+

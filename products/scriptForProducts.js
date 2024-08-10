@@ -15,7 +15,7 @@ sizeRange.addEventListener("change", function () {
 
 console.log(sizeRange.value);
 let item = [];
-let cartStorge = parseInt(localStorage.getItem("cartStorge")) || [];
+let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
 let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
 let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts")) || 0;
@@ -137,7 +137,6 @@ function loadProducts(category, PriceRange, Size) {
               localStorage.setItem(
                 "numOfProducts",
                 JSON.stringify(productsOnCart)
-                //edit
               );
             }
           });

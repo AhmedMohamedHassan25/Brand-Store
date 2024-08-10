@@ -221,7 +221,7 @@ applyHoverEffect(HeartIcon, "../fav/favourite.html");
 //end of header
 
 var cartdiv = document.getElementById("cartdiv");
-var cart = JSON.parse(localStorage.getItem("cartStorge"));
+var cart = JSON.parse(localStorage.getItem("cartStorge")) || [];
 let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts"));
 
 console.log(cart);
@@ -361,8 +361,6 @@ if (cart.length == 0) {
               console.log(itemToAdd);
               console.log(cartStorge);
               productsOnCart += 1;
-              CartNumb.innerHTML = "";
-              CartNumb.textContent = productsOnCart.toString();
               cartStorge.push(itemToAdd);
               localStorage.setItem("cartStorge", JSON.stringify(cartStorge));
               localStorage.setItem(
@@ -599,7 +597,7 @@ if (cart.length == 0) {
   notRegesterd.innerHTML = "Must login to Do this step";
   notRegesterd.style.color = "red";
   const logbtn = document.createElement("button");
-  logbtn.setAttribute("id","logbtn")
+  logbtn.setAttribute("id", "logbtn");
   logbtn.innerHTML = "Login";
   LogDiv.innerHTML = "";
   LogDiv.appendChild(notRegesterd);
