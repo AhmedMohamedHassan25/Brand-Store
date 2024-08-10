@@ -1,3 +1,10 @@
+*{
+    font-family: myFont;
+}
+@font-face {
+    font-family: myFont;
+    src: url(./Fonts/Poppins-Medium.ttf);
+}
 #Body{
     margin-left: 400px;
     margin-top: 20px;
@@ -26,13 +33,13 @@
     display: inline-block;
     margin-bottom: 10px;
 }
-.Fname{
+#Fname{
     display: inline-block;
     width: 195px;
     height: 30px;
     margin-top: 10px;
 }
-.Lname{
+#Lname{
     display: inline-block;
     width: 195px;
     height: 30px;
@@ -88,7 +95,7 @@
     margin-top: 10px;
 }
 #check{
-    margin-right: 240px;
+    margin-right: 217px;
 }
 #cod{
     font-size: 20px;

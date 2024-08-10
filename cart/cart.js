@@ -190,95 +190,10 @@ if (cart.length == 0) {
   var sidediv = document.createElement("div");
   sidediv.setAttribute("id", "sidediv");
   cartdiv.appendChild(sidediv);
-  var summary = document.createElement("p");
-  summary.innerHTML = "ORDER SUMMARY";
 
-  //   var shipping = document.createElement("p");
-  //   shipping.innerHTML = "Shipping Information";
-  //   shipping.style.marginTop = "30px";
-
-  //   var governorate = document.createElement("select");
-  //   governorate.setAttribute("id", "governorate");
-  //   var option1 = document.createElement("option");
-  //   option1.setAttribute("value", "Sohag");
-  //   option1.innerHTML = "Sohag";
-  //   governorate.appendChild(option1);
-
-  //   var option2 = document.createElement("option");
-  //   option2.setAttribute("value", "Assiut");
-  //   option2.innerHTML = "Assiut";
-  //   governorate.appendChild(option2);
-
-  //   var option3 = document.createElement("option");
-  //   option3.setAttribute("value", "Qena");
-  //   option3.innerHTML = "Qena";
-  //   governorate.appendChild(option3);
-
-  //   var city = document.createElement("select");
-  //   city.setAttribute("id", "city");
-  //   var allCities = [
-  //     {
-  //       governorate: "Sohag",
-  //       cities: [
-  //         "Sohag",
-  //         "Tema",
-  //         "Tahta",
-  //         "El-Maragha",
-  //         "Girga",
-  //         "El-Munshaa",
-  //         "Al-Blina",
-  //       ],
-  //     },
-  //     {
-  //       governorate: "Assiut",
-  //       cities: ["Assiut", "Sedfa", "Al-Fath", "Abo Teag", "Al-Qousia", "Abnoub"],
-  //     },
-  //     {
-  //       governorate: "Qena",
-  //       cities: [
-  //         "Qena",
-  //         "Farshot",
-  //         "Deshna",
-  //         "Abu Tesht",
-  //         "Naga Hamadi",
-  //         "Qous",
-  //         "Quft",
-  //       ],
-  //     },
-  //   ];
-
-  //   function updateCityOptions() {
-  //     city.innerHTML = "";
-  //     var selectedGovernorate = governorate.value;
-  //     var cities;
-  //     for (let i = 0; i < allCities.length; i++) {
-  //       if (allCities[i].governorate == selectedGovernorate) {
-  //         cities = allCities[i].cities;
-  //         break;
-  //       }
-  //     }
-  //     for (let j = 0; j < cities.length; j++) {
-  //       var cityName = cities[j];
-  //       var option = document.createElement("option");
-  //       option.setAttribute("value", cityName);
-  //       option.innerHTML = cityName;
-  //       city.appendChild(option);
-  //     }
-  //   }
-  //   updateCityOptions();
-  //   governorate.addEventListener("change", updateCityOptions);
-  //   var post = document.createElement("input");
-  //   post.setAttribute("id", "post");
-  //   post.setAttribute("type", "text");
-  //   post.setAttribute("placeHolder", "Postal Code");
-
-  //   sidediv.appendChild(summary);
-  //   sidediv.appendChild(shipping);
-  //   sidediv.appendChild(governorate);
-  //   sidediv.appendChild(city);
-  //   sidediv.appendChild(post);
-
+  let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts"));
   let overAllPrice = 0;
+  const storedQuantities = JSON.parse(localStorage.getItem("cartQuantities")) || {};
   const SubtotalAmount = document.createElement("p");
   for (let i = 0; i < cart.length; i++) {
     var cartcarddiv = document.createElement("div");
@@ -326,7 +241,7 @@ if (cart.length == 0) {
     const counter = document.createElement("input");
     counter.setAttribute("type", "number");
     counter.setAttribute("class", "counterinput");
-    counter.setAttribute("value", 1);
+    counter.setAttribute("value", storedQuantities[cart[i].id] || 1);
     counter.setAttribute("max", 10);
     counter.setAttribute("min", 1);
     cartcarddiv.appendChild(counter);
@@ -358,17 +273,29 @@ if (cart.length == 0) {
         if (countValue > previousCountValue) {
           tprice.innerHTML = "LE " + countValue * discountedTotal;
           overAllPrice += (countValue - previousCountValue) * discountedTotal;
+          productsOnCart += 1;
+          localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
+          console.log(productsOnCart);
         } else if (countValue < previousCountValue) {
           tprice.innerHTML = "LE " + countValue * discountedTotal;
           overAllPrice -= (previousCountValue - countValue) * discountedTotal;
+          productsOnCart -= 1;
+          localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
+          console.log(productsOnCart);
         }
       } else {
         if (countValue > previousCountValue) {
           tprice.innerHTML = "LE " + countValue * totalpriceNumber;
           overAllPrice += (countValue - previousCountValue) * totalpriceNumber;
+          productsOnCart += 1;
+          localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
+          console.log(productsOnCart);
         } else if (countValue < previousCountValue) {
           tprice.innerHTML = "LE " + countValue * totalpriceNumber;
           overAllPrice -= (previousCountValue - countValue) * totalpriceNumber;
+          productsOnCart -= 1;
+          localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
+          console.log(productsOnCart);
         }
       }
       SubtotalAmount.innerHTML = overAllPrice;
@@ -392,6 +319,9 @@ if (cart.length == 0) {
         return item.id !== itemId;
       });
       localStorage.setItem("cartStorge", JSON.stringify(cart));
+      productsOnCart -= 1;
+      console.log(productsOnCart);
+      localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
       SubtotalAmount.innerHTML = overAllPrice;
     });
     console.log(overAllPrice);
@@ -429,6 +359,8 @@ if (cart.length == 0) {
   buybtn.innerHTML = "Proced To Checkout";
   buybtn.disabled = true;
   sidediv.appendChild(buybtn);
+  let users = JSON.parse(localStorage.getItem("users"));
+  console.log(users);
   check.addEventListener("change", function () {
     if (check.checked) {
       buybtn.disabled = false;
@@ -440,8 +372,25 @@ if (cart.length == 0) {
       buybtn.style.cursor = "auto";
     }
   });
+  const LogDiv = document.createElement("div");
+  LogDiv.style.marginTop = "10px";
+  const notRegesterd = document.createElement("p");
+  notRegesterd.innerHTML = "Must login to Do this step";
+  const logbtn = document.createElement("button");
+  logbtn.innerHTML = "Login";
+  logbtn.addEventListener("click", function () {
+    window.open("login.html", "_self");
+  });
+
   buybtn.addEventListener("click", function () {
-    window.open("buy.html", "_self");
+    if (!users) {
+      LogDiv.innerHTML = "";
+      LogDiv.appendChild(notRegesterd);
+      LogDiv.appendChild(logbtn);
+      sidediv.appendChild(LogDiv);
+    } else {
+      window.open("buy.html", "_self");
+    }
   });
   const continueShopping = document.createElement("button");
   continueShopping.setAttribute("id", "continueShopping");

@@ -1,3 +1,19 @@
+let users = JSON.parse(localStorage.getItem("users"));
+const loginEmail = document.getElementById("Einput");
+loginEmail.value = users[0].email;
+
+const loginPhone = document.getElementById("Pinput");
+loginPhone.value = users[0].phone;
+
+const fName = document.getElementById("Fname");
+fName.value = users[0].firstName;
+
+const lName = document.getElementById("Lname");
+lName.value = users[0].lastName;
+
+const cardName = document.getElementById("cardName");
+cardName.value = users[0].firstName + " " + users[0].lastName;
+
 const governorate = document.getElementById("Governorate");
 var option1 = document.createElement("option");
 option1.setAttribute("value", "Sohag");
@@ -71,13 +87,13 @@ post.setAttribute("id", "post");
 post.setAttribute("type", "text");
 post.setAttribute("placeHolder", "Postal Code");
 
-const payDiv = document.getElementById("payment")
-const check = document.getElementById("check")
+const payDiv = document.getElementById("payment");
+const check = document.getElementById("check");
 
 check.addEventListener("change", function () {
-    if (check.checked) {
-        payDiv.style.display = "none"
-    } else {
-        payDiv.style.display = "block"
-    }
-  });
+  if (check.checked) {
+    payDiv.style.display = "none";
+  } else {
+    payDiv.style.display = "block";
+  }
+});
