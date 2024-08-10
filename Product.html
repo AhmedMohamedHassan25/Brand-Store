@@ -36,50 +36,36 @@
 
             <h2 id="p_name"></h2>
 
-            <div class="gallery-container" style="display: flex;">
+            <!-- <div class="gallery-container" style="display: flex;"> -->
  
                 <div class="main-image" style="display: inline-block;">
                     <img id="main-image" src="">
 
                 </div>
 
-                <div class="thumbnails" style="display: inline-block;">
-                    <img src="" alt="" id="img1">
-                    <img src="" alt="" id="img2">
-                    <img src="" alt="" id="img3">
+                <div id="pras" style="display: inline-block;">
+                    <p id="p_size"></p>
+                    <p id="p_decsription"></p>
+                    <p id="p_price"></p>
+                    <div id="discound"></div>
                 </div>
 
-            </div>
-            <div id="pras" style="display: inline-block;">
-                <p id="p_size"></p>
-                <p id="p_decsription"></p>
-                <p id="p_price"></p>
-                <div id="discound"></div>
-            </div>
+                <div class="thumbnails" style="display: inline-block; text-wrap: wrap; position: relative; left: 20px;">
+
+                    <img src="" alt="" id="img1" style="margin: 15px;"> 
+                    <img src="" alt="" id="img2" style="margin: 15px;">
+                    <img src="" alt="" id="img3" style="margin: 15px;">
+
+                </div>
+
+            <!-- </div> -->
+           
 
         </div>
     </div>
 
     <script src="scriptOneProduct.js">
-
-
-        // const thumbnails = document.querySelectorAll('.thumbnails img');
-        // const mainImage = document.getElementById('main-image');
-
-        // thumbnails.forEach(thumbnail => {
-        //     thumbnail.addEventListener('click', function() {
-        //         // Change the main image source
-        //         mainImage.src = this.src;
-
-        //         // Remove the active class from all thumbnails
-        //         thumbnails.forEach(img => img.classList.remove('active-thumbnail'));
-
-        //         // Add the active class to the clicked thumbnail
-        //         this.classList.add('active-thumbnail');
-        //     });
-        // });
-
-
+        
     </script>
 
 </body>
