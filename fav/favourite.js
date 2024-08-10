@@ -4,30 +4,31 @@ let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
 var cart = JSON.parse(localStorage.getItem("favourites"));
 
+var bigDiv=document.getElementById('product_fav');
+var footer=document.getElementById("footer");
 
 if (storedData) {
   var products = JSON.parse(storedData);
-
+ 
   if (products.length > 0) {
     var head =document.createElement("h1");
     head.textContent="Your Fav Products";
     document.getElementById('hh').appendChild(head);
-
-
-
+    
+    
     
     products.forEach(product => {
-        
-        var productDiv = document.createElement('div');
-        productDiv.setAttribute("class", "card")
-
-    //productDiv.style.display="flex";
+      
+      var productDiv = document.createElement('div');
+      productDiv.setAttribute("class", "card")
+      
+      //productDiv.style.display="flex";
       productDiv.style.border='1px solid black';
       productDiv.style.width='100%';
       productDiv.style.marginBottom='15px';
       productDiv.style.marginRight='20px';
       productDiv.style.padding='15px';
-
+      
       
       var productName = document.createElement('p');
       productName.textContent =product.product_name; // Use id or name if available
@@ -140,9 +141,11 @@ if (storedData) {
 
       
 
-      document.getElementById('product_fav').appendChild(productDiv);
+      bigDiv.appendChild(productDiv);
+    
 
     });
+  
 } else {
     var had =document.createElement("h2");
     had.textContent="Your Fav Products Is Empty";
@@ -158,6 +161,11 @@ if (storedData) {
     document.getElementById('empty').appendChild(had);
     console.log('No favourites found in local storage.');
 }
+
+
+
+ 
+bigDiv.after(footer);
 
 
 
@@ -198,7 +206,9 @@ logo.style.top = "-13px";
 
 logo.style.cursor = "pointer";
 logo.id = "logo";
-
+logo.addEventListener("click",function(){
+  window.location.href = "../index.html";
+})
 Div.appendChild(logo);
 
 // categories
@@ -345,7 +355,7 @@ Div.appendChild(CrtIcon);
 
 //heart icon
 var HeartIcon = document.createElement("img");
-HeartIcon.src = "../rss/Heart2.png";
+HeartIcon.src = "../rss/icons8-administrator-male-96.png";
 HeartIcon.style.height = "23px";
 HeartIcon.style.position = "absolute";
 HeartIcon.style.right = "170px";
@@ -368,7 +378,7 @@ function applyHoverEffect(element, url) {
 }
 
 applyHoverEffect(CrtIcon, "../cart/cart.html");
-applyHoverEffect(HeartIcon, "../fav/favourite.html");
+applyHoverEffect(HeartIcon, "../login/login.html");
 
 
 //end of header
