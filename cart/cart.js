@@ -198,7 +198,7 @@ function applyHoverEffect(element, url) {
   });
 }
 
-applyHoverEffect(CrtIcon, "../cart/cart.html");
+applyHoverEffect(person, "../login/login.html");
 applyHoverEffect(HeartIcon, "../fav/favourite.html");
 
 var CartNumbDiv = document.createElement("div");
