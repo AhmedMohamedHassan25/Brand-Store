@@ -1,3 +1,4 @@
+
 // validate username
 function isValidUsername(username) {
     return /^[a-z]{3,}$/.test(username);
@@ -23,6 +24,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     const user = storedUsers.find(u => u.email === email && u.password === password);
 
     if (user) {
+        localStorage.setItem('ActiveUser',JSON.stringify(user));
         message.textContent = 'Login successful!';
         message.style.color = 'green';
         window.location.href = 'https://chatgpt.com'; // Redirect on success
@@ -48,6 +50,7 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
     const lastName = document.getElementById('lastName').value;
     const username = document.getElementById('registerUsername').value;
     const email = document.getElementById('registerEmail').value;
+    const gender = document.getElementById('Gender').value;
     const phone = document.getElementById('phone').value;
     const city = document.getElementById('city').value;
     const detailedAddress = document.getElementById('detailedAddress').value;
@@ -92,7 +95,7 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
         registerMessage.style.color = 'red';
     }
     else {
-        storedUsers.push({ firstName, lastName, username, email, phone, city, detailedAddress, password });
+        storedUsers.push({ firstName, lastName, username , email , phone , gender , city , detailedAddress , password });
         localStorage.setItem('users', JSON.stringify(storedUsers));
         registerMessage.textContent = 'Registration successful! Please log in.';
         registerMessage.style.color = 'green';

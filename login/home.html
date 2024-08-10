@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #logoutBtn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #14202E;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #logoutBtn:hover {
+            background-color: #14202E;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="welcomeMessage">Welcome!</h1>
+    <button id="logoutBtn">Logout</button>
+
+    <script>
+        // On the home page, retrieve and display the user's name
+        window.addEventListener('DOMContentLoaded', function() {
+            const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+            if (loggedInUser) {
+                document.getElementById('welcomeMessage').textContent = `Welcome, ${loggedInUser.firstName} ${loggedInUser.lastName}!`;
+            } else {
+                document.getElementById('welcomeMessage').textContent = 'Welcome, Guest!';
+            }
+        });
+
+        // Handle the logout button click
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            localStorage.removeItem('loggedInUser'); // Remove the logged-in user from localStorage
+            window.location.href = 'login.html'; // Redirect to the login page
+        });
+    </script>
+</body>
+</html>

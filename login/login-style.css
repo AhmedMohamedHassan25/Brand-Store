@@ -13,7 +13,7 @@ body {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
+    max-width: 800px;
     width: 100%;
 }
 
@@ -22,9 +22,14 @@ h1 {
     color: #333;
 }
 
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
 input, select {
     display: block;
-    width: calc(100% - 22px);
+    width: 100%;
     padding: 12px;
     margin: 12px 0;
     border: 1px solid #ccc;
@@ -32,10 +37,14 @@ input, select {
     box-sizing: border-box;
 }
 
+input.half-width, select.half-width {
+    width: calc(50% - 5px);
+}
+
 button {
     width: 100%;
     padding: 12px;
-    background-color:  #14202E;
+    background-color: #14202E;
     color: #ffffff;
     border: none;
     border-radius: 4px;
@@ -44,7 +53,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #14202E;
 }
 
 p {
@@ -53,7 +62,7 @@ p {
 }
 
 input:invalid, select:invalid {
-    border-color: rgb(0, 166, 255);
+    border-color: #14202E;
 }
 
 input:valid, select:valid {
