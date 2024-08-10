@@ -32,31 +32,31 @@
 <body>
 
 
-    <div id="product-display">
+    <div id="product-display"  >
 
-        <div id="container">
+        <div id="container" style="display: flex;margin-top: 120px; flex-direction: row;">
 
             <h2 id="p_name"></h2>
 
-            <div class="gallery-container" style="display: flex; width: 40%;">
+            <div class="gallery-container" style=" width: 40%; flex-direction: column;flex: 3;">
  
-                <div class="main-image" style="display: inline-block;">
+                <div class="main-image" style="display: inline-block; flex: 3;">
                     <img id="main-image" src="">
 
                 </div>
 
                
 
-                <div class="thumbnails" style="display: inline-block; text-wrap: wrap; position: relative; left: 20px;">
+                <div class="thumbnails" style="display: inline-block; text-wrap: wrap; left: 0px; ">
 
-                    <img src="" alt="" id="img1" style="margin: 15px;"> 
+                    <img src="" alt="" id="img1" style="margin: 15px;" > 
                     <img src="" alt="" id="img2" style="margin: 15px;">
                     <img src="" alt="" id="img3" style="margin: 15px;">
 
                 </div>
             </div>
 
-                <div id="pras" style="display: inline-block; width: 40%;">
+                <div id="pras" style="display: inline-block; width: 60%; flex-direction: column;">
                     <p id="p_size"></p>
                     <p id="p_decsription"></p>
                     <p id="p_price"></p>
