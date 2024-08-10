@@ -298,6 +298,9 @@ console.log(SentCat);
 
 loadProducts(SentCat);
 
+
+
+
 //start of header
 
 var Div = document.createElement("div");

@@ -10,6 +10,7 @@ if (storedData) {
     console.log(Product);
 
     var productDiv=document.getElementById('container');
+    
     var productName=document.getElementById('p_name');
     productName.textContent=Product.product_name;
     productName.style.textAlign='center'
@@ -98,7 +99,7 @@ if (storedData) {
     
     
     var productDescription = document.getElementById('p_decsription');
-    productDescription.textContent= `<strong>Description:</strong> ${Product.description}`;
+    productDescription.textContent= `Description: ${Product.description}`;
     paras.appendChild(productDescription);
 
 
@@ -109,7 +110,7 @@ if (storedData) {
     // productDiv.appendChild(productPrice);
     
     var productSize = document.getElementById('p_size');
-    productSize.textContent= `<strong>Size:</strong> ${Product.size}`;
+    productSize.textContent= `Size: ${Product.size}`;
 
     paras.appendChild(productSize);
     productDiv.appendChild(paras);
@@ -121,7 +122,7 @@ if (storedData) {
 
     
     var productQuantity = document.createElement('p');
-    productQuantity.textContent = `<strong>Quantity:</strong> ${Product.quantity}`;
+    productQuantity.textContent = `Quantity: ${Product.quantity}`;
 
     paras.appendChild(productQuantity);
     productDiv.appendChild(paras);
@@ -133,7 +134,7 @@ if (storedData) {
     if (!Product.discount) {
         
         var productPrice = document.getElementById('p_price');
-        productPrice.textContent = `<strong>Price : </strong> ${Product.price} LE `;
+        productPrice.textContent = `Price :${Product.price} LE `;
         productDiv.appendChild(productPrice);
         paras.appendChild(productPrice);
 
@@ -142,7 +143,7 @@ if (storedData) {
     }
     else{
         var discount =document.getElementById("discound") ;
-        discount.textContent=`<strong>Sale: </strong> -15%`;
+        discount.textContent=`Sale:  -15%`;
         //discount.style.textAlign="center";
 
         paras.appendChild(discount)
@@ -195,24 +196,26 @@ if (storedData) {
 
 
 
+//start of header
 
 var Div = document.createElement("div");
 Div.style.display = "flex";
 Div.id = "MyDiv";
 Div.style.width = "100%";
 Div.style.height = "100px";
-Div.style.backgroundColor = "rgba(245, 222, 179, 0)";
+Div.style.backgroundColor = "#14202E";
 Div.style.position = "absolute";
-Div.style.Top = "0px";
-Div.style.borderRadius = "0px 0px 10px 10px";
+Div.style.top = "0px";
 Div.style.zIndex = "1000";
+Div.style.left = "0px";
 Div.style.padding = "0px";
 Div.style.margin = "0px";
 
+const fillters = document.getElementById("fillters")
 productName.before(Div);
 // logo
 var logo = document.createElement("img");
-logo.src = "./rss/Brown-logo.png";
+logo.src = "../rss/White-Logo.png";
 logo.style.height = "140px";
 logo.style.width = "220px";
 logo.style.position = "absolute";
@@ -230,6 +233,7 @@ var LIST = document.createElement("div");
 LIST.style.display = "inline-block";
 LIST.style.width = "fit-content";
 LIST.style.backgroundColor = "rgba(245, 222, 179, 0)";
+LIST.style.Color = "#f6ead9";
 
 var C1 = document.createElement("button");
 var C2 = document.createElement("button");
@@ -281,7 +285,7 @@ C7.style.border = "0";
 
 C1.onclick = function () {
   localStorage.removeItem("category");
-  window.open("./Products.html", "_self");
+  window.open("../products/Products.html", "_self");
 };
 C2.onclick = function () {
   sending("Jackets");
@@ -304,20 +308,21 @@ C7.onclick = function () {
 
 function sending(category) {
   localStorage.setItem("category", category);
-  window.open("./Products.html", "_self");
+  window.open("../products/Products.html", "_self");
 }
 
 function HoverEffect(element) {
+  element.style.color = "#f6ead9";
   element.addEventListener("mouseover", function () {
     element.style.transition =
       "transform 0.2s ease-in-out, color 0.2s ease-in-out";
     element.style.transform = "scale(1.05)";
-    element.style.color = "#532200";
+    element.style.color = "#E1A140";
   });
 
   element.addEventListener("mouseout", function () {
     element.style.transform = "scale(1)";
-    element.style.color = "#f9f9f9";
+    element.style.color = "white";
   });
 }
 
@@ -356,7 +361,7 @@ Div.appendChild(LIST);
 
 // cart icon
 var CrtIcon = document.createElement("img");
-CrtIcon.src = "./rss/Cart2.png";
+CrtIcon.src = "../rss/Cart2.png";
 CrtIcon.style.height = "22px";
 CrtIcon.style.position = "absolute";
 CrtIcon.style.cursor = "pointer";
@@ -367,7 +372,7 @@ Div.appendChild(CrtIcon);
 
 //heart icon
 var HeartIcon = document.createElement("img");
-HeartIcon.src = "./rss/Heart2.png";
+HeartIcon.src = "../rss/Heart2.png";
 HeartIcon.style.height = "23px";
 HeartIcon.style.position = "absolute";
 HeartIcon.style.right = "170px";
@@ -377,7 +382,7 @@ Div.appendChild(HeartIcon);
 
 function applyHoverEffect(element, url) {
   element.addEventListener("mouseover", function () {
-    element.style.filter = "invert(100%) hue-rotate(180deg)";
+    element.style.filter = "invert(50%) hue-rotate(180deg)";
   });
 
   element.addEventListener("mouseout", function () {
@@ -388,22 +393,28 @@ function applyHoverEffect(element, url) {
     window.location.href = url;
   });
 }
-function applyHoverEffectForCategory(element) {
-  element.addEventListener("mouseover", function () {
-    element.style.filter = "invert(50%) hue-rotate(180deg)";
-  });
 
-  element.addEventListener("mouseout", function () {
-    element.style.filter = "none";
-  });
+applyHoverEffect(CrtIcon, "../cart/cart.html");
+applyHoverEffect(HeartIcon, "../fav/favourite.html");
+
+var CartNumbDiv = document.createElement("div");
+CartNumbDiv.style.height = "20px";
+CartNumbDiv.style.width = "20px";
+CartNumbDiv.style.position = "absolute";
+CartNumbDiv.style.bottom = "60px";
+CartNumbDiv.style.right = "105px";
+CartNumbDiv.style.backgroundColor = "yellow";
+CartNumbDiv.style.borderRadius = "50%";
+CartNumbDiv.style.textAlign = "center";
+
+var CartNumb = document.createElement("p");
+CartNumb.style.marginTop = "-1px";
+
+function updateCartDisplay() {
+  CartNumb.textContent = parseInt(localStorage.getItem("numOfProducts"));
 }
-applyHoverEffect(CrtIcon, "cart.html");
-applyHoverEffect(HeartIcon, "favourite.html");
 
-applyHoverEffectForCategory();
+CartNumbDiv.appendChild(CartNumb);
+Div.appendChild(CartNumbDiv);
 
 //end of header
-
-
-
-
