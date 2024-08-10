@@ -30,7 +30,7 @@
   }
 @font-face {
     font-family: myFont;
-    src: url(./Fonts/Poppins-Medium.ttf);
+    src: url(../Fonts/Poppins-Medium.ttf);
 }
 .dicounted{
     display: inline-block;
