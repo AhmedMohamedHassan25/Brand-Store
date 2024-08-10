@@ -1,13 +1,16 @@
 *{
     font-family: myFont;
 }
+body{
+    background-color: rgb(226, 233, 242);
+}
 @font-face {
     font-family: myFont;
-    src: url(./Fonts/Poppins-Medium.ttf);
+    src: url(../Fonts/Poppins-Medium.ttf);
 }
 #Body{
     margin-left: 400px;
-    margin-top: 20px;
+    margin-top: 120px;
     height: 100%;
 }
 .Clabel{

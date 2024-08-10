@@ -9,14 +9,42 @@
 
 
 
-    </style>
     <link rel="stylesheet" href="FooterStyles.css">   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+    <style>
+        .empty-cart-container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .empty-cart-message {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .empty-cart-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: black;
+            border: 2px solid black;
+            background-color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .empty-cart-button:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
 </head>
 <body>
         <div id="hh"></div>
         <div id="empty"></div>
+        <div id="cart-message-container"></div>
+
         
         <div id="product_fav">
             <img id="p_image">
