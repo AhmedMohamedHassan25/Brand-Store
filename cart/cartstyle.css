@@ -279,6 +279,18 @@ i{
     color: white;
     cursor: pointer;
   }
+#logbtn{
+    width: 30%;
+    height: 30px;
+    background-color: white;
+    font-family: myFont;
+}
+#logbtn:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+
 @font-face {
     font-family: myFont;
     src: url(../Fonts/Poppins-Medium.ttf);

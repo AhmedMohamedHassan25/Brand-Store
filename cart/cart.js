@@ -597,18 +597,22 @@ if (cart.length == 0) {
   LogDiv.style.marginTop = "10px";
   const notRegesterd = document.createElement("p");
   notRegesterd.innerHTML = "Must login to Do this step";
+  notRegesterd.style.color = "red";
   const logbtn = document.createElement("button");
+  logbtn.setAttribute("id","logbtn")
   logbtn.innerHTML = "Login";
+  LogDiv.innerHTML = "";
+  LogDiv.appendChild(notRegesterd);
+  LogDiv.appendChild(logbtn);
+  sidediv.appendChild(LogDiv);
+  LogDiv.style.display = "none";
   logbtn.addEventListener("click", function () {
-    window.open("login.html", "_self");
+    window.open("../login/login.html", "_self");
   });
 
   buybtn.addEventListener("click", function () {
     if (!users) {
-      LogDiv.innerHTML = "";
-      LogDiv.appendChild(notRegesterd);
-      LogDiv.appendChild(logbtn);
-      sidediv.appendChild(LogDiv);
+      LogDiv.style.display = "block";
     } else {
       window.open("../Buy/buy.html", "_self");
     }
