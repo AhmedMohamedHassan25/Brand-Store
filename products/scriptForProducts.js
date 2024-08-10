@@ -137,6 +137,7 @@ function loadProducts(category, PriceRange, Size) {
               localStorage.setItem(
                 "numOfProducts",
                 JSON.stringify(productsOnCart)
+                //edit
               );
             }
           });
@@ -180,9 +181,6 @@ Div.style.left = "0px";
 Div.style.padding = "0px";
 Div.style.margin = "0px";
 
-
-
-
 document.body.append(Div);
 // logo
 var logo = document.createElement("img");
@@ -196,11 +194,9 @@ logo.style.top = "-13px";
 
 logo.style.cursor = "pointer";
 logo.id = "logo";
-logo.addEventListener("click",function(){
-
+logo.addEventListener("click", function () {
   window.location.href = "../index.html";
-
-})
+});
 Div.appendChild(logo);
 
 // categories
@@ -387,7 +383,7 @@ CartNumb.style.marginTop = "-1px";
 
 if (parseInt(localStorage.getItem("numOfProducts")) == NaN) {
   CartNumb.textContent = 0;
-} 
+}
 
 CartNumbDiv.appendChild(CartNumb);
 Div.appendChild(CartNumbDiv);

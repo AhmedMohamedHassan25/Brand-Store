@@ -537,6 +537,9 @@ if (cart.length == 0) {
       CartNumb.innerHTML = productsOnCart;
       localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
       SubtotalAmount.innerHTML = overAllPrice;
+      if (cart.length == 0) {
+        window.open("../cart/cart.html", "_self");
+      }
     });
     console.log(overAllPrice);
   }
