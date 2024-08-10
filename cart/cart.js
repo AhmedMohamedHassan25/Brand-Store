@@ -170,6 +170,12 @@ person.style.position = "absolute";
 person.style.cursor = "pointer";
 person.style.bottom = "40px";
 person.style.right = "120px";
+<<<<<<< HEAD
+=======
+
+
+Div.appendChild(person);
+>>>>>>> 5334df8322f468ea7c86cbd3135b4e3ee48d7231
 
 Div.appendChild(person);
 
