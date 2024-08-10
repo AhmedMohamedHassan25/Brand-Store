@@ -1,13 +1,13 @@
 // var storedData = localStorage.getItem('favourites');
 let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
-let favourites = JSON.parse(localStorage.getItem("favourites"))||[];
+let favourites = JSON.parse(localStorage.getItem("favourites"));
 let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
 
 
 var bigDiv = document.getElementById("product_fav");
 var footer = document.getElementById("footer");
 
-if (favourites!=0) {
+if (favourites) {
   // var products = JSON.parse(storedData);
 
   if (favourites.length > 0) {
@@ -187,54 +187,25 @@ if (favourites!=0) {
     console.log("No favorite products found in local storage.");
   }
 } else {
-  console.log("kmqkln");
-  
+  var head = document.createElement("h1");
 
-  var head = document.getElementById("hh")
-  var main = document.getElementById("empty");
-
-  head.innerHTML= "<h1>Your fav Product is Impty</h1>";
+  head.textContent= "Your fav Product is Empty";
   head.style.marginTop = "150px";
   head.style.textAlign="center";
   // head.style.border = "20px black solid";
-  productDiv.appendChild(head);
-  main.appendChild(productDiv);
-  console.log(favourites.length);
+  Div.after(head);
 
-  const cartMessageContainer = document.getElementById('cart-message-container');
-    const emptyCartContainer = document.createElement('div');
-    emptyCartContainer.className = 'empty-cart-container';
-
-    const emptyCartMessage = document.createElement('div');
-    emptyCartMessage.className = 'empty-cart-message';
-    // emptyCartMessage.textContent = 'Your cart is Empty';
-
-    const emptyCartButton = document.createElement('button');
-    emptyCartButton.className = 'empty-cart-button';
-    emptyCartButton.textContent = 'Check out our products';
-
-    // Append elements
-    emptyCartContainer.appendChild(emptyCartMessage);
-    emptyCartContainer.appendChild(emptyCartButton);
-    cartMessageContainer.appendChild(emptyCartContainer);
-
-    emptyCartButton.addEventListener('mouseover', function () {
-        emptyCartButton.style.backgroundColor = 'rgb(20, 32, 46)';
-        emptyCartButton.style.color = 'white';
-    });
-
-    emptyCartButton.addEventListener('mouseout', function () {
-        emptyCartButton.style.backgroundColor = 'white';
-        emptyCartButton.style.color = 'rgb(20, 32, 46)';
-    });
-
-
-    emptyCartButton.addEventListener("click", function () {
-      localStorage.removeItem("category");
-      window.open("../products/Products.html", "_self");
-
-    });
 }
+
+
+
+
+
+  
+
+
+
+
 
 bigDiv.after(footer);
 
