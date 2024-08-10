@@ -1,11 +1,17 @@
-// var storedData = localStorage.getItem('favourites');
-let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
-let favourites = JSON.parse(localStorage.getItem("favourites"))||[];
+
+var cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
+let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+var storedData = localStorage.getItem('favourites') || [];
+//let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
 let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
 
 
 var bigDiv = document.getElementById("product_fav");
 var footer = document.getElementById("footer");
+var productDiv = document.createElement("div");
+var bestProd = document.createElement("div");
+const cardemp = document.createElement("div");
+const bestSel = document.createElement("p");
 
 if (favourites!=0) {
   // var products = JSON.parse(storedData);
@@ -117,17 +123,18 @@ if (favourites!=0) {
       remove.addEventListener("click", function () {
         this.parentElement.remove(); // Remove element from DOM
 
+        // if(favourites.length==0){
+          
+        // }
         // Update favourites data in memory
         favourites = favourites.filter(function (item) {
+          
           return item.id !== itemId; // Keep items except the one with matching id
         });
         localStorage.setItem("favourites", JSON.stringify(favourites));
         console.log(favourites);
 
-        // Persist the updated favourites data in local storage (potentially asynchronous)
-
-        // Update productsOnCart only if it's relevant to favourites
-        if (productsOnCart) {
+         if (productsOnCart) {
           // Check if productsOnCart exists
           productsOnCart -= 1;
           console.log(productsOnCart);
@@ -135,23 +142,64 @@ if (favourites!=0) {
         }
       });
 
-      // try {
-      //   var favourites = JSON.parse(localStorage.getItem("favourites"));
-      // } catch (error) {
-      //   console.error("Error parsing favourites data:", error);
-      //   favourites = []; // Initialize with an empty array if parsing fails
-      // }
-
+    
       bigDiv.appendChild(productDiv);
     });
   } else {
-    var had = document.createElement("h2");
-    had.textContent = "Your Fav Products Is Empty";
-
-    document.getElementById("empty").appendChild(had);
-    console.log("No favorite products found in local storage.");
+    
+    var head = document.getElementById("hh")
+    var main = document.getElementById("empty");
+  
+    head.innerHTML= "<h1>Your fav Product is Impty</h1>";
+    head.style.marginTop = "150px";
+    head.style.textAlign="center";
+    // head.style.border = "20px black solid";
+    productDiv.appendChild(head);
+    main.appendChild(productDiv);
+    console.log(favourites.length);
+  
+    const cartMessageContainer = document.getElementById('cart-message-container');
+      const emptyCartContainer = document.createElement('div');
+      emptyCartContainer.className = 'empty-cart-container';
+  
+      const emptyCartMessage = document.createElement('div');
+      emptyCartMessage.className = 'empty-cart-message';
+      // emptyCartMessage.textContent = 'Your cart is Empty';
+  
+      const emptyCartButton = document.createElement('button');
+      emptyCartButton.className = 'empty-cart-button';
+      emptyCartButton.textContent = 'Check out our products';
+  
+      // Append elements
+      emptyCartContainer.appendChild(emptyCartMessage);
+      emptyCartContainer.appendChild(emptyCartButton);
+      cartMessageContainer.appendChild(emptyCartContainer);
+  
+      emptyCartButton.addEventListener('mouseover', function () {
+          emptyCartButton.style.backgroundColor = 'rgb(20, 32, 46)';
+          emptyCartButton.style.color = 'white';
+      });
+  
+      emptyCartButton.addEventListener('mouseout', function () {
+          emptyCartButton.style.backgroundColor = 'white';
+          emptyCartButton.style.color = 'rgb(20, 32, 46)';
+      });
+  
+  
+      emptyCartButton.addEventListener("click", function () {
+        localStorage.removeItem("category");
+        window.open("../products/Products.html", "_self");
+  
+      });
+  
+  
+  
+  
+  
+  
   }
-} else {
+}
+else {
   console.log("kmqkln");
   
 
@@ -199,7 +247,16 @@ if (favourites!=0) {
       window.open("../products/Products.html", "_self");
 
     });
+
+
+
+
+
+
 }
+
+
+
 
 bigDiv.after(footer);
 
@@ -211,6 +268,7 @@ bigDiv.after(footer);
 //start of header
 
 var Div = document.createElement("div");
+
 Div.style.display = "flex";
 Div.id = "MyDiv";
 Div.style.width = "100%";
