@@ -1,4 +1,7 @@
-var storedData = localStorage.getItem("favourites");
+var storedData = localStorage.getItem('favourites');
+let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
+let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
 var cart = JSON.parse(localStorage.getItem("favourites"));
 
 if (storedData) {
@@ -111,7 +114,6 @@ if (storedData) {
         console.log(products);
         localStorage.setItem("favourites", JSON.stringify(products));
       });
-
       document.getElementById("product_fav").appendChild(productDiv);
     });
   } else {
@@ -128,6 +130,14 @@ if (storedData) {
   document.getElementById("empty").appendChild(had);
   console.log("No favourites found in local storage.");
 }
+
+
+
+
+
+
+
+
 
 //start of header
 
