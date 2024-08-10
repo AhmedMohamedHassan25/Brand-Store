@@ -61,9 +61,4 @@ footer {
     color: white;
 }
 
-#desc{
-    white-space: nowrap;        
-    overflow: hidden;         
-    text-overflow: ellipsis;
-}
 
