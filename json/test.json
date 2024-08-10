@@ -1072,22 +1072,6 @@
         "BestSeller": false
     },
     {
-        "id": 68,
-        "product_name": "Light Grey Melan",
-        "size": 8,
-        "price": 199,
-        "quantity": 269,
-        "image": [
-            "..\\materials\\accessories\\8\\a1.webp",
-            "..\\materials\\accessories\\8\\a2.webp",
-            "..\\materials\\accessories\\8\\a3.webp"
-        ],
-        "category": "Accessories",
-        "discount": false,
-        "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
-        "BestSeller": false
-    },
-    {
         "id": 69,
         "product_name": "Baseball cap White",
         "size": 8,
@@ -1148,22 +1132,6 @@
         ],
         "category": "Accessories",
         "discount": false,
-        "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
-        "BestSeller": false
-    },
-    {
-        "id": 73,
-        "product_name": "Grey Melan",
-        "size": 16,
-        "price": 199,
-        "quantity": 29,
-        "image": [
-            "..\\materials\\accessories\\13\\a1.webp",
-            "..\\materials\\accessories\\13\\a2.webp",
-            "..\\materials\\accessories\\13\\a3.webp"
-        ],
-        "category": "Accessories",
-        "discount": true,
         "description": "Experience ultimate comfort with our 100% cotton tees. Available in vibrant colors, these shirts are perfect for any occasion. Stay stylish and cozy all day long.",
         "BestSeller": false
     },

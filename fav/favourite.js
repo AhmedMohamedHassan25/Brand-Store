@@ -4,38 +4,45 @@ let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
 var cart = JSON.parse(localStorage.getItem("favourites"));
 
+var bigDiv = document.getElementById('product_fav');
+var footer = document.getElementById("footer");
+
 if (storedData) {
-  let products = JSON.parse(storedData);
+  var products = JSON.parse(storedData);
 
   if (products.length > 0) {
     var head = document.createElement("h1");
     head.textContent = "Your Fav Products";
-    document.getElementById("hh").appendChild(head);
+    document.getElementById('hh').appendChild(head);
 
-    products.forEach((product) => {
-      var productDiv = document.createElement("div");
-      productDiv.setAttribute("class", "card");
+
+
+    products.forEach(product => {
+
+      var productDiv = document.createElement('div');
+      productDiv.setAttribute("class", "card")
 
       //productDiv.style.display="flex";
-      productDiv.style.border = "1px solid black";
-      productDiv.style.width = "100%";
-      productDiv.style.marginBottom = "15px";
-      productDiv.style.marginRight = "20px";
-      productDiv.style.padding = "15px";
+      productDiv.style.border = '1px solid black';
+      productDiv.style.width = '100%';
+      productDiv.style.marginBottom = '15px';
+      productDiv.style.marginRight = '20px';
+      productDiv.style.padding = '15px';
 
-      var productName = document.createElement("p");
+
+      var productName = document.createElement('p');
       productName.textContent = product.product_name; // Use id or name if available
       productName.style.display = "block";
       productName.style.margin = "20";
 
       productDiv.appendChild(productName);
 
-      var productImage = document.createElement("img");
-      productImage.src = product.image[1] || ""; // Set default empty src if image[0] is missing
-      productImage.style.display = "block";
-      productImage.style.width = "200px";
-      productImage.style.margin = "0 20px 20px 0";
-      productImage.style.height = "200px";
+      var productImage = document.createElement('img');
+      productImage.src = product.image[1] || ''; // Set default empty src if image[0] is missing
+      productImage.style.display = 'block';
+      productImage.style.width = '200px';
+      productImage.style.margin = '0 20px 20px 0';
+      productImage.style.height = '200px';
 
       productDiv.appendChild(productImage);
 
@@ -46,31 +53,32 @@ if (storedData) {
         productImage.src = product.image[1];
       });
 
-      var productprice = document.createElement("p");
+
+
+      var productprice = document.createElement('p');
       productprice.textContent = " Price : " + product.price + " " + " LE";
       productprice.style.display = "inline";
 
       if (product.discount) {
-        var markForDis = document.createElement("div");
-        markForDis.setAttribute("class", "markForDis");
-        markForDis.innerHTML = "Sale 15%";
+        var markForDis = document.createElement("div")
+        markForDis.setAttribute("class", "markForDis")
+        markForDis.innerHTML = "Sale 15%"
         var dicounted = document.createElement("p");
-        dicounted.setAttribute("class", "dicounted");
+        dicounted.setAttribute("class", "dicounted")
         productprice.style.width = "35%";
         productprice.style.textDecorationLine = "line-through";
-        var dicountedtext = document.createTextNode(
-          "LE " + (product.price - (product.price * 15) / 100) + " (-15%)"
-        );
+        var dicountedtext = document.createTextNode("LE " + (product.price - product.price * 15 / 100) + " (-15%)");
         dicounted.appendChild(dicountedtext);
         productDiv.appendChild(dicounted);
-        productDiv.appendChild(markForDis);
+        productDiv.appendChild(markForDis)
       }
       productDiv.appendChild(productprice);
       var addToCart = document.createElement("button");
-      addToCart.setAttribute("class", "addtocart");
+      addToCart.setAttribute("class", "addtocart")
       var addtext = document.createTextNode("Add To Cart");
       addToCart.appendChild(addtext);
       productDiv.appendChild(addToCart);
+
 
       const itemToAdd = product;
       addToCart.addEventListener("click", function (event) {
@@ -80,6 +88,7 @@ if (storedData) {
             console.log(product);
             if (cartStorge[i].id == product.id) {
               return true;
+
             }
           }
           return false;
@@ -87,49 +96,85 @@ if (storedData) {
         if (!isItemInCart(itemToAdd)) {
           console.log(itemToAdd);
           console.log(cartStorge);
+          // var curnum = parseInt(CartNumb.textContent);
+          //var newnum = curnum + 1;
+          // CartNumb.textContent = newnum;
           cartStorge.push(itemToAdd);
           localStorage.setItem("cartStorge", JSON.stringify(cartStorge));
         }
       });
 
-      var productDescription = document.createElement("p");
+      var productDescription = document.createElement('p');
 
       productDescription.textContent = " Description: " + product.description;
 
       productDiv.appendChild(productDescription);
 
+
+      // var remove = document.createElement("button");
+      // remove.setAttribute("class", "remove");
+      // remove.innerHTML = "X";
+      // productDiv.appendChild(remove);
+      // console.log(cart.length);
+      let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts"));
       var remove = document.createElement("button");
       remove.setAttribute("class", "remove");
       remove.innerHTML = "X";
       productDiv.appendChild(remove);
-      console.log(cart.length);
-
-      let itemId = product.id;
+      
       remove.addEventListener("click", function () {
-        console.log(itemId);
-        this.parentElement.remove();
-        products = products.filter(function (item) {
-          return item.id !== itemId;
-        });
-        console.log(products);
-        localStorage.setItem("favourites", JSON.stringify(products));
+          // Get the id of the product that you want to remove
+          const itemId = product.id;  // Assuming `product.id` is available in the scope
+      
+          // Remove the product from the DOM
+          this.parentElement.remove();
+      
+          // Filter out the removed item from the cart array
+          cart = cart.filter(function (item) {
+              return item.id !== itemId; // Keep all items except the one with the matching id
+          });
+      
+          // Update the cart in localStorage
+          localStorage.setItem("cartStorge", JSON.stringify(cart));
+      
+          // Decrease the number of products in the cart
+          productsOnCart -= 1;
+          console.log(productsOnCart);
+      
+          // Update the number of products in localStorage
+          localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
       });
-      document.getElementById("product_fav").appendChild(productDiv);
+      
+
+
+
+
+
+      bigDiv.appendChild(productDiv);
+
+
     });
+
   } else {
     var had = document.createElement("h2");
     had.textContent = "Your Fav Products Is Empty";
 
-    document.getElementById("empty").appendChild(had);
-    console.log("No favorite products found in local storage.");
+    document.getElementById('empty').appendChild(had);
+    console.log('No favorite products found in local storage.');
   }
 } else {
+
   var had = document.createElement("h2");
   had.textContent = "Your Fav Products";
 
-  document.getElementById("empty").appendChild(had);
-  console.log("No favourites found in local storage.");
+  document.getElementById('empty').appendChild(had);
+  console.log('No favourites found in local storage.');
 }
+
+
+
+
+bigDiv.after(footer);
 
 
 
@@ -140,6 +185,9 @@ if (storedData) {
 
 
 //start of header
+
+
+
 
 var Div = document.createElement("div");
 Div.style.display = "flex";
@@ -154,7 +202,7 @@ Div.style.left = "0px";
 Div.style.padding = "0px";
 Div.style.margin = "0px";
 
-head.before(Div);
+document.body.append(Div);
 // logo
 var logo = document.createElement("img");
 logo.src = "../rss/White-Logo.png";
@@ -167,7 +215,9 @@ logo.style.top = "-13px";
 
 logo.style.cursor = "pointer";
 logo.id = "logo";
-
+logo.addEventListener("click", function () {
+  window.location.href = "../index.html";
+})
 Div.appendChild(logo);
 
 // categories
@@ -314,7 +364,7 @@ Div.appendChild(CrtIcon);
 
 //heart icon
 var HeartIcon = document.createElement("img");
-HeartIcon.src = "../rss/Heart2.png";
+HeartIcon.src = "../rss/icons8-administrator-male-96.png";
 HeartIcon.style.height = "23px";
 HeartIcon.style.position = "absolute";
 HeartIcon.style.right = "170px";
@@ -337,6 +387,7 @@ function applyHoverEffect(element, url) {
 }
 
 applyHoverEffect(CrtIcon, "../cart/cart.html");
-applyHoverEffect(HeartIcon, "../fav/favourite.html");
+applyHoverEffect(HeartIcon, "../login/login.html");
+
 
 //end of header

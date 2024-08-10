@@ -73,7 +73,7 @@ Div.style.margin = "0px";
 mainOfHome.before(Div);
 // logo
 var logo = document.createElement("img");
-logo.src = "./rss/Brown-logo.png";
+logo.src = "./rss/blue-logo.png";
 logo.style.height = "140px";
 logo.style.width = "220px";
 logo.style.position = "absolute";

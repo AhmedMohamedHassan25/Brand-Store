@@ -180,8 +180,12 @@ Div.style.left = "0px";
 Div.style.padding = "0px";
 Div.style.margin = "0px";
 
+<<<<<<< HEAD
 const fillters = document.getElementById("fillters");
 fillters.before(Div);
+=======
+document.body.append(Div);
+>>>>>>> cbd6d21f4eeba63225b55a0452ae6a25cdbe956a
 // logo
 var logo = document.createElement("img");
 logo.src = "../rss/White-Logo.png";
@@ -389,4 +393,8 @@ Div.appendChild(CartNumbDiv);
 //end of header
 
 //footer
+<<<<<<< HEAD
+=======
+
+>>>>>>> cbd6d21f4eeba63225b55a0452ae6a25cdbe956a
 const foot = document.getElementById("foot");
