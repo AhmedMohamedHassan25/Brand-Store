@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 // var storedData = localStorage.getItem('favourites');
 let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
 let favourites = JSON.parse(localStorage.getItem("favourites"));
-=======
-var storedData = localStorage.getItem('favourites')|| [];
-let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
-//let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
->>>>>>> ed85e854b4942abd4f593e8cba26f21b219931a3
 let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
 
 
@@ -108,13 +102,7 @@ if (favourites) {
 
       productDiv.appendChild(productDescription);
 
-<<<<<<< HEAD
       // var favourites = JSON.parse(localStorage.getItem("favourites")); // Use "favourites" key
-=======
-
-
-
->>>>>>> ed85e854b4942abd4f593e8cba26f21b219931a3
 
       let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts")); // Assuming this tracks cart items
 
@@ -128,21 +116,14 @@ if (favourites) {
         this.parentElement.remove(); // Remove element from DOM
 
         // Update favourites data in memory
-        storedData = storedData.filter(function (item) {
+        favourites = favourites.filter(function (item) {
           return item.id !== itemId; // Keep items except the one with matching id
         });
-<<<<<<< HEAD
         localStorage.setItem("favourites", JSON.stringify(favourites));
         console.log(favourites);
 
         // Persist the updated favourites data in local storage (potentially asynchronous)
 
-=======
-      
-        // Persist the updated favourites data in local storage (potentially asynchronous)
-        localStorage.setItem("favourites", JSON.stringify(storedData));
-      
->>>>>>> ed85e854b4942abd4f593e8cba26f21b219931a3
         // Update productsOnCart only if it's relevant to favourites
         if (productsOnCart) {
           // Check if productsOnCart exists
@@ -152,30 +133,12 @@ if (favourites) {
         }
       });
 
-<<<<<<< HEAD
       // try {
       //   var favourites = JSON.parse(localStorage.getItem("favourites"));
       // } catch (error) {
       //   console.error("Error parsing favourites data:", error);
       //   favourites = []; // Initialize with an empty array if parsing fails
       // }
-=======
-
-
-      try {
-        var storedData = JSON.parse(localStorage.getItem("favourites"));
-      } catch (error) {
-        console.error("Error parsing favourites data:", error);
-        storedData = []; // Initialize with an empty array if parsing fails
-      }
-      
-      
-      
-
-
-
-
->>>>>>> ed85e854b4942abd4f593e8cba26f21b219931a3
 
       bigDiv.appendChild(productDiv);
     });
