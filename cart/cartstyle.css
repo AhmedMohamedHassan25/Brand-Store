@@ -295,6 +295,9 @@ i{
     font-family: myFont;
     src: url(../Fonts/Poppins-Medium.ttf);
 }
+#terms:hover{
+    cursor: pointer;
+}
 
 body {
     font-family: Arial, sans-serif;

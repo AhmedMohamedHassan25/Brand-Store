@@ -563,10 +563,11 @@ if (cart.length == 0) {
   terms.innerHTML = "I Agree With ";
   sidediv.appendChild(terms);
   const termsOfServes = document.createElement("a");
+  termsOfServes.setAttribute("id","terms")
   termsOfServes.innerHTML = "Terms & Conditions";
   termsOfServes.addEventListener("click", function () {
     window.open(
-      "./Terms.html",
+      "../terms/Terms.html",
       "_blank",
       "width=700,height=1000",
       "top=500,left=500"
