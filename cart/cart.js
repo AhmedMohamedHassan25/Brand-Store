@@ -561,8 +561,8 @@ if (cart.length == 0) {
   buybtn.innerHTML = "Proced To Checkout";
   buybtn.disabled = true;
   sidediv.appendChild(buybtn);
-  let users = JSON.parse(localStorage.getItem("users"));
-  console.log(users);
+  let Active = localStorage.getItem("Active");
+  console.log(Active);
   check.addEventListener("change", function () {
     if (check.checked) {
       buybtn.disabled = false;
@@ -592,7 +592,7 @@ if (cart.length == 0) {
   });
 
   buybtn.addEventListener("click", function () {
-    if (!users) {
+    if (!Active) {
       LogDiv.style.display = "block";
     } else {
       window.open("../Buy/buy.html", "_self");
