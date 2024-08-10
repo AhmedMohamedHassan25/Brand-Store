@@ -241,41 +241,51 @@ document.body.appendChild(Profileform);
 
 var NameLabel = document.createElement('label');
 NameLabel.className = 'profile-label';
-NameLabel.textContent = 'Name: Walid Nader';
+
 Profileform.appendChild(NameLabel);
 
 var PhoneLabel = document.createElement('label');
 PhoneLabel.className = 'profile-label';
-PhoneLabel.textContent = 'Phone Number: 01098485366';
+
 Profileform.appendChild(PhoneLabel);
 
 var AddressLabel = document.createElement('label');
 AddressLabel.className = 'profile-label';
-AddressLabel.textContent = 'Address: 116g st hadayk el ahram'; 
+
 Profileform.appendChild(AddressLabel);
 
 var GenderLabel = document.createElement('label');
 GenderLabel.className = 'profile-label';
-GenderLabel.textContent = 'Gender: Male'; 
+
 Profileform.appendChild(GenderLabel);
 
 var CityLabel = document.createElement('label');
 CityLabel.className = 'profile-label';
-CityLabel.textContent = 'City: Giza'; 
+
 Profileform.appendChild(CityLabel);
 
 
-//local storage part
-var ActiveUserData= JSON.parse(localStorage.getItem("ActiveUser"));
-if(ActiveUserData)
+
+
+
+
+var activeUserEmail = localStorage.getItem('Active');
+
+// جلب جميع المستخدمين من localStorage
+
+var ActiveUserData= JSON.parse(localStorage.getItem("users"));
+var currentUser = ActiveUserData.find(u => u.email === activeUserEmail);
+
+console.log(ActiveUserData)
+if(currentUser)
     {
         // console.log(ActiveUserData.firstName)
         
-        NameLabel.textContent = `Name: ${ActiveUserData.firstName }  ${ActiveUserData.lastName}`;
-        PhoneLabel.textContent = `PhoneNumber: ${ActiveUserData.phone}`;
-        AddressLabel.textContent = `Address: ${ActiveUserData.detailedAddress}`;
-        GenderLabel.textContent = `Gender: ${ActiveUserData.gender}`;
-        CityLabel.textContent = `City: ${ActiveUserData.city}`;
+        NameLabel.textContent = `Name: ${currentUser.firstName }  ${currentUser.lastName}`;
+        PhoneLabel.textContent = `PhoneNumber: ${currentUser.phone}`;
+        AddressLabel.textContent = `Address: ${currentUser.detailedAddress}`;
+        GenderLabel.textContent = `Gender: ${currentUser.gender}`;
+        CityLabel.textContent = `City: ${currentUser.city}`;
         
      
         
@@ -286,7 +296,8 @@ if(ActiveUserData)
     //   };
 
     document.getElementById('logoutBtn').addEventListener('click', function() {
-        localStorage.removeItem("users");
+
+        localStorage.removeItem(localStorage.getItem("Active"));
         window.location.href = '../login/login.html'; 
     });
     

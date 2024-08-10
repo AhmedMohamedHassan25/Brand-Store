@@ -1,4 +1,7 @@
+    if(localStorage.getItem("Active")){
 
+        window.location.href="../Account Info/MyAccount.html";
+    }
 // validate username
 function isValidUsername(username) {
     return /^[a-z]{3,}$/.test(username);
@@ -19,6 +22,13 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
     const message = document.getElementById('loginMessage');
+
+
+    const email1 =email ; 
+
+    const password2 = password; 
+    localStorage.setItem(email,password);
+     localStorage.setItem("Active",email);
     
     const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
     const user = storedUsers.find(u => u.email === email && u.password === password);
