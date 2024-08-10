@@ -380,7 +380,7 @@ if (cart.length == 0) {
   const logbtn = document.createElement("button");
   logbtn.innerHTML = "Login";
   logbtn.addEventListener("click", function () {
-    window.open("login.html", "_self");
+    window.open("../login/login.html", "_self");
   });
 
   buybtn.addEventListener("click", function () {
@@ -390,7 +390,7 @@ if (cart.length == 0) {
       LogDiv.appendChild(logbtn);
       sidediv.appendChild(LogDiv);
     } else {
-      window.open("buy.html", "_self");
+      window.open("../Buy/buy.html", "_self");
     }
   });
   const continueShopping = document.createElement("button");
