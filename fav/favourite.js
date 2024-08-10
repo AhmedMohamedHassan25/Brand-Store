@@ -26,27 +26,48 @@ if (favourites!=0) {
       productDiv.setAttribute("class", "card");
 
       //productDiv.style.display="flex";
-      productDiv.style.border = "1px solid black";
-      productDiv.style.width = "100%";
-      productDiv.style.marginBottom = "15px";
-      productDiv.style.marginRight = "20px";
-      productDiv.style.padding = "15px";
+      productDiv.style.border = "3px solid black ";
+      productDiv.style.boxShadow = "4px 2px 0  #14202E ";
+      productDiv.style.borderRadius = "10px ";
+      productDiv.style.backgroundColor = "white ";
+      productDiv.style.width = "60%";
+      productDiv.style.display = "flex";
+      productDiv.style.textAlign = "center";
+      productDiv.style.justifyContent = "center";
+      
+      productDiv.style.marginBottom = "20px";
+      productDiv.style.marginTop = "20px";
+      productDiv.style.marginBottom = "20px";
+      productDiv.style.marginLeft = "19%";
+      productDiv.style.padding = "20px";
 
-      var productName = document.createElement("p");
+      var productName = document.createElement("h2");
       productName.textContent = product.product_name; // Use id or name if available
-      productName.style.display = "block";
-      productName.style.margin = "20";
 
-      productDiv.appendChild(productName);
+      var productDiv1 = document.createElement("div");
+      var productDiv2 = document.createElement("div");
+      
+      productDiv1.style.width="50%";
+      productDiv1.style.height="100%";
+      productDiv2.style.width="50%";
 
-      var productImage = document.createElement("img");
-      productImage.src = product.image[1] || ""; // Set default empty src if image[0] is missing
-      productImage.style.display = "block";
-      productImage.style.width = "200px";
-      productImage.style.margin = "0 20px 20px 0";
-      productImage.style.height = "200px";
+      productDiv.appendChild(productDiv1);
+      productDiv.appendChild(productDiv2);
 
-      productDiv.appendChild(productImage);
+      
+            var productImage = document.createElement("img");
+            productImage.src = product.image[1] || ""; // Set default empty src if image[0] is missing
+            productImage.style.flex = "1";
+            productImage.style.width = "250";
+            productImage.style.height = "300px";
+            productImage.style.borderRadius = "25px";
+            productImage.style.position = "relative";
+            productImage.style.left = "-50px";
+
+
+      
+            productDiv1.appendChild(productImage);
+            productDiv2.appendChild(productName);
 
       productImage.addEventListener("mouseover", function () {
         productImage.src = product.image[0];
@@ -57,29 +78,37 @@ if (favourites!=0) {
 
       var productprice = document.createElement("p");
       productprice.textContent = " Price : " + product.price + " " + " LE";
-      productprice.style.display = "inline";
+      productprice.style.display = "block";
 
       if (product.discount) {
         var markForDis = document.createElement("div");
         markForDis.setAttribute("class", "markForDis");
-        markForDis.innerHTML = "Sale 15%";
+        markForDis.textContent = "Sale 15%";
+        markForDis.style.color = "#9a0707";
+        markForDis.style.fontWeight = "bold";
         var dicounted = document.createElement("p");
         dicounted.setAttribute("class", "dicounted");
-        productprice.style.width = "35%";
         productprice.style.textDecorationLine = "line-through";
+        productprice.style.color = "#9a0707";
         var dicountedtext = document.createTextNode(
           "LE " + (product.price - (product.price * 15) / 100) + " (-15%)"
         );
         dicounted.appendChild(dicountedtext);
-        productDiv.appendChild(dicounted);
-        productDiv.appendChild(markForDis);
+        productDiv2.appendChild(dicounted);
+        productDiv2.appendChild(markForDis);
       }
-      productDiv.appendChild(productprice);
+      productDiv2.appendChild(productprice);
       var addToCart = document.createElement("button");
       addToCart.setAttribute("class", "addtocart");
+      addToCart.style.width="300px";
+      addToCart.style.height="30px";
+      addToCart.style.backgroundColor="#14202E";
+      addToCart.style.color="white";
+      addToCart.style.fontSize="20px";
+      addToCart.style.border="0";
       var addtext = document.createTextNode("Add To Cart");
       addToCart.appendChild(addtext);
-      productDiv.appendChild(addToCart);
+      productDiv2.appendChild(addToCart);
 
       const itemToAdd = product;
       addToCart.addEventListener("click", function (event) {
@@ -104,10 +133,10 @@ if (favourites!=0) {
 
       var productDescription = document.createElement("p");
 
-      productDescription.textContent = " Description: " + product.description;
+      productDescription.innerHTML = "<strong>Description:</strong> " + product.description;
       productDescription.id="desc";
 
-      productDiv.appendChild(productDescription);
+      productDiv2.appendChild(productDescription);
 
       // var favourites = JSON.parse(localStorage.getItem("favourites")); // Use "favourites" key
 
@@ -116,8 +145,14 @@ if (favourites!=0) {
 
       const remove = document.createElement("button");
       remove.setAttribute("class", "remove");
-      remove.innerHTML = "X";
-      productDiv.appendChild(remove);
+      remove.textContent = "Remove";
+      remove.style.width = "300px";
+      remove.style.height = "30px";
+      remove.style.backgroundColor="#14202E";
+      remove.style.color="white";
+      remove.style.fontSize="20px";
+      remove.style.border="0";
+      productDiv2.appendChild(remove);
 
       const itemId = product.id; // Assuming `product.id` is available in the scope
       remove.addEventListener("click", function () {
