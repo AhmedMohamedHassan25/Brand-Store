@@ -1,16 +1,17 @@
 // made by mohamed
 /// resopnd and cards
+let SentCat = localStorage.getItem("category");
 var PriceRange = document.getElementById("priceRange");
 var priceIndecator = document.getElementById("indPrice");
 PriceRange.addEventListener("change", function () {
   priceIndecator.value = PriceRange.value;
-  loadProducts(dropvalue, PriceRange.value, sizeRange.value);
+  loadProducts(SentCat, PriceRange.value);
 });
 var sizeIndecator = document.getElementById("indSize");
 var sizeRange = document.getElementById("sizeRange");
 sizeRange.addEventListener("change", function () {
   sizeIndecator.value = sizeRange.value;
-  loadProducts(dropvalue, PriceRange.value, sizeRange.value);
+  loadProducts(SentCat, PriceRange.value, sizeRange.value);
 });
 
 console.log(sizeRange.value);
@@ -160,7 +161,6 @@ function loadProducts(category, PriceRange, Size) {
   };
   xhr.send();
 }
-let SentCat = localStorage.getItem("category");
 console.log(SentCat);
 
 loadProducts(SentCat);
