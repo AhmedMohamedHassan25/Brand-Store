@@ -225,6 +225,11 @@ logo.style.top = "-13px";
 
 logo.style.cursor = "pointer";
 logo.id = "logo";
+logo.addEventListener("click",function(){
+
+  window.location.href = "./index.html";
+
+})
 
 Div.appendChild(logo);
 
