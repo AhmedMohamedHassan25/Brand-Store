@@ -24,10 +24,9 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     const user = storedUsers.find(u => u.email === email && u.password === password);
 
     if (user) {
-        localStorage.setItem('ActiveUser',JSON.stringify(user));
         message.textContent = 'Login successful!';
         message.style.color = 'green';
-        window.location.href = 'https://chatgpt.com'; // Redirect on success
+        window.location.href = 'index.html'; // Redirect on success
     } else {
         message.textContent = 'Invalid email or password.';
         message.style.color = 'red';
