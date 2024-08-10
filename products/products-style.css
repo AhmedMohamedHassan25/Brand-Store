@@ -1,3 +1,7 @@
+
+#fillters{
+    margin-top: 100px;
+}
 .card{
     display: inline-block;
     border: solid 1px black;
@@ -76,6 +80,7 @@ i{
     display: inline-block;
     margin-top: 20px;
     margin-bottom: 10px;
+    font-family: myFont;
 }
 .indecator{
     width: 40px;
@@ -92,5 +97,7 @@ i{
     display: inline-block;
     margin-top: 20px;
     margin-bottom: 10px;
+    font-family: myFont;
+
 }
 
