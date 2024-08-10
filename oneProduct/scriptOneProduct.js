@@ -10,7 +10,6 @@ if (storedData) {
     console.log(Product);
 
     var productDiv=document.getElementById('container');
-    
     var productName=document.getElementById('p_name');
     productName.textContent=Product.product_name;
     productName.style.textAlign='center'
@@ -99,7 +98,7 @@ if (storedData) {
     
     
     var productDescription = document.getElementById('p_decsription');
-    productDescription.textContent= `Description: ${Product.description}`;
+    productDescription.innerHTML = `<strong>Description:</strong> ${Product.description}`;
     paras.appendChild(productDescription);
 
 
@@ -110,7 +109,7 @@ if (storedData) {
     // productDiv.appendChild(productPrice);
     
     var productSize = document.getElementById('p_size');
-    productSize.textContent= `Size: ${Product.size}`;
+    productSize.innerHTML = `<strong>Size:</strong> ${Product.size}`;
 
     paras.appendChild(productSize);
     productDiv.appendChild(paras);
@@ -122,7 +121,7 @@ if (storedData) {
 
     
     var productQuantity = document.createElement('p');
-    productQuantity.textContent = `Quantity: ${Product.quantity}`;
+    productQuantity.innerHTML = `<strong>Quantity:</strong> ${Product.quantity}`;
 
     paras.appendChild(productQuantity);
     productDiv.appendChild(paras);
@@ -134,7 +133,7 @@ if (storedData) {
     if (!Product.discount) {
         
         var productPrice = document.getElementById('p_price');
-        productPrice.textContent = `Price :${Product.price} LE `;
+        productPrice.innerHTML = `<strong>Price : </strong> ${Product.price} LE `;
         productDiv.appendChild(productPrice);
         paras.appendChild(productPrice);
 
@@ -143,13 +142,13 @@ if (storedData) {
     }
     else{
         var discount =document.getElementById("discound") ;
-        discount.textContent=`Sale:  -15%`;
+        discount.innerHTML=`<strong>Sale: </strong> -15%`;
         //discount.style.textAlign="center";
 
         paras.appendChild(discount)
          
         var productPrice = document.getElementById('p_price');
-        productPrice.innerteHTML = `<strong>Price After Sale : </strong> ${(Product.price - Product.price * 15/100)}LE `;
+        productPrice.innerHTML = `<strong>Price After Sale : </strong> ${(Product.price - Product.price * 15/100)}LE `;
       //  productDiv.appendChild(productPrice);
 
         paras.appendChild(productPrice);
@@ -211,8 +210,7 @@ Div.style.left = "0px";
 Div.style.padding = "0px";
 Div.style.margin = "0px";
 
-const fillters = document.getElementById("fillters")
-productName.before(Div);
+document.body.append(Div);
 // logo
 var logo = document.createElement("img");
 logo.src = "../rss/White-Logo.png";
@@ -225,12 +223,9 @@ logo.style.top = "-13px";
 
 logo.style.cursor = "pointer";
 logo.id = "logo";
-logo.addEventListener("click",function(){
-
-  window.location.href = "./index.html";
-
-})
-
+logo.addEventListener("click", function () {
+  window.location.href = "../index.html";
+});
 Div.appendChild(logo);
 
 // categories
@@ -402,24 +397,9 @@ function applyHoverEffect(element, url) {
 applyHoverEffect(CrtIcon, "../cart/cart.html");
 applyHoverEffect(HeartIcon, "../fav/favourite.html");
 
-var CartNumbDiv = document.createElement("div");
-CartNumbDiv.style.height = "20px";
-CartNumbDiv.style.width = "20px";
-CartNumbDiv.style.position = "absolute";
-CartNumbDiv.style.bottom = "60px";
-CartNumbDiv.style.right = "105px";
-CartNumbDiv.style.backgroundColor = "yellow";
-CartNumbDiv.style.borderRadius = "50%";
-CartNumbDiv.style.textAlign = "center";
-
-var CartNumb = document.createElement("p");
-CartNumb.style.marginTop = "-1px";
-
-function updateCartDisplay() {
-  CartNumb.textContent = parseInt(localStorage.getItem("numOfProducts"));
-}
-
-CartNumbDiv.appendChild(CartNumb);
-Div.appendChild(CartNumbDiv);
-
 //end of header
+
+
+
+
+
