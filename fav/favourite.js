@@ -1,9 +1,8 @@
-var storedData = localStorage.getItem('favourites');
+var storedData = localStorage.getItem('favourites')|| [];
 let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
-let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+//let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
-//var cart = JSON.parse(localStorage.getItem("favourites")); // Assuming "cart" is the correct key
-//var cart = JSON.parse(localStorage.getItem("favourites"));
+
 
 var bigDiv = document.getElementById('product_fav');
 var footer = document.getElementById("footer");
@@ -97,9 +96,7 @@ if (storedData) {
         if (!isItemInCart(itemToAdd)) {
           console.log(itemToAdd);
           console.log(cartStorge);
-          // var curnum = parseInt(CartNumb.textContent);
-          //var newnum = curnum + 1;
-          // CartNumb.textContent = newnum;
+
           cartStorge.push(itemToAdd);
           localStorage.setItem("cartStorge", JSON.stringify(cartStorge));
         }
@@ -114,7 +111,6 @@ if (storedData) {
 
 
 
-      var favourites = JSON.parse(localStorage.getItem("favourites")); // Use "favourites" key
 
       let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts")); // Assuming this tracks cart items
       
@@ -129,12 +125,12 @@ if (storedData) {
         this.parentElement.remove(); // Remove element from DOM
       
         // Update favourites data in memory
-        favourites = favourites.filter(function (item) {
+        storedData = storedData.filter(function (item) {
           return item.id !== itemId; // Keep items except the one with matching id
         });
       
         // Persist the updated favourites data in local storage (potentially asynchronous)
-        localStorage.setItem("favourites", JSON.stringify(favourites));
+        localStorage.setItem("favourites", JSON.stringify(storedData));
       
         // Update productsOnCart only if it's relevant to favourites
         if (productsOnCart) { // Check if productsOnCart exists
@@ -147,10 +143,10 @@ if (storedData) {
 
 
       try {
-        var favourites = JSON.parse(localStorage.getItem("favourites"));
+        var storedData = JSON.parse(localStorage.getItem("favourites"));
       } catch (error) {
         console.error("Error parsing favourites data:", error);
-        favourites = []; // Initialize with an empty array if parsing fails
+        storedData = []; // Initialize with an empty array if parsing fails
       }
       
       
