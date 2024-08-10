@@ -1,0 +1,11 @@
+@font-face {
+    font-family: myFont;
+    src: url(../Fonts/Poppins-Medium.ttf);
+}
+body{
+    font-family: myFont;
+}
+p{
+    display: inline-block;
+    margin-inline: 97px;
+}

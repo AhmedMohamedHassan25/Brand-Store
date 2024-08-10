@@ -200,24 +200,6 @@ function applyHoverEffect(element, url) {
 applyHoverEffect(person, "../login/login.html");
 applyHoverEffect(HeartIcon, "../fav/favourite.html");
 
-// var CartNumbDiv = document.createElement("div");
-// CartNumbDiv.style.height = "20px";
-// CartNumbDiv.style.width = "20px";
-// CartNumbDiv.style.position = "absolute";
-// CartNumbDiv.style.bottom = "60px";
-// CartNumbDiv.style.right = "105px";
-// CartNumbDiv.style.backgroundColor = "yellow";
-// CartNumbDiv.style.borderRadius = "50%";
-// CartNumbDiv.style.textAlign = "center";
-// var CartNumb = document.createElement("p");
-// CartNumb.style.marginTop = "-1px";
-
-// CartNumbDiv.appendChild(CartNumb);
-// if (parseInt(localStorage.getItem("numOfProducts")) == NaN) {
-//   CartNumb.textContent = 0;
-// }
-// Div.appendChild(CartNumbDiv);
-
 //end of header
 
 var cartdiv = document.getElementById("cartdiv");
@@ -563,10 +545,11 @@ if (cart.length == 0) {
   terms.innerHTML = "I Agree With ";
   sidediv.appendChild(terms);
   const termsOfServes = document.createElement("a");
+  termsOfServes.setAttribute("id","terms")
   termsOfServes.innerHTML = "Terms & Conditions";
   termsOfServes.addEventListener("click", function () {
     window.open(
-      "./Terms.html",
+      "../terms/Terms.html",
       "_blank",
       "width=700,height=1000",
       "top=500,left=500"
