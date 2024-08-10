@@ -291,3 +291,9 @@ if(ActiveUserData)
     });
     
     //footer
+
+
+    var footer= document.getElementById("footer");
+    
+
+    Profileform.after(footer);
