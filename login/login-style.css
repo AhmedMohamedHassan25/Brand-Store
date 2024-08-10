@@ -44,7 +44,7 @@ input.half-width, select.half-width {
 button {
     width: 100%;
     padding: 12px;
-    background-color: #007bff;
+    background-color: #14202E;
     color: #ffffff;
     border: none;
     border-radius: 4px;
@@ -53,7 +53,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #14202E;
 }
 
 p {
@@ -62,7 +62,7 @@ p {
 }
 
 input:invalid, select:invalid {
-    border-color: rgb(0, 166, 255);
+    border-color: #14202E;
 }
 
 input:valid, select:valid {
