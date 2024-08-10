@@ -1,5 +1,10 @@
+
+#h2Text{
+    margin-top: 130px;
+}
 #cartdiv{
     text-align: center;
+    font-family: myFont;
 }
 #empitycartbtn{
     width:"250px";
@@ -52,10 +57,9 @@
     
 }
 .cartcardimg{
-    height: 150px;
+    height: 100%;
     width: 150px;
-    margin-left: -700px;
-    margin-top: 25px;
+    margin-left: -705px;
 }
 .cartcardtitle{
     display: inline-block;
@@ -166,7 +170,7 @@
     background-color: red;
     display: inline-block;
     font-size: 15px;
-    margin-left: -162px ;
+    margin-left: -160px ;
     margin-top: 5;
 }
 #buyBtn{
