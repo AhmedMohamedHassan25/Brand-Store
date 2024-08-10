@@ -181,8 +181,8 @@ Div.style.padding = "0px";
 Div.style.margin = "0px";
 
 
-const fillters = document.getElementById("fillters");
-fillters.before(Div);
+
+
 document.body.append(Div);
 // logo
 var logo = document.createElement("img");
@@ -196,7 +196,11 @@ logo.style.top = "-13px";
 
 logo.style.cursor = "pointer";
 logo.id = "logo";
+logo.addEventListener("click",function(){
 
+  window.location.href = "../index.html";
+
+})
 Div.appendChild(logo);
 
 // categories
@@ -391,4 +395,5 @@ Div.appendChild(CartNumbDiv);
 //end of header
 
 //footer
+
 const foot = document.getElementById("foot");

@@ -105,6 +105,7 @@ if (favourites) {
 
       // var favourites = JSON.parse(localStorage.getItem("favourites")); // Use "favourites" key
 
+
       let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts")); // Assuming this tracks cart items
 
       const remove = document.createElement("button");
@@ -159,6 +160,11 @@ if (favourites) {
 }
 
 bigDiv.after(footer);
+
+
+
+
+
 
 //start of header
 
