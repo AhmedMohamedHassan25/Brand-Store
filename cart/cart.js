@@ -1,4 +1,3 @@
-
 //start of header
 
 var Div = document.createElement("div");
@@ -221,9 +220,6 @@ if (parseInt(localStorage.getItem("numOfProducts")) == NaN) {
 Div.appendChild(CartNumbDiv);
 
 //end of header
-
-
-
 
 var cartdiv = document.getElementById("cartdiv");
 var cart = JSON.parse(localStorage.getItem("cartStorge"));
@@ -544,6 +540,9 @@ if (cart.length == 0) {
       CartNumb.innerHTML = productsOnCart;
       localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
       SubtotalAmount.innerHTML = overAllPrice;
+      if (cart.length == 0) {
+        window.open("../cart/cart.html", "_self");
+      }
     });
     console.log(overAllPrice);
   }
@@ -553,7 +552,9 @@ if (cart.length == 0) {
   sidediv.appendChild(Subtotal);
   SubtotalAmount.setAttribute("id", "SubtotalAmount");
   SubtotalAmount.innerHTML = "LE " + overAllPrice;
+  const breakLi = document.createElement("br");
   sidediv.appendChild(SubtotalAmount);
+  SubtotalAmount.after(breakLi);
   const check = document.createElement("input");
   check.setAttribute("type", "checkbox");
   check.setAttribute("name", "TOS");
