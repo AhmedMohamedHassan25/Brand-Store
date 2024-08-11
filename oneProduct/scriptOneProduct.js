@@ -22,7 +22,7 @@ if (storedData) {
   productImage.alt = Product.product_name;
   productImage.style.width = "50%";
   productImage.style.marginLeft = "20px";
-  productImage.style.borderRadius = "20px";
+  // productImage.style.borderRadius = "20px";
 
   productDiv.appendChild(productImage);
 
