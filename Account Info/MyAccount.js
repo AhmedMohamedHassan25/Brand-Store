@@ -297,7 +297,7 @@ if(currentUser)
 
     document.getElementById('logoutBtn').addEventListener('click', function() {
 
-        localStorage.removeItem(localStorage.getItem("Active"));
+        localStorage.setItem("Active", "");
         window.location.href = '../login/login.html'; 
     });
     
