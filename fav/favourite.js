@@ -2,7 +2,7 @@
 let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
 let favourites = JSON.parse(localStorage.getItem("favourites"));
 let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
-
+let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts")) || 0;
 
 var bigDiv = document.getElementById("product_fav");
 var footer = document.getElementById("footer");
@@ -119,9 +119,13 @@ if (favourites) {
         if (!isItemInCart(itemToAdd)) {
           console.log(itemToAdd);
           console.log(cartStorge);
-
+          productsOnCart += 1;
           cartStorge.push(itemToAdd);
           localStorage.setItem("cartStorge", JSON.stringify(cartStorge));
+          localStorage.setItem(
+            "numOfProducts",
+            JSON.stringify(productsOnCart)
+          );
         }
       });
 
@@ -135,7 +139,6 @@ if (favourites) {
       // var favourites = JSON.parse(localStorage.getItem("favourites")); // Use "favourites" key
 
 
-      let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts")); // Assuming this tracks cart items
 
       const remove = document.createElement("button");
       remove.setAttribute("class", "remove");
@@ -158,16 +161,15 @@ if (favourites) {
         });
         localStorage.setItem("favourites", JSON.stringify(favourites));
         console.log(favourites);
+        delete isBlackStorage[itemId];
+        localStorage.setItem(
+          "isBlackStorage",
+          JSON.stringify(isBlackStorage)
+        );
 
         // Persist the updated favourites data in local storage (potentially asynchronous)
 
         // Update productsOnCart only if it's relevant to favourites
-        if (productsOnCart) {
-          // Check if productsOnCart exists
-          productsOnCart -= 1;
-          console.log(productsOnCart);
-          localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
-        }
       });
 
       // try {
