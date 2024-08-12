@@ -203,7 +203,9 @@ h2{
 }
 #bestSel{
     font-family: myFont;
-    font-size: 19px;
+    font-size: 30px;
+    position: relative;
+    top: 30px;
 }
 
 #empitycartbtn{
@@ -227,7 +229,7 @@ h2{
     border: solid 1px black;
     height: 400px;
     width: 250px;
-    margin: 30px;
+    margin: 40px;
     text-align: center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     float: left;
@@ -364,3 +366,9 @@ footer {
 }
 
 
+#bestSeller{
+    display: flex;
+   justify-content: center;
+   scale: 1.2;
+padding: 100px;   
+margin-bottom: 0; }   

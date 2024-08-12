@@ -229,6 +229,7 @@ if (cart.length == 0) {
   bestSel.innerHTML = "Best Sellers";
   cartdiv.appendChild(bestSel);
   const bestProd = document.createElement("div");
+  bestProd.setAttribute("id","bestSeller");
   cartdiv.appendChild(bestProd);
 
   let item = [];
