@@ -1,31 +1,13 @@
 //start of header
 
 var Div = document.createElement("div");
-Div.style.display = "flex";
-Div.id = "MyDiv";
-Div.style.width = "100%";
-Div.style.height = "100px";
-Div.style.backgroundColor = "#14202E";
-Div.style.position = "absolute";
-Div.style.top = "0px";
-Div.style.zIndex = "1000";
-Div.style.left = "0px";
-Div.style.padding = "0px";
-Div.style.margin = "0px";
-
+Div.id="MyDiv";
 document.body.append(Div);
 // logo
 var logo = document.createElement("img");
 logo.src = "../rss/White-Logo.png";
-logo.style.height = "140px";
-logo.style.width = "220px";
-logo.style.position = "absolute";
-
-logo.style.left = "5%";
-logo.style.top = "-13px";
-
+logo.id="logo";
 logo.style.cursor = "pointer";
-logo.id = "logo";
 logo.addEventListener("click", function () {
   window.location.href = "../index.html";
 });
@@ -33,10 +15,8 @@ Div.appendChild(logo);
 
 // categories
 var LIST = document.createElement("div");
-LIST.style.display = "inline-block";
-LIST.style.width = "fit-content";
-LIST.style.backgroundColor = "rgba(245, 222, 179, 0)";
-LIST.style.Color = "#f6ead9";
+LIST.id="lis";
+
 
 var C1 = document.createElement("button");
 var C2 = document.createElement("button");
@@ -45,6 +25,13 @@ var C4 = document.createElement("button");
 var C5 = document.createElement("button");
 var C6 = document.createElement("button");
 var C7 = document.createElement("button");
+C1.id="c1";
+C2.id="c2";
+C3.id="c3";
+C4.id="c4";
+C5.id="c5";
+C6.id="c6";
+C7.id="c7";
 
 C1.textContent = "All Products";
 C2.textContent = "Jackets";
@@ -54,37 +41,6 @@ C5.textContent = "Shirts";
 C6.textContent = "T-shirts";
 C7.textContent = "Accessories";
 
-C1.style.display = "inline";
-C2.style.display = "inline";
-C3.style.display = "inline";
-C4.style.display = "inline";
-C5.style.display = "inline";
-C6.style.display = "inline";
-C7.style.display = "inline";
-
-C1.style.margin = "7px";
-C2.style.margin = "7px";
-C3.style.margin = "7px";
-C4.style.margin = "7px";
-C5.style.margin = "7px";
-C6.style.margin = "7px";
-C7.style.margin = "7px";
-
-C2.style.backgroundColor = "rgba(245, 222, 179, 0)";
-C1.style.backgroundColor = "rgba(245, 222, 179, 0)";
-C3.style.backgroundColor = "rgba(245, 222, 179, 0)";
-C4.style.backgroundColor = "rgba(245, 222, 179, 0)";
-C5.style.backgroundColor = "rgba(245, 222, 179, 0)";
-C6.style.backgroundColor = "rgba(245, 222, 179, 0)";
-C7.style.backgroundColor = "rgba(245, 222, 179, 0)";
-
-C2.style.border = "0";
-C1.style.border = "0";
-C3.style.border = "0";
-C4.style.border = "0";
-C5.style.border = "0";
-C6.style.border = "0";
-C7.style.border = "0";
 
 C1.onclick = function () {
   localStorage.removeItem("category");
@@ -137,19 +93,6 @@ HoverEffect(C5);
 HoverEffect(C6);
 HoverEffect(C7);
 
-C1.style.fontSize = "15px";
-C2.style.fontSize = "15px";
-C3.style.fontSize = "15px";
-C4.style.fontSize = "15px";
-C5.style.fontSize = "15px";
-C6.style.fontSize = "15px";
-C7.style.fontSize = "15px";
-
-LIST.style.position = " absolute";
-LIST.style.left = "31%";
-LIST.style.top = "30px";
-LIST.style.color = "#f4f4f4";
-
 LIST.appendChild(C1);
 C1.after(C2);
 C2.after(C3);
@@ -158,29 +101,19 @@ C4.after(C5);
 C5.after(C6);
 C6.after(C7);
 
-LIST.style.transition = "transform";
-
 Div.appendChild(LIST);
 
 // cart icon
 var person = document.createElement("img");
 person.src = "../rss/icons8-administrator-male-96.png";
-person.style.height = "22px";
-person.style.position = "absolute";
-person.style.cursor = "pointer";
-person.style.bottom = "40px";
-person.style.right = "120px";
-
+person.id="CartIcon"
 Div.appendChild(person);
 
 //heart icon
 var HeartIcon = document.createElement("img");
 HeartIcon.src = "../rss/Heart2.png";
-HeartIcon.style.height = "23px";
-HeartIcon.style.position = "absolute";
-HeartIcon.style.right = "170px";
-HeartIcon.style.bottom = "40px";
-HeartIcon.style.cursor = "pointer";
+HeartIcon.id="HearIcon";
+
 Div.appendChild(HeartIcon);
 
 function applyHoverEffect(element, url) {
@@ -375,8 +308,13 @@ if (cart.length == 0) {
 } else {
   // CartNumb.textContent = productsOnCart.toString();
   var carthead = document.createElement("div");
-  var productdiv = document.createElement("p");
   carthead.setAttribute("id", "carthead");
+  var productdiv = document.createElement("p");
+  productdiv.innerHTML = "Product";
+  productdiv.setAttribute("id", "productdiv");
+
+
+  var productdiv = document.createElement("p");
   productdiv.innerHTML = "Product";
   productdiv.setAttribute("id", "productdiv");
   var pricediv = document.createElement("p");
@@ -397,6 +335,8 @@ if (cart.length == 0) {
   var sidediv = document.createElement("div");
   sidediv.setAttribute("id", "sidediv");
   cartdiv.appendChild(sidediv);
+
+
 
   let overAllPrice = 0;
   // const storedQuantities =
@@ -419,7 +359,7 @@ if (cart.length == 0) {
 
     var categ = document.createElement("p");
     categ.setAttribute("class", "categ");
-    categ.innerHTML = " category: " + cart[i].category;
+    categ.innerHTML = "<strong> category </strong>: " + cart[i].category;
     cartcarddiv.appendChild(categ);
 
     var quantity = document.createElement("p");
@@ -438,10 +378,9 @@ if (cart.length == 0) {
       markForDis.innerHTML = "Sale 15%";
       const dicounted = document.createElement("p");
       dicounted.setAttribute("class", "dicounted");
-      price.style.marginLeft = "200px";
       price.style.textDecorationLine = "line-through";
       dicounted.innerHTML =
-        "LE " + (cart[i].price - (cart[i].price * 15) / 100) + " (-15%)";
+        "LE " + (cart[i].price - (cart[i].price * 15) / 100) + `<span id="Disc">(-15%)</span>`;
       cartcarddiv.appendChild(dicounted);
       cartcarddiv.appendChild(markForDis);
     }
@@ -568,10 +507,16 @@ if (cart.length == 0) {
     if (check.checked) {
       buybtn.disabled = false;
       buybtn.style.backgroundColor = "white";
+      buybtn.style.color="#14202E";
+      buybtn.style.margin= "10px";
+
       buybtn.style.cursor = "Pointer";
     } else {
       buybtn.disabled = true;
-      buybtn.style.backgroundColor = "gray";
+      buybtn.style.color="white";
+      buybtn.style.backgroundColor = "#14202E";
+      buybtn.style.margin= "10px";
+
       buybtn.style.cursor = "auto";
     }
   });
@@ -608,3 +553,7 @@ if (cart.length == 0) {
     window.open("../products/Products.html", "_self");
   });
 }
+var sideLogo=document.createElement("img");
+sideLogo.src="../rss/blue-logo.png";
+sideLogo.id="sideLogo";
+sidediv.appendChild(sideLogo);
