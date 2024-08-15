@@ -1,6 +1,9 @@
 // made by Menna Abd-Elaziz
 
-var storedData = localStorage.getItem("item");
+let storedData = localStorage.getItem("item");
+let actialProduct = JSON.parse(localStorage.getItem("item"));
+console.log(actialProduct[0].id);
+
 console.log(storedData);
 if (storedData) {
   var product = JSON.parse(storedData);
@@ -167,6 +170,10 @@ if (storedData) {
 }
 let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
 let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts")) || 0;
+let quantityStorage = JSON.parse(localStorage.getItem("quantityStorage")) || {};
+
+const selectedProduct = actialProduct[0];
+console.log(selectedProduct.id);
 const addcart = document.getElementById("addcart");
 addcart.addEventListener("click", function () {
   function isItemInCart(item) {
@@ -178,12 +185,20 @@ addcart.addEventListener("click", function () {
     }
     return false;
   }
-  if (!isItemInCart(Product)) {
+  if (!isItemInCart(selectedProduct)) {
     console.log(cartStorge);
     productsOnCart += 1;
-    cartStorge.push(Product);
+    cartStorge.push(actialProduct[0]);
     localStorage.setItem("cartStorge", JSON.stringify(cartStorge));
     localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
+    quantityStorage[actialProduct[0].id] = 1;
+    localStorage.setItem("quantityStorage", JSON.stringify(quantityStorage));
+  } else {
+    productsOnCart += 1;
+    localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
+    quantityStorage[actialProduct[0].id] =
+      (quantityStorage[actialProduct[0].id] || 0) + 1;
+    localStorage.setItem("quantityStorage", JSON.stringify(quantityStorage));
   }
 });
 

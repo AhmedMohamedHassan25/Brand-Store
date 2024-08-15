@@ -2,6 +2,7 @@
 let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
 let favourites = JSON.parse(localStorage.getItem("favourites"));
 let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
+let quantityStorage = JSON.parse(localStorage.getItem("quantityStorage")) || {};
 let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts")) || 0;
 
 var bigDiv = document.getElementById("product_fav");
@@ -126,7 +127,17 @@ if (favourites) {
             "numOfProducts",
             JSON.stringify(productsOnCart)
           );
+          quantityStorage[itemToAdd.id] = 1;
+        } else {
+          productsOnCart += 1;
+          localStorage.setItem(
+            "numOfProducts",
+            JSON.stringify(productsOnCart)
+          );
+          quantityStorage[itemToAdd.id] = (quantityStorage[itemToAdd.id] || 0) + 1;
+          console.log(itemToAdd.id);
         }
+        localStorage.setItem("quantityStorage", JSON.stringify(quantityStorage));
       });
 
       var productDescription = document.createElement("p");
