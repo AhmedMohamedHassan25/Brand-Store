@@ -19,6 +19,7 @@ let item = [];
 let cartStorge = JSON.parse(localStorage.getItem("cartStorge")) || [];
 let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 let isBlackStorage = JSON.parse(localStorage.getItem("isBlackStorage")) || {};
+let quantityStorage = JSON.parse(localStorage.getItem("quantityStorage")) || {};
 let productsOnCart = JSON.parse(localStorage.getItem("numOfProducts")) || 0;
 function loadProducts(category, PriceRange, Size) {
   var xhr = new XMLHttpRequest();
@@ -139,7 +140,20 @@ function loadProducts(category, PriceRange, Size) {
                 "numOfProducts",
                 JSON.stringify(productsOnCart)
               );
+              quantityStorage[itemToAdd.id] = 1;
+              console.log(itemToAdd.id);
+            } else {
+              productsOnCart += 1;
+              CartNumb.innerHTML = "";
+              CartNumb.textContent = productsOnCart.toString();
+              localStorage.setItem(
+                "numOfProducts",
+                JSON.stringify(productsOnCart)
+              );
+              quantityStorage[itemToAdd.id] = (quantityStorage[itemToAdd.id] || 0) + 1;
+              console.log(itemToAdd.id);
             }
+            localStorage.setItem("quantityStorage", JSON.stringify(quantityStorage));
           });
           card.addEventListener("click", function (event) {
             if (!event.target.closest("button")) {

@@ -162,7 +162,7 @@ if (cart.length == 0) {
   bestSel.innerHTML = "Best Sellers";
   cartdiv.appendChild(bestSel);
   const bestProd = document.createElement("div");
-  bestProd.setAttribute("id","bestSeller");
+  bestProd.setAttribute("id", "bestSeller");
   cartdiv.appendChild(bestProd);
 
   let item = [];
@@ -341,6 +341,7 @@ if (cart.length == 0) {
   let overAllPrice = 0;
   // const storedQuantities =
   //   JSON.parse(localStorage.getItem("cartQuantities")) || {};
+  let quantityStorage = JSON.parse(localStorage.getItem("quantityStorage"));
   let numOfProducts;
   const SubtotalAmount = document.createElement("p");
   for (let i = 0; i < cart.length; i++) {
@@ -388,17 +389,22 @@ if (cart.length == 0) {
     const counter = document.createElement("input");
     counter.setAttribute("type", "number");
     counter.setAttribute("class", "counterinput");
-    counter.setAttribute("value", 1);
+    counter.setAttribute("value", quantityStorage[cart[i].id]);
     counter.setAttribute("max", 10);
     counter.setAttribute("min", 1);
     cartcarddiv.appendChild(counter);
 
+    const ActialPrice = cart[i].price;
+    const ActialPriceDiscounted = parseInt(
+      cart[i].price - (cart[i].price * 15) / 100
+    );
+
     const totalprice = document.createElement("p");
     totalprice.setAttribute("class", "totalprice");
     totalprice.setAttribute("id", cart[i].id);
-    const totalpriceNumber = cart[i].price;
+    const totalpriceNumber = cart[i].price * quantityStorage[cart[i].id];
     const discountedTotal = parseInt(
-      cart[i].price - (cart[i].price * 15) / 100
+      (cart[i].price - (cart[i].price * 15) / 100) * quantityStorage[cart[i].id]
     );
     if (cart[i].discount) {
       totalprice.innerHTML = "LE " + discountedTotal;
@@ -415,26 +421,35 @@ if (cart.length == 0) {
     counter.addEventListener("change", function () {
       let previousCountValue = countValue;
       countValue = counter.value;
-
+      console.log(countValue);
       if (cart[i].discount) {
         if (countValue > previousCountValue) {
-          tprice.innerHTML = "LE " + countValue * discountedTotal;
-          overAllPrice += (countValue - previousCountValue) * discountedTotal;
+          tprice.innerHTML = "LE " + countValue * ActialPriceDiscounted;
+          overAllPrice +=
+            (countValue - previousCountValue) * ActialPriceDiscounted;
+          productsOnCart += 1;
         } else if (countValue < previousCountValue) {
-          tprice.innerHTML = "LE " + countValue * discountedTotal;
-          overAllPrice -= (previousCountValue - countValue) * discountedTotal;
+          tprice.innerHTML = "LE " + countValue * ActialPriceDiscounted;
+          overAllPrice -=
+            (previousCountValue - countValue) * ActialPriceDiscounted;
+          productsOnCart -= 1;
         }
       } else {
         if (countValue > previousCountValue) {
-          tprice.innerHTML = "LE " + countValue * totalpriceNumber;
-          overAllPrice += (countValue - previousCountValue) * totalpriceNumber;
+          tprice.innerHTML = "LE " + countValue * ActialPrice;
+          overAllPrice += (countValue - previousCountValue) * ActialPrice;
+          productsOnCart += 1;
         } else if (countValue < previousCountValue) {
-          tprice.innerHTML = "LE " + countValue * totalpriceNumber;
-          overAllPrice -= (previousCountValue - countValue) * totalpriceNumber;
+          tprice.innerHTML = "LE " + countValue * ActialPrice;
+          overAllPrice -= (previousCountValue - countValue) * ActialPrice;
+          productsOnCart -= 1;
         }
       }
       SubtotalAmount.innerHTML = overAllPrice;
       console.log(overAllPrice);
+      quantityStorage[cart[i].id] = parseInt(countValue);
+      localStorage.setItem("quantityStorage", JSON.stringify(quantityStorage));
+      localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
     });
     const isDiscount = cart[i].discount;
     var remove = document.createElement("button");
@@ -444,9 +459,9 @@ if (cart.length == 0) {
     const itemId = cart[i].id;
     remove.addEventListener("click", function () {
       if (isDiscount) {
-        overAllPrice -= discountedTotal * counter.value;
+        overAllPrice -= ActialPriceDiscounted * counter.value;
       } else {
-        overAllPrice -= totalpriceNumber * counter.value;
+        overAllPrice -= ActialPrice * counter.value;
       }
       console.log(overAllPrice);
       this.parentElement.remove();
@@ -454,10 +469,11 @@ if (cart.length == 0) {
         return item.id !== itemId;
       });
       localStorage.setItem("cartStorge", JSON.stringify(cart));
-      productsOnCart -= 1;
+      productsOnCart -= quantityStorage[itemId];
       console.log(productsOnCart);
-      // CartNumb.innerHTML = productsOnCart;
       localStorage.setItem("numOfProducts", JSON.stringify(productsOnCart));
+      delete quantityStorage[itemId];
+      localStorage.setItem("quantityStorage", JSON.stringify(quantityStorage));
       SubtotalAmount.innerHTML = overAllPrice;
       if (cart.length == 0) {
         window.open("../cart/cart.html", "_self");
@@ -485,7 +501,7 @@ if (cart.length == 0) {
   terms.innerHTML = "I Agree With ";
   sidediv.appendChild(terms);
   const termsOfServes = document.createElement("a");
-  termsOfServes.setAttribute("id","terms")
+  termsOfServes.setAttribute("id", "terms");
   termsOfServes.innerHTML = "Terms & Conditions";
   termsOfServes.addEventListener("click", function () {
     window.open(
