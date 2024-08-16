@@ -62,3 +62,43 @@ footer {
 }
 
 
+.remove{
+    width :300px;
+    height :30px;
+    background-color:#14202E;
+    color:white;
+    font-size:20px;
+    border:0;
+    border-radius: 5px;
+}
+
+.card{
+    border :3px solid black ;
+    box-shadow :4px 2px 1px 1px #14202E ;
+    border-radius :10px ;
+    background-color :white ;
+    width :60%;
+    display :flex;
+    text-align :center;
+    justify-content:center;
+    margin-bottom :20px;
+    margin-top :20px;
+    margin-left :19%;
+    padding :20px;
+    transition: all .5s;
+
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+#productDiv1
+{
+    width:50%;
+  height:100%;
+}
+#productDiv2
+{
+    width:60%;
+  
+}

@@ -318,9 +318,9 @@ if (cart.length == 0) {
   productdiv.innerHTML = "Product";
   productdiv.setAttribute("id", "productdiv");
   var pricediv = document.createElement("p");
-  pricediv.innerHTML = "Price";
+  pricediv.innerHTML = "Price"; 
   pricediv.setAttribute("id", "pricediv");
-  var amountdiv = document.createElement("p");
+  var amountdiv = document.createElement("p"); 
   amountdiv.innerHTML = "Amount";
   amountdiv.setAttribute("id", "amountdiv");
   var totaldiv = document.createElement("p");

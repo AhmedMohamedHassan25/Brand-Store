@@ -20,21 +20,7 @@ if (favourites) {
       var productDiv = document.createElement("div");
       productDiv.setAttribute("class", "card");
 
-      //productDiv.style.display="flex";
-      productDiv.style.border = "3px solid black ";
-      productDiv.style.boxShadow = "4px 2px 0  #14202E ";
-      productDiv.style.borderRadius = "10px ";
-      productDiv.style.backgroundColor = "white ";
-      productDiv.style.width = "60%";
-      productDiv.style.display = "flex";
-      productDiv.style.textAlign = "center";
-      productDiv.style.justifyContent = "center";
-      
-      productDiv.style.marginBottom = "20px";
-      productDiv.style.marginTop = "20px";
-      productDiv.style.marginBottom = "20px";
-      productDiv.style.marginLeft = "19%";
-      productDiv.style.padding = "20px";
+    
 
       var productName = document.createElement("h2");
       productName.textContent = product.product_name; // Use id or name if available
@@ -42,9 +28,9 @@ if (favourites) {
       var productDiv1 = document.createElement("div");
       var productDiv2 = document.createElement("div");
       
-      productDiv1.style.width="50%";
-      productDiv1.style.height="100%";
-      productDiv2.style.width="50%";
+      productDiv1.id="productDiv1";
+      productDiv2.id="productDiv2";
+    
 
       productDiv.appendChild(productDiv1);
       productDiv.appendChild(productDiv2);
@@ -154,12 +140,6 @@ if (favourites) {
       const remove = document.createElement("button");
       remove.setAttribute("class", "remove");
       remove.textContent = "Remove";
-      remove.style.width = "300px";
-      remove.style.height = "30px";
-      remove.style.backgroundColor="#14202E";
-      remove.style.color="white";
-      remove.style.fontSize="20px";
-      remove.style.border="0";
       productDiv2.appendChild(remove);
 
       const itemId = product.id; // Assuming `product.id` is available in the scope
@@ -176,8 +156,11 @@ if (favourites) {
         localStorage.setItem(
           "isBlackStorage",
           JSON.stringify(isBlackStorage)
-        );
 
+   
+          
+        );
+        productDiv.remove();
         // Persist the updated favourites data in local storage (potentially asynchronous)
 
         // Update productsOnCart only if it's relevant to favourites
